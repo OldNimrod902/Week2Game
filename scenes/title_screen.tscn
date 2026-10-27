@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://yp664n7iylh0"]
+
+[ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://ju5l62pyruhc" path="res://scenes/title_screen.gd" id="1_sa3yf"]
+
+[node name="TitleScreen" type="Node2D" unique_id=1674956820]
+script = ExtResource("1_sa3yf")
+
+[node name="Background" type="TextureRect" parent="." unique_id=511934117]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("1_fgkus")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=229028707]
+clip_contents = false
+offset_left = 239.0
+offset_top = 121.000015
+offset_right = 1230.0375
+offset_bottom = 315.5105
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "The Antique Hunt"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1810089415]
+offset_left = 396.0
+offset_top = 268.0
+offset_right = 790.0
+offset_bottom = 522.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=383823823]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Start game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=812819598]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=297982037]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
