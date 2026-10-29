@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b4b1ij0odbhev"]
+
+[ext_resource type="Script" uid="uid://dx7sk8e30nsb3" path="res://scenes/dead_screen.gd" id="1_id3ew"]
+[ext_resource type="Texture2D" uid="uid://b2b8q5dfqolam" path="res://assets/dead_background.png" id="2_urrme"]
+
+[node name="dead_screen" type="Node2D" unique_id=1976498233]
+script = ExtResource("1_id3ew")
+
+[node name="Background" type="TextureRect" parent="." unique_id=424748248]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("2_urrme")
+
+[node name="title" type="RichTextLabel" parent="." unique_id=290899306]
+clip_contents = false
+offset_left = 61.000004
+offset_top = 163.00002
+offset_right = 1072.1993
+offset_bottom = 284.37457
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(1, 0, 0.23529412, 1)
+theme_override_colors/font_outline_color = Color(0.51635885, 8.3025543e-07, 2.8878452e-07, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/normal_font_size = 71
+text = "No Antique Clock for you!"
+
+[node name="description" type="RichTextLabel" parent="." unique_id=1234314959]
+clip_contents = false
+offset_left = 64.0
+offset_top = 251.0
+offset_right = 906.1492
+offset_bottom = 461.0714
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 32
+text = "You lost all of your lives, and failed the mission!
+Go back to the main menu and start over.
+Note: you might want to change the game's difficulty in the settings menu, if it's to hard for you"
+
+[node name="Button" type="Button" parent="." unique_id=1716400617]
+offset_left = 67.0
+offset_top = 399.0
+offset_right = 286.0
+offset_bottom = 458.0
+text = "Restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
