@@ -6,6 +6,7 @@
 script = ExtResource("1_srplv")
 
 [node name="timer" type="RichTextLabel" parent="." unique_id=1164632770]
+clip_contents = false
 offset_right = 146.0
 offset_bottom = 76.0
 theme_override_constants/outline_size = 7

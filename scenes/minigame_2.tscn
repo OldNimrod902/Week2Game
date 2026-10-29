@@ -60,6 +60,17 @@ script = ExtResource("4_tbdge")
 [node name="timer" parent="." unique_id=2075219886 instance=ExtResource("7_q3ivc")]
 position = Vector2(1053, 37)
 
+[node name="quest_text" type="RichTextLabel" parent="." unique_id=958448426]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 568.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Pick up your items, before going out on the adventure!
+Use your mouse!"
+
 [connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]
 [connection signal="pressed" from="Button_3" to="Button_3" method="_on_pressed"]

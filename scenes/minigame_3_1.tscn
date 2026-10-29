@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://3bd14j2v2bg0"]
+
+[ext_resource type="Script" uid="uid://bqgmkxayvfojk" path="res://scenes/minigame_3_1.gd" id="1_6xnuo"]
+[ext_resource type="Texture2D" uid="uid://dydpv08tkxdh5" path="res://assets/level1_background.png" id="2_cr4yq"]
+[ext_resource type="Texture2D" uid="uid://8ktnibtvbbx5" path="res://assets/overlay_background.png" id="3_tvbfo"]
+[ext_resource type="Texture2D" uid="uid://b1xirlgrgc1y3" path="res://assets/building.png" id="4_f70gt"]
+[ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="5_e6pfr"]
+[ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="6_fdmdp"]
+[ext_resource type="Script" uid="uid://j0secxqau61n" path="res://scenes/door.gd" id="7_tvbfo"]
+[ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="8_f70gt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvkra"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
+size = Vector2(103, 170)
+
+[node name="minigame_3_1" type="Node2D" unique_id=916889929]
+script = ExtResource("1_6xnuo")
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1455901800]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=1036838349]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("2_cr4yq")
+metadata/_edit_use_anchors_ = true
+
+[node name="nature" type="TextureRect" parent="." unique_id=936475588]
+offset_top = -37.0
+offset_right = 1920.0
+offset_bottom = 1043.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("3_tvbfo")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=816256354]
+offset_left = 684.00006
+offset_top = 53.000004
+offset_right = 1404.0
+offset_bottom = 773.0
+scale = Vector2(0.69415414, 0.70931506)
+texture = ExtResource("4_f70gt")
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=968660370]
+position = Vector2(-25, 561.00006)
+scale = Vector2(31.319996, 2.799999)
+
+[node name="TextureRect" type="TextureRect" parent="ground" unique_id=893245787]
+offset_right = 1574.5039
+offset_bottom = 144.0
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("5_e6pfr")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=2077358499]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_bvkra")
+
+[node name="wall1" type="StaticBody2D" parent="." unique_id=157828998]
+position = Vector2(-76, -20)
+scale = Vector2(1.5999211, 15.889328)
+
+[node name="ColorRect" type="ColorRect" parent="wall1" unique_id=56111032]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=172099240]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_bvkra")
+
+[node name="wall2" type="StaticBody2D" parent="." unique_id=1991241211]
+position = Vector2(1166, -41)
+scale = Vector2(1.5999211, 15.889328)
+
+[node name="ColorRect" type="ColorRect" parent="wall2" unique_id=373691551]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=404793990]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_bvkra")
+
+[node name="Player" parent="." unique_id=599305279 instance=ExtResource("6_fdmdp")]
+position = Vector2(133, 138)
+
+[node name="door" type="Area2D" parent="." unique_id=1733639428]
+position = Vector2(801, 438)
+scale = Vector2(0.9599951, 1)
+script = ExtResource("7_tvbfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door" unique_id=2033793499]
+position = Vector2(21, 39)
+shape = SubResource("RectangleShape2D_x1h7o")
+
+[node name="timer" parent="." unique_id=2075219886 instance=ExtResource("8_f70gt")]
+position = Vector2(80, 53)
+
+[node name="quest_text" type="RichTextLabel" parent="." unique_id=208657622]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 568.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Enter the Antique House!"
+
+[connection signal="touched_door" from="door" to="." method="_on_door_touched_door"]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dydpv08tkxdh5" path="res://assets/level1_background.png" id="1_tk6fs"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="2_og05i"]
 [ext_resource type="Texture2D" uid="uid://cmp0mccwfwqlt" path="res://assets/map_piece.png" id="3_lmjug"]
+[ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="3_vc5od"]
 [ext_resource type="Script" uid="uid://0vuxe626j7he" path="res://mappiece.gd" id="4_j1cg4"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="6_j1cg4"]
 
@@ -41,44 +42,45 @@ scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("1_tk6fs")
 metadata/_edit_use_anchors_ = true
 
-[node name="Platform1" type="StaticBody2D" parent="." unique_id=978379838]
+[node name="ground" type="StaticBody2D" parent="." unique_id=978379838]
 position = Vector2(-25, 561.00006)
 scale = Vector2(24.519997, 2.799999)
 
-[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1454879558]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
-metadata/_edit_use_anchors_ = true
+[node name="TextureRect" type="TextureRect" parent="ground" unique_id=233497376]
+offset_right = 1574.5039
+offset_bottom = 144.0
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("3_vc5od")
+stretch_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=222823891]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=222823891]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_x1h7o")
 
-[node name="Platform5" type="StaticBody2D" parent="." unique_id=2004481949]
+[node name="wall1" type="StaticBody2D" parent="." unique_id=2004481949]
 position = Vector2(-76, -20)
 scale = Vector2(1.5999211, 15.889328)
 
-[node name="ColorRect" type="ColorRect" parent="Platform5" unique_id=828569176]
+[node name="ColorRect" type="ColorRect" parent="wall1" unique_id=828569176]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=336109276]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=336109276]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_x1h7o")
 
-[node name="Platform6" type="StaticBody2D" parent="." unique_id=214578965]
+[node name="wall2" type="StaticBody2D" parent="." unique_id=214578965]
 position = Vector2(1166, -41)
 scale = Vector2(1.5999211, 15.889328)
 
-[node name="ColorRect" type="ColorRect" parent="Platform6" unique_id=1118573104]
+[node name="ColorRect" type="ColorRect" parent="wall2" unique_id=1118573104]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6" unique_id=1286797877]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=1286797877]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_x1h7o")
 
@@ -188,6 +190,16 @@ shape = SubResource("CircleShape2D_x1h7o")
 
 [node name="timer" parent="." unique_id=2075219886 instance=ExtResource("6_j1cg4")]
 position = Vector2(78, 51)
+
+[node name="quest_text" type="RichTextLabel" parent="." unique_id=1138119474]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 568.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Collect all 3 map-pieces so you can find the Antique Watch!"
 
 [connection signal="mappiece_collected" from="MapPiece1" to="." method="piece_collect"]
 [connection signal="mappiece_collected" from="MapPiece2" to="." method="piece_collect"]

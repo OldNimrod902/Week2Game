@@ -4,9 +4,13 @@
 [ext_resource type="Script" uid="uid://ba7dpj7ub4nj7" path="res://scenes/minigame_3.gd" id="1_yiing"]
 [ext_resource type="Texture2D" uid="uid://8ktnibtvbbx5" path="res://assets/overlay_background.png" id="2_4c0c6"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_nuwo7"]
+[ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="4_ybnx4"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="5_nuwo7"]
+[ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="5_w3p2l"]
 [ext_resource type="Script" uid="uid://du3mrunqgb2ei" path="res://enemy.gd" id="6_knknf"]
 [ext_resource type="Texture2D" uid="uid://dvxjjm2c4tjay" path="res://assets/enemy.png" id="6_rguwe"]
+[ext_resource type="Script" uid="uid://du7eny21oscyc" path="res://scenes/key.gd" id="10_sfvvs"]
+[ext_resource type="Texture2D" uid="uid://cg6npigv4fuq2" path="res://assets/key.png" id="11_j0t4l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yiing"]
 size = Vector2(40, 40)
@@ -52,6 +56,9 @@ _data = {
 &"walking": SubResource("Animation_ybnx4")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1h7o"]
+radius = 45.763573
+
 [node name="minigame_3" type="Node2D" unique_id=1668255734]
 script = ExtResource("1_yiing")
 
@@ -78,14 +85,75 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-25, 561.00006)
 scale = Vector2(31.319996, 2.799999)
 
-[node name="ColorRect" type="ColorRect" parent="ground" unique_id=240531956]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
-metadata/_edit_use_anchors_ = true
+[node name="TextureRect" type="TextureRect" parent="ground" unique_id=1360275817]
+offset_right = 1574.5039
+offset_bottom = 144.0
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("4_ybnx4")
+stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=652030004]
 position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_yiing")
+
+[node name="platfrom" type="StaticBody2D" parent="." unique_id=1528879819]
+position = Vector2(295, 278)
+scale = Vector2(5.868259, 1.4342495)
+
+[node name="TextureRect" type="TextureRect" parent="platfrom" unique_id=443834126]
+offset_right = 1569.4935
+offset_bottom = 143.23578
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("5_w3p2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platfrom" unique_id=391353416]
+position = Vector2(20, 19.999992)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_yiing")
+
+[node name="platfrom3" type="StaticBody2D" parent="." unique_id=873696504]
+position = Vector2(668, 164)
+scale = Vector2(5.868259, 1.4342495)
+
+[node name="TextureRect" type="TextureRect" parent="platfrom3" unique_id=281433567]
+offset_right = 1569.4935
+offset_bottom = 143.23578
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("5_w3p2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platfrom3" unique_id=423924214]
+position = Vector2(20, 19.999992)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_yiing")
+
+[node name="platfrom4" type="StaticBody2D" parent="." unique_id=1587618645]
+position = Vector2(974, 103)
+scale = Vector2(5.868259, 1.4342495)
+
+[node name="TextureRect" type="TextureRect" parent="platfrom4" unique_id=1175848843]
+offset_right = 1569.4935
+offset_bottom = 143.23578
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("5_w3p2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platfrom4" unique_id=2040592102]
+position = Vector2(20, 19.999992)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_yiing")
+
+[node name="platfrom2" type="StaticBody2D" parent="." unique_id=672423413]
+position = Vector2(653, 371)
+scale = Vector2(5.868259, 1.4342495)
+
+[node name="TextureRect" type="TextureRect" parent="platfrom2" unique_id=1237115959]
+offset_right = 1569.4935
+offset_bottom = 143.23578
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("5_w3p2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platfrom2" unique_id=1191796490]
+position = Vector2(20, 19.999992)
+scale = Vector2(0.99999994, 1)
 shape = SubResource("RectangleShape2D_yiing")
 
 [node name="wall1" type="StaticBody2D" parent="." unique_id=1898164543]
@@ -116,7 +184,7 @@ position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_yiing")
 
 [node name="timer" parent="." unique_id=2075219886 instance=ExtResource("4_nuwo7")]
-position = Vector2(57, 45)
+position = Vector2(76, 49)
 
 [node name="Player" parent="." unique_id=599305279 instance=ExtResource("5_nuwo7")]
 position = Vector2(130, 478)
@@ -142,4 +210,34 @@ shape = SubResource("CircleShape2D_knknf")
 [node name="animation" type="AnimationPlayer" parent="enemy1" unique_id=1581275884]
 libraries/ = SubResource("AnimationLibrary_w3p2l")
 
+[node name="key" type="Node2D" parent="." unique_id=1506910708]
+script = ExtResource("10_sfvvs")
+
+[node name="keyTexture" type="TextureRect" parent="key" unique_id=1136357094]
+offset_left = 1047.0
+offset_top = 36.0
+offset_right = 1111.0
+offset_bottom = 100.0
+scale = Vector2(0.6777598, 0.66543025)
+texture = ExtResource("11_j0t4l")
+
+[node name="Area2D" type="Area2D" parent="key" unique_id=1796006169]
+position = Vector2(1047, 36)
+scale = Vector2(0.6777598, 0.66543025)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key/Area2D" unique_id=596908617]
+position = Vector2(29.50898, 30.055742)
+shape = SubResource("CircleShape2D_x1h7o")
+
+[node name="quest_text" type="RichTextLabel" parent="." unique_id=1336519048]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 568.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Find the key to the Antique House!"
+
 [connection signal="touched_enemy" from="enemy1" to="." method="_on_enemy_1_touched_enemy"]
+[connection signal="key_collected" from="key" to="." method="_on_key_key_collected"]
