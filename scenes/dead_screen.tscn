@@ -39,11 +39,23 @@ text = "You lost all of your lives, and failed the mission!
 Go back to the main menu and start over.
 Note: you might want to change the game's difficulty in the settings menu, if it's to hard for you"
 
-[node name="Button" type="Button" parent="." unique_id=1716400617]
-offset_left = 67.0
-offset_top = 399.0
-offset_right = 286.0
-offset_bottom = 458.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=497827570]
+offset_left = 69.0
+offset_top = 402.0
+offset_right = 279.0
+offset_bottom = 523.0
+theme_override_constants/separation = 11
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1716400617]
+layout_mode = 2
 text = "Restart"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Ragequit" type="Button" parent="VBoxContainer" unique_id=1938705033]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.2369943, 2.5419052e-07, 7.821247e-08, 1)
+theme_override_constants/outline_size = 5
+text = "Rage quit"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Ragequit" to="." method="_on_ragequit_pressed"]

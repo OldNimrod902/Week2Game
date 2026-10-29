@@ -3,14 +3,19 @@
 [ext_resource type="Script" uid="uid://dbntvg1k6nua3" path="res://scenes/minigame_1.gd" id="1_fa05o"]
 [ext_resource type="Texture2D" uid="uid://dydpv08tkxdh5" path="res://assets/level1_background.png" id="1_tk6fs"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="2_og05i"]
+[ext_resource type="Texture2D" uid="uid://8ktnibtvbbx5" path="res://assets/overlay_background.png" id="3_1digs"]
 [ext_resource type="Texture2D" uid="uid://cmp0mccwfwqlt" path="res://assets/map_piece.png" id="3_lmjug"]
 [ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="3_vc5od"]
+[ext_resource type="Texture2D" uid="uid://b8hl6kum5l2vi" path="res://assets/lake_background.png" id="4_00jeu"]
 [ext_resource type="Script" uid="uid://0vuxe626j7he" path="res://mappiece.gd" id="4_j1cg4"]
+[ext_resource type="Texture2D" uid="uid://cepvlxuobjqxi" path="res://assets/wooden_platform.png" id="4_r58ir"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="6_j1cg4"]
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="8_xpvfh"]
+[ext_resource type="Texture2D" uid="uid://p2i6hvjfoasa" path="res://assets/map_piece_2.png" id="9_6n0yg"]
+[ext_resource type="Texture2D" uid="uid://crnm68csf2jq" path="res://assets/map_piece_3.png" id="10_2gcu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
-size = Vector2(40, 40)
+size = Vector2(38.30072, 40)
 
 [sub_resource type="Animation" id="Animation_v5ebm"]
 length = 0.001
@@ -46,12 +51,29 @@ scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("1_tk6fs")
 metadata/_edit_use_anchors_ = true
 
+[node name="nature" type="TextureRect" parent="." unique_id=577512281]
+offset_top = -37.99999
+offset_right = 1920.0
+offset_bottom = 1042.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("3_1digs")
+metadata/_edit_use_anchors_ = true
+
+[node name="nature2" type="TextureRect" parent="." unique_id=1435237419]
+offset_left = 343.0
+offset_top = 252.00002
+offset_right = 2263.0
+offset_bottom = 1332.0
+scale = Vector2(0.42421615, 0.4249201)
+texture = ExtResource("4_00jeu")
+metadata/_edit_use_anchors_ = true
+
 [node name="ground" type="StaticBody2D" parent="." unique_id=978379838]
 position = Vector2(-25, 561.00006)
 scale = Vector2(24.519997, 2.799999)
 
 [node name="TextureRect" type="TextureRect" parent="ground" unique_id=233497376]
-offset_right = 1574.5039
+offset_right = 1539.1637
 offset_bottom = 144.0
 scale = Vector2(0.02549, 0.27925992)
 texture = ExtResource("3_vc5od")
@@ -88,43 +110,70 @@ color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_x1h7o")
 
-[node name="Platform2" type="StaticBody2D" parent="." unique_id=754379346]
-position = Vector2(536, 398)
-scale = Vector2(7.299881, 1.2206199)
-
-[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=516364422]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.7373005, 0.39658245, 1.92523e-07, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1439355390]
-position = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_x1h7o")
-
 [node name="Platform3" type="StaticBody2D" parent="." unique_id=1659226917]
 position = Vector2(105.99998, 317)
 scale = Vector2(9.059881, 1.2206199)
 
-[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=926849202]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.50470585, 0.2636744, 9.62615e-08, 1)
+[node name="TextureRect" type="TextureRect" parent="Platform3" unique_id=1583126553]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("4_r58ir")
+
+[node name="TextureRect2" type="TextureRect" parent="Platform3" unique_id=952942689]
+offset_left = 19.42566
+offset_right = 487.64044
+offset_bottom = 64.0
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("4_r58ir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=205628040]
-position = Vector2(20, 20)
+position = Vector2(19.31593, 19.662144)
+scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_x1h7o")
 
-[node name="Platform4" type="StaticBody2D" parent="." unique_id=2033703211]
-position = Vector2(586, 155.00003)
-scale = Vector2(7.419879, 1.2206199)
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=2082107700]
+position = Vector2(509.00003, 406)
+scale = Vector2(9.059881, 1.2206199)
 
-[node name="ColorRect" type="ColorRect" parent="Platform4" unique_id=1976185555]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.9121156, 0.49563754, 7.70092e-07, 1)
+[node name="TextureRect" type="TextureRect" parent="Platform2" unique_id=1176651468]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("4_r58ir")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=1946844137]
-position = Vector2(20, 20)
+[node name="TextureRect2" type="TextureRect" parent="Platform2" unique_id=482763530]
+offset_left = 19.42566
+offset_right = 487.64044
+offset_bottom = 64.0
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("4_r58ir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1518914732]
+position = Vector2(19.31593, 19.662144)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_x1h7o")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=1325678325]
+position = Vector2(609, 154.00003)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform1" unique_id=1526706895]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("4_r58ir")
+
+[node name="TextureRect2" type="TextureRect" parent="Platform1" unique_id=1634155402]
+offset_left = 19.42566
+offset_right = 487.64044
+offset_bottom = 64.0
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("4_r58ir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=665882920]
+position = Vector2(19.31593, 19.662144)
+scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_x1h7o")
 
 [node name="Player" parent="." unique_id=599305279 instance=ExtResource("2_og05i")]
@@ -134,11 +183,11 @@ position = Vector2(262, 436)
 script = ExtResource("4_j1cg4")
 
 [node name="MapPiece" type="TextureRect" parent="MapPiece1" unique_id=1694212594]
-offset_left = 628.0
-offset_top = 457.0
-offset_right = 724.0
-offset_bottom = 553.0008
-texture = ExtResource("3_lmjug")
+offset_left = 634.0
+offset_top = 449.0
+offset_right = 730.0
+offset_bottom = 545.0008
+texture = ExtResource("9_6n0yg")
 
 [node name="animation" type="AnimationPlayer" parent="MapPiece1" unique_id=1878136762]
 root_node = NodePath("../..")
@@ -159,7 +208,7 @@ offset_left = 628.0
 offset_top = 457.0
 offset_right = 724.0
 offset_bottom = 553.0
-texture = ExtResource("3_lmjug")
+texture = ExtResource("10_2gcu5")
 
 [node name="animation" type="AnimationPlayer" parent="MapPiece2" unique_id=575131266]
 root_node = NodePath("../..")
@@ -212,6 +261,19 @@ script = ExtResource("8_xpvfh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="outside_the_box" unique_id=112099618]
 position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_b7bry")
+
+[node name="completition" type="RichTextLabel" parent="." unique_id=505522463]
+offset_left = 425.0
+offset_top = 218.0
+offset_right = 740.0
+offset_bottom = 298.0
+theme_override_colors/default_color = Color(0.6, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.43671313, 0.6606254, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Quest complete!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mappiece_collected" from="MapPiece1" to="." method="piece_collect"]
 [connection signal="mappiece_collected" from="MapPiece2" to="." method="piece_collect"]

@@ -103,7 +103,7 @@ position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_e54dn")
 
 [node name="Player" parent="." unique_id=599305279 instance=ExtResource("4_dc4i4")]
-position = Vector2(1245, 584)
+position = Vector2(1248, 584)
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
