@@ -12,35 +12,11 @@ size = Vector2(40, 40)
 
 [sub_resource type="Animation" id="Animation_v5ebm"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MapPiece1/MapPiece:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(628, 457)]
-}
 
 [sub_resource type="Animation" id="Animation_fa05o"]
 resource_name = "floating"
-length = 1.0333333
+length = 1.1333333
 loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MapPiece1/MapPiece:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(628, 457), Vector2(627, 429)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j1cg4"]
 _data = {
@@ -63,17 +39,46 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("1_tk6fs")
+metadata/_edit_use_anchors_ = true
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=978379838]
 position = Vector2(-25, 561.00006)
-scale = Vector2(30.119997, 2.799999)
+scale = Vector2(24.519997, 2.799999)
 
 [node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1454879558]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=222823891]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_x1h7o")
+
+[node name="Platform5" type="StaticBody2D" parent="." unique_id=2004481949]
+position = Vector2(-76, -20)
+scale = Vector2(1.5999211, 15.889328)
+
+[node name="ColorRect" type="ColorRect" parent="Platform5" unique_id=828569176]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=336109276]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_x1h7o")
+
+[node name="Platform6" type="StaticBody2D" parent="." unique_id=214578965]
+position = Vector2(1166, -41)
+scale = Vector2(1.5999211, 15.889328)
+
+[node name="ColorRect" type="ColorRect" parent="Platform6" unique_id=1118573104]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6" unique_id=1286797877]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_x1h7o")
 
@@ -126,7 +131,7 @@ script = ExtResource("4_j1cg4")
 offset_left = 628.0
 offset_top = 457.0
 offset_right = 724.0
-offset_bottom = 553.0
+offset_bottom = 553.0008
 texture = ExtResource("3_lmjug")
 
 [node name="animation" type="AnimationPlayer" parent="MapPiece1" unique_id=1878136762]

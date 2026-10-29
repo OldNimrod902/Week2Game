@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c8hqd8nmyl1yb"]
+
+[ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_mioa6"]
+
+[node name="done_screen" type="Node2D" unique_id=461110403]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1741585933]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("1_mioa6")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1992180714]
+clip_contents = false
+offset_left = 102.0
+offset_top = 109.0
+offset_right = 1093.0375
+offset_bottom = 303.5105
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "The hunt is over!"
+
+[node name="Subtitle" type="RichTextLabel" parent="." unique_id=583706440]
+clip_contents = false
+offset_left = 102.0
+offset_top = 210.00002
+offset_right = 1093.0375
+offset_bottom = 404.5105
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 48
+text = "You found the Antique Watch!"

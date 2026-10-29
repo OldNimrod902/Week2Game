@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://c32ksfki7qaji"]
+
+[ext_resource type="Texture2D" uid="uid://dydpv08tkxdh5" path="res://assets/level1_background.png" id="1_vhxdv"]
+[ext_resource type="Script" uid="uid://ba7dpj7ub4nj7" path="res://scenes/minigame_3.gd" id="1_yiing"]
+[ext_resource type="Texture2D" uid="uid://8ktnibtvbbx5" path="res://assets/overlay_background.png" id="2_4c0c6"]
+[ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_nuwo7"]
+[ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="5_nuwo7"]
+[ext_resource type="Script" uid="uid://du3mrunqgb2ei" path="res://enemy.gd" id="6_knknf"]
+[ext_resource type="Texture2D" uid="uid://dvxjjm2c4tjay" path="res://assets/enemy.png" id="6_rguwe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yiing"]
+size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knknf"]
+radius = 55.0
+
+[sub_resource type="Animation" id="Animation_knknf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 517)]
+}
+
+[sub_resource type="Animation" id="Animation_ybnx4"]
+resource_name = "walking"
+length = 4.3333335
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, 517), Vector2(589, 514)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3p2l"]
+_data = {
+&"RESET": SubResource("Animation_knknf"),
+&"walking": SubResource("Animation_ybnx4")
+}
+
+[node name="minigame_3" type="Node2D" unique_id=1668255734]
+script = ExtResource("1_yiing")
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1179922297]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=1562765283]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_vhxdv")
+metadata/_edit_use_anchors_ = true
+
+[node name="nature" type="TextureRect" parent="." unique_id=276193811]
+offset_top = -37.0
+offset_right = 1920.0
+offset_bottom = 1043.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("2_4c0c6")
+metadata/_edit_use_anchors_ = true
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=110860143]
+position = Vector2(-25, 561.00006)
+scale = Vector2(31.319996, 2.799999)
+
+[node name="ColorRect" type="ColorRect" parent="ground" unique_id=240531956]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=652030004]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_yiing")
+
+[node name="wall1" type="StaticBody2D" parent="." unique_id=1898164543]
+position = Vector2(-76, -20)
+scale = Vector2(1.5999211, 15.889328)
+
+[node name="ColorRect" type="ColorRect" parent="wall1" unique_id=487063815]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=1130929341]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_yiing")
+
+[node name="wall2" type="StaticBody2D" parent="." unique_id=1538521970]
+position = Vector2(1166, -41)
+scale = Vector2(1.5999211, 15.889328)
+
+[node name="ColorRect" type="ColorRect" parent="wall2" unique_id=1591024735]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=1076934897]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_yiing")
+
+[node name="timer" parent="." unique_id=2075219886 instance=ExtResource("4_nuwo7")]
+position = Vector2(57, 45)
+
+[node name="Player" parent="." unique_id=599305279 instance=ExtResource("5_nuwo7")]
+position = Vector2(130, 478)
+
+[node name="enemy1" type="Node2D" parent="." unique_id=31227839]
+position = Vector2(1000, 517)
+script = ExtResource("6_knknf")
+
+[node name="enemypic" type="TextureRect" parent="enemy1" unique_id=490953648]
+offset_left = -58.0
+offset_top = -53.0
+offset_right = 38.0
+offset_bottom = 43.0
+texture = ExtResource("6_rguwe")
+
+[node name="Area2D" type="Area2D" parent="enemy1" unique_id=1282082440]
+position = Vector2(-2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy1/Area2D" unique_id=1927403094]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_knknf")
+
+[node name="animation" type="AnimationPlayer" parent="enemy1" unique_id=1581275884]
+libraries/ = SubResource("AnimationLibrary_w3p2l")
+
+[connection signal="touched_enemy" from="enemy1" to="." method="_on_enemy_1_touched_enemy"]

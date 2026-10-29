@@ -19,7 +19,8 @@ offset_left = 80.0
 offset_top = 184.0
 offset_right = 1146.0
 offset_bottom = 394.0
-scale = Vector2(0.4958393, 0.5168259)
+scale = Vector2(0.4158402, 0.4158047)
+theme_override_constants/separation = 20
 
 [node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=1373908474]
 layout_mode = 2
@@ -43,19 +44,19 @@ texture = ExtResource("3_fkwfp")
 
 [node name="Level" type="RichTextLabel" parent="." unique_id=26259005]
 clip_contents = false
-offset_left = 92.0
-offset_top = 365.0
-offset_right = 322.0
-offset_bottom = 446.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 83.0
+offset_top = 309.0
+offset_right = 313.0
+offset_bottom = 390.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 48
 text = "Level #"
 
 [node name="Timer" type="RichTextLabel" parent="." unique_id=1051152969]
-offset_left = 94.0
-offset_top = 462.0
-offset_right = 324.0
-offset_bottom = 583.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 48
-text = "0.0"
+offset_left = 85.0
+offset_top = 406.0
+offset_right = 388.0
+offset_bottom = 527.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Starting in 0.0"

@@ -1,3 +1,45 @@
 [gd_scene format=3 uid="uid://fm6w57kvag77"]
 
+[ext_resource type="Script" uid="uid://bdb5y3hjt1am1" path="res://scenes/settings_screen.gd" id="1_assm4"]
+[ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="2_qrqa7"]
+
 [node name="settings_screen" type="Node2D" unique_id=1599589894]
+script = ExtResource("1_assm4")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1958398859]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("2_qrqa7")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=172135841]
+clip_contents = false
+offset_left = 103.00001
+offset_top = 149.0
+offset_right = 1094.0375
+offset_bottom = 343.5105
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "Settings"
+
+[node name="Title2" type="RichTextLabel" parent="." unique_id=1268260688]
+clip_contents = false
+offset_left = 103.00001
+offset_top = 269.0
+offset_right = 1094.0375
+offset_bottom = 463.5105
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 36
+text = "Nothing to see here yet"
+
+[node name="BackButton" type="Button" parent="." unique_id=2019084578]
+offset_left = 105.0
+offset_top = 385.0
+offset_right = 362.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 26
+text = "Main Menu"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

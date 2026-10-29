@@ -9,6 +9,7 @@ extends Node2D
 # make a signal
 signal mappiece_collected
 
+
 func _process(delta: float) -> void: # this runs EVERY FRAME! 
 	
 	if player_area.overlaps_area(self_area): # checks if overlapping
