@@ -6,7 +6,7 @@ var timer_end = false
 
 func _ready() -> void:
 
-	await themed_timer.Timer(15.0) 
+	await themed_timer.Timer(10.0) 
 	timer_end = true 
 
 func _process(delta: float) -> void: 

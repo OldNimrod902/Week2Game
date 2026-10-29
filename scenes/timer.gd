@@ -9,13 +9,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	timer.text = str(snapped(time, 0.10)) # this makes names easier
+	timer.text = str(snapped(time, 0.10)) + "s remaining" # this makes names easier
 
 func Timer(start_time: float): # making a new function for timer countdown!
 	# we want the timer to go down, and when it reaches 0 it transitions 
 	# to the next scene!
 	
-	time = start_time
+	time = start_time + Global.time_adjustment
 	
 	while time > 0.0: # run if timer hasnt reached 0
 		await wait(0.10)

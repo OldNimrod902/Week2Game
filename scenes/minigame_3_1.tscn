@@ -30,9 +30,10 @@ texture = ExtResource("2_cr4yq")
 metadata/_edit_use_anchors_ = true
 
 [node name="nature" type="TextureRect" parent="." unique_id=936475588]
-offset_top = -37.0
-offset_right = 1920.0
-offset_bottom = 1043.0
+offset_left = -389.00003
+offset_top = -73.0
+offset_right = 1531.0
+offset_bottom = 1007.0
 scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("3_tvbfo")
 metadata/_edit_use_anchors_ = true
@@ -110,6 +111,6 @@ offset_bottom = 163.0
 theme_override_colors/default_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 16
-text = "Enter the Antique House!"
+text = "Enter the Antique House using the key!"
 
 [connection signal="touched_door" from="door" to="." method="_on_door_touched_door"]

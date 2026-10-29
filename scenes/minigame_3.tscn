@@ -74,9 +74,9 @@ texture = ExtResource("1_vhxdv")
 metadata/_edit_use_anchors_ = true
 
 [node name="nature" type="TextureRect" parent="." unique_id=276193811]
-offset_top = -37.0
+offset_top = -64.0
 offset_right = 1920.0
-offset_bottom = 1043.0
+offset_bottom = 1016.0
 scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("2_4c0c6")
 metadata/_edit_use_anchors_ = true

@@ -1,3 +1,89 @@
 [gd_scene format=3 uid="uid://ln5asniyspsp"]
 
+[ext_resource type="Script" uid="uid://khos51yr7m7r" path="res://scenes/minigame_4.gd" id="1_ewl5d"]
+[ext_resource type="Texture2D" uid="uid://cpdujv63sc0yy" path="res://assets/renovation_background.png" id="1_mxhla"]
+[ext_resource type="Texture2D" uid="uid://dvxjjm2c4tjay" path="res://assets/enemy.png" id="2_ewl5d"]
+[ext_resource type="Texture2D" uid="uid://c81p3cidt7x17" path="res://assets/main_character.png" id="3_jlkes"]
+[ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_88pdw"]
+[ext_resource type="Script" uid="uid://bsiyoqfvgi5gg" path="res://pressableEnemy.gd" id="4_jlkes"]
+
 [node name="minigame_4" type="Node2D" unique_id=1036579980]
+script = ExtResource("1_ewl5d")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1418441846]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_mxhla")
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemy" type="TextureButton" parent="." unique_id=360122662]
+offset_left = 216.0
+offset_top = 174.00002
+offset_right = 312.0
+offset_bottom = 270.0
+scale = Vector2(0.7575327, 0.81323963)
+texture_normal = ExtResource("2_ewl5d")
+script = ExtResource("4_jlkes")
+
+[node name="Enemy2" type="TextureButton" parent="." unique_id=1548635407]
+offset_left = 402.0
+offset_top = 327.0
+offset_right = 498.0
+offset_bottom = 423.0
+scale = Vector2(0.7575327, 0.81323963)
+texture_normal = ExtResource("2_ewl5d")
+script = ExtResource("4_jlkes")
+
+[node name="Enemy5" type="TextureButton" parent="." unique_id=888498326]
+offset_left = 544.0
+offset_top = 345.0
+offset_right = 640.0
+offset_bottom = 441.0
+scale = Vector2(0.7575327, 0.81323963)
+texture_normal = ExtResource("2_ewl5d")
+script = ExtResource("4_jlkes")
+
+[node name="Enemy3" type="TextureButton" parent="." unique_id=5384463]
+offset_left = 902.0
+offset_top = 363.00003
+offset_right = 998.0
+offset_bottom = 459.00003
+scale = Vector2(0.7575327, 0.81323963)
+texture_normal = ExtResource("2_ewl5d")
+script = ExtResource("4_jlkes")
+
+[node name="Enemy4" type="TextureButton" parent="." unique_id=1332805300]
+offset_left = 688.0
+offset_top = 130.0
+offset_right = 784.0
+offset_bottom = 226.0
+scale = Vector2(0.7575327, 0.81323963)
+texture_normal = ExtResource("2_ewl5d")
+script = ExtResource("4_jlkes")
+
+[node name="quest_text" type="RichTextLabel" parent="." unique_id=767686207]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 568.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Eliminate all guards with your mouse! QUICK!"
+
+[node name="player" type="TextureRect" parent="." unique_id=25308003]
+offset_left = 299.0
+offset_top = 507.0
+offset_right = 395.0
+offset_bottom = 603.0
+texture = ExtResource("3_jlkes")
+
+[node name="timer" parent="." unique_id=2075219886 instance=ExtResource("4_88pdw")]
+position = Vector2(76, 55)
+
+[connection signal="pressed" from="Enemy" to="Enemy" method="_on_pressed"]
+[connection signal="pressed" from="Enemy2" to="Enemy2" method="_on_pressed"]
+[connection signal="pressed" from="Enemy5" to="Enemy5" method="_on_pressed"]
+[connection signal="pressed" from="Enemy3" to="Enemy3" method="_on_pressed"]
+[connection signal="pressed" from="Enemy4" to="Enemy4" method="_on_pressed"]

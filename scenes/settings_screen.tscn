@@ -12,7 +12,7 @@ offset_bottom = 1080.0
 scale = Vector2(0.5999985, 0.60000694)
 texture = ExtResource("2_qrqa7")
 
-[node name="Title" type="RichTextLabel" parent="." unique_id=172135841]
+[node name="Settings_title" type="RichTextLabel" parent="." unique_id=172135841]
 clip_contents = false
 offset_left = 103.00001
 offset_top = 149.0
@@ -23,23 +23,100 @@ theme_override_constants/outline_size = 40
 theme_override_font_sizes/normal_font_size = 108
 text = "Settings"
 
-[node name="Title2" type="RichTextLabel" parent="." unique_id=1268260688]
+[node name="difficulty_title" type="RichTextLabel" parent="." unique_id=1268260688]
 clip_contents = false
 offset_left = 103.00001
 offset_top = 269.0
 offset_right = 1094.0375
-offset_bottom = 463.5105
+offset_bottom = 320.35077
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/normal_font_size = 36
-text = "Nothing to see here yet"
+text = "Difficulty"
+
+[node name="difficulty_description" type="RichTextLabel" parent="." unique_id=591011176]
+clip_contents = false
+offset_left = 103.00001
+offset_top = 309.0
+offset_right = 728.02045
+offset_bottom = 389.91638
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/normal_font_size = 26
+text = "Changing the difficulty modifies the number of lives, and the amount of time given for levels"
+
+[node name="modifier" type="RichTextLabel" parent="." unique_id=136831284]
+clip_contents = false
+offset_left = 103.00001
+offset_top = 418.00003
+offset_right = 414.73474
+offset_bottom = 463.12643
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/normal_font_size = 26
+text = "Current modifiers:"
+
+[node name="descriptor_lives" type="RichTextLabel" parent="." unique_id=29813913]
+clip_contents = false
+offset_left = 103.00001
+offset_top = 444.00003
+offset_right = 414.73474
+offset_bottom = 489.12643
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/normal_font_size = 26
+text = "You start with 0 lives"
+
+[node name="descriptor_time" type="RichTextLabel" parent="." unique_id=1508517695]
+clip_contents = false
+offset_left = 103.00001
+offset_top = 468.00003
+offset_right = 703.20575
+offset_bottom = 513.12646
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/normal_font_size = 26
+text = "Each level starts with X seconds more time"
+
+[node name="difficulties" type="HBoxContainer" parent="." unique_id=1608400233]
+offset_left = 108.0
+offset_top = 370.0
+offset_right = 298.0
+offset_bottom = 411.0
+
+[node name="easy" type="Button" parent="difficulties" unique_id=99537095]
+layout_mode = 2
+text = "Easy"
+
+[node name="normal" type="Button" parent="difficulties" unique_id=1587902387]
+layout_mode = 2
+text = "Normal"
+
+[node name="hard" type="Button" parent="difficulties" unique_id=1716954606]
+layout_mode = 2
+text = "Hard
+"
+
+[node name="harder" type="Button" parent="difficulties" unique_id=422835257]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39962548, 0.33114496, 1)
+text = "Hardcore
+"
 
 [node name="BackButton" type="Button" parent="." unique_id=2019084578]
-offset_left = 105.0
-offset_top = 385.0
-offset_right = 362.0
-offset_bottom = 456.0
+offset_left = 107.0
+offset_top = 525.0
+offset_right = 364.0
+offset_bottom = 596.0
 theme_override_font_sizes/font_size = 26
 text = "Main Menu"
 
+[connection signal="pressed" from="difficulties/easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="difficulties/normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="difficulties/hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="difficulties/harder" to="." method="_on_harder_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
