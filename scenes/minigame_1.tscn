@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="3_vc5od"]
 [ext_resource type="Script" uid="uid://0vuxe626j7he" path="res://mappiece.gd" id="4_j1cg4"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="6_j1cg4"]
+[ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="8_xpvfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
 size = Vector2(40, 40)
@@ -27,6 +28,9 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x1h7o"]
 radius = 40.012497
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7bry"]
+size = Vector2(2145, 142)
 
 [node name="minigame_1" type="Node2D" unique_id=64859436]
 script = ExtResource("1_fa05o")
@@ -201,6 +205,15 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 16
 text = "Collect all 3 map-pieces so you can find the Antique Watch!"
 
+[node name="outside_the_box" type="Area2D" parent="." unique_id=1572114954]
+position = Vector2(1081, 1203)
+script = ExtResource("8_xpvfh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outside_the_box" unique_id=112099618]
+position = Vector2(4.5, 0)
+shape = SubResource("RectangleShape2D_b7bry")
+
 [connection signal="mappiece_collected" from="MapPiece1" to="." method="piece_collect"]
 [connection signal="mappiece_collected" from="MapPiece2" to="." method="piece_collect"]
 [connection signal="mappiece_collected" from="MapPiece3" to="." method="piece_collect"]
+[connection signal="fallen_out" from="outside_the_box" to="." method="_on_player_fallen_out"]

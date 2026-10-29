@@ -35,3 +35,9 @@ func _process(delta: float) -> void: # running every frame brochacho
 func piece_collect() -> void: # cool function that you connect to those pieces
 	piece_collected = piece_collected +1
 	return
+
+
+func _on_player_fallen_out() -> void:
+	Global.minigames_done -=1
+	Global.lives -=1
+	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
