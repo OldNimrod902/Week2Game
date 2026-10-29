@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://yp664n7iylh0"]
 
 [ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_fgkus"]
-[ext_resource type="Script" uid="uid://ju5l62pyruhc" path="res://scenes/title_screen.gd" id="1_sa3yf"]
+[ext_resource type="Script" uid="uid://bdbgkk8v1ldg7" path="res://scenes/title_screen.gd" id="1_sa3yf"]
 
 [node name="TitleScreen" type="Node2D" unique_id=1674956820]
 script = ExtResource("1_sa3yf")
@@ -14,20 +14,20 @@ texture = ExtResource("1_fgkus")
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=229028707]
 clip_contents = false
-offset_left = 239.0
-offset_top = 121.000015
-offset_right = 1230.0375
-offset_bottom = 315.5105
+offset_left = 102.0
+offset_top = 109.0
+offset_right = 1093.0375
+offset_bottom = 303.5105
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_constants/outline_size = 40
 theme_override_font_sizes/normal_font_size = 108
 text = "The Antique Hunt"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1810089415]
-offset_left = 396.0
-offset_top = 268.0
-offset_right = 790.0
-offset_bottom = 522.0
+offset_left = 105.0
+offset_top = 256.0
+offset_right = 499.0
+offset_bottom = 510.0
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=383823823]
 layout_mode = 2
