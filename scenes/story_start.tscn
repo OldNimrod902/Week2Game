@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bru0w8qi7ro4d"]
+
+[ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_e5oti"]
+[ext_resource type="Script" uid="uid://bvf0yowi3gutc" path="res://scenes/story_start.gd" id="1_eedmx"]
+[ext_resource type="Texture2D" uid="uid://vk5ci71cu2v3" path="res://assets/gametitle.png" id="2_eedmx"]
+
+[node name="story_start" type="Node2D" unique_id=2069724546]
+script = ExtResource("1_eedmx")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1313570369]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("1_e5oti")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=881020444]
+offset_left = 322.0
+offset_top = 64.0
+offset_right = 1301.0
+offset_bottom = 216.0
+scale = Vector2(0.50249016, 0.50655496)
+texture = ExtResource("2_eedmx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1352016080]
+offset_left = 92.0
+offset_top = 165.0
+offset_right = 840.0
+offset_bottom = 505.0
+theme_override_constants/outline_size = 9
+text = "Once upon a time, there was a creature
+A creature that, for whatever reason, did not posses \"arms\"
+This creature is you, fellow traveler
+
+You set out on an adventure
+To find the best
+the biggest
+the antiquest
+the one and only
+The Antique Clock (TM)
+
+So off you go
+And I hope you find it
+Otherwise won't know the time - and that would be a shame"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=789198186]
+offset_left = 332.0
+offset_top = 531.0
+offset_right = 612.0
+offset_bottom = 595.0
+text = "I don't want to read that"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
