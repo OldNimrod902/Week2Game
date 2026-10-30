@@ -11,15 +11,14 @@ func _ready() -> void:
 
 func _process(delta: float) -> void: 
 	
-	if piece_collected == 3: 
-		if Global.minigames_done > 3:
-			get_tree().change_scene_to_file("res://scenes/done_screen.tscn") 
-		else:
-			get_tree().change_scene_to_file("res://scenes/level_scene.tscn") 
+	if piece_collected == 3:
+		Global.intermission_message = "Collect your items before the adventure!"
+		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 	
 	if timer_end: # if the timer does end...
 		Global.minigames_done -=1 #go back a minigame
 		Global.lives -= 1 # lose ur lives
+		Global.intermission_message = "Ran out of time. Slow."
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn") # back to intermission
 		
 
@@ -31,6 +30,7 @@ func piece_collect() -> void:
 func _on_player_fallen_out() -> void:
 	Global.minigames_done -=1
 	Global.lives -=1
+	Global.intermission_message = "You cannot swim."
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 	
 func wait(seconds: float) -> void: 

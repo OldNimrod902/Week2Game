@@ -12,12 +12,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if buttons_pressed == 4:
-		if Global.minigames_done > 3:
-			get_tree().change_scene_to_file("res://scenes/done_screen.tscn")
-		else:
-			get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
+		Global.intermission_message = "Now that you have the essentials, let's get going!"
+		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 	
 	if timer_end:
 		Global.lives -= 1
 		Global.minigames_done -=1
+		Global.intermission_message = "You ran out of time. Could be a little faster."
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")

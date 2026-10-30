@@ -8,12 +8,14 @@ extends Node2D
 @onready var heart_debug: TextureRect = $HeartContainer/HeartDebug
 @onready var level: RichTextLabel = $Level
 @onready var timer: RichTextLabel = $Timer
+@onready var message: RichTextLabel = $Message
 
 var time
 
 func _ready() -> void:
 	
 	heart_debug.hide()
+	message.text = str(Global.intermission_message)
 	
 	if Global.lives == 0:
 		get_tree().change_scene_to_file("res://scenes/dead_screen.tscn")

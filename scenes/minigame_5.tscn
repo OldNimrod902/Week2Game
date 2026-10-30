@@ -156,7 +156,7 @@ position = Vector2(49.5, 16)
 shape = SubResource("RectangleShape2D_x1h7o")
 
 [node name="spike6" type="Node2D" parent="." unique_id=703875001]
-position = Vector2(912, 496)
+position = Vector2(912.00006, 544)
 script = ExtResource("3_c7se5")
 
 [node name="TextureRect" type="TextureRect" parent="spike6" unique_id=1559190151]
@@ -216,7 +216,7 @@ scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_fd0vc")
 
 [node name="Platform6" type="StaticBody2D" parent="." unique_id=2047009484]
-position = Vector2(822.99994, 530)
+position = Vector2(823, 578)
 scale = Vector2(9.059881, 1.2206199)
 
 [node name="TextureRect" type="TextureRect" parent="Platform6" unique_id=1556634702]
@@ -346,7 +346,7 @@ position = Vector2(114, 520)
 position = Vector2(69, 53)
 
 [node name="door" type="Node2D" parent="." unique_id=1191289248]
-position = Vector2(1056, 434)
+position = Vector2(1056, 482)
 script = ExtResource("12_i51xv")
 
 [node name="TextureRect" type="TextureRect" parent="door" unique_id=415289246]

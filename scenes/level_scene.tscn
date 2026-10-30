@@ -65,3 +65,13 @@ offset_bottom = 527.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "Starting in 0.0"
+
+[node name="Message" type="RichTextLabel" parent="." unique_id=481475599]
+offset_left = 86.0
+offset_top = 491.0
+offset_right = 466.0
+offset_bottom = 594.0
+theme_override_colors/default_color = Color(0.8776157, 0.8776158, 0.8776157, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 20
+text = "You really shouldnt see this piece of text"
