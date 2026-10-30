@@ -27,38 +27,33 @@ func _ready() -> void:
 	
 	await Timer(3.0)
 	
-	if Global.minigames_done < 7:
-		Global.minigames_done = Global.minigames_done +1
-		get_tree().change_scene_to_file("res://scenes/minigame_" + str(Global.minigames_done) + ".tscn") 
-	
-	else:
-		get_tree().change_scene_to_file("res://scenes/title_screen.tscn") 
-	
+	Global.minigames_done = Global.minigames_done +1
+	get_tree().change_scene_to_file("res://scenes/minigame_" + str(Global.minigames_done) + ".tscn") 
 
-func _process(delta: float) -> void: #hides lost hearts
-	match Global.lives:
-		4:
-			heart.hide()
-		3:
-			heart.hide()
-			heart_2.hide()
-		2:
-			heart.hide()
-			heart_2.hide()
-			heart_3.hide()
-		1:
-			heart.hide()
-			heart_2.hide()
-			heart_3.hide()
-			heart_4.hide()
-		0:
-			heart.hide()
-			heart_2.hide()
-			heart_3.hide()
-			heart_4.hide()
-			heart_5.hide()
+func _process(delta: float) -> void:
 	
-	if Global.lives>5:
+	if Global.lives==4:
+		heart.hide()
+	elif Global.lives==3:
+		heart.hide()
+		heart_2.hide()
+	elif Global.lives==2:
+		heart.hide()
+		heart_2.hide()
+		heart_3.hide()
+	elif Global.lives==1:
+		heart.hide()
+		heart_2.hide()
+		heart_3.hide()
+		heart_4.hide()
+	elif Global.lives==0:
+		heart.hide()
+		heart_2.hide()
+		heart_3.hide()
+		heart_4.hide()
+		heart_5.hide()
+		heart_none.show()
+	else:
 		heart_debug.show()
 	
 	if Global.lives>0:
