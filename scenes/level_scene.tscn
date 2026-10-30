@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://moyxo1fnjtyb" path="res://scenes/timer_screen.gd" id="1_a74lg"]
 [ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="2_c8xsp"]
 [ext_resource type="Texture2D" uid="uid://ce805tjq16jcs" path="res://assets/heart.png" id="3_fkwfp"]
+[ext_resource type="Texture2D" uid="uid://cw5ocgxonrhv" path="res://assets/heart_infinite.png" id="4_c8xsp"]
 
 [node name="level_scene" type="Node2D" unique_id=2063433828]
 position = Vector2(0, -1)
@@ -41,6 +42,10 @@ texture = ExtResource("3_fkwfp")
 [node name="Heart5" type="TextureRect" parent="HeartContainer" unique_id=411249196]
 layout_mode = 2
 texture = ExtResource("3_fkwfp")
+
+[node name="HeartDebug" type="TextureRect" parent="HeartContainer" unique_id=41260960]
+layout_mode = 2
+texture = ExtResource("4_c8xsp")
 
 [node name="Level" type="RichTextLabel" parent="." unique_id=26259005]
 clip_contents = false

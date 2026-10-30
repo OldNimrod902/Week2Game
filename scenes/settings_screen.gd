@@ -37,3 +37,8 @@ func _on_hard_pressed() -> void:
 func _on_harder_pressed() -> void:
 	Global.lives=1
 	Global.time_adjustment=-2
+
+
+func _on_debug_pressed() -> void:
+	Global.lives=10000
+	Global.time_adjustment=0

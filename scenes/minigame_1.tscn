@@ -262,19 +262,6 @@ script = ExtResource("8_xpvfh")
 position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_b7bry")
 
-[node name="completition" type="RichTextLabel" parent="." unique_id=505522463]
-offset_left = 425.0
-offset_top = 218.0
-offset_right = 740.0
-offset_bottom = 298.0
-theme_override_colors/default_color = Color(0.6, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0.43671313, 0.6606254, 1)
-theme_override_constants/outline_size = 8
-theme_override_font_sizes/normal_font_size = 32
-text = "Quest complete!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [connection signal="mappiece_collected" from="MapPiece1" to="." method="piece_collect"]
 [connection signal="mappiece_collected" from="MapPiece2" to="." method="piece_collect"]
 [connection signal="mappiece_collected" from="MapPiece3" to="." method="piece_collect"]

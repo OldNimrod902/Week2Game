@@ -62,7 +62,7 @@ text = "Current modifiers:"
 clip_contents = false
 offset_left = 103.00001
 offset_top = 444.00003
-offset_right = 414.73474
+offset_right = 638.06714
 offset_bottom = 489.12643
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_colors/default_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
@@ -107,6 +107,11 @@ theme_override_colors/font_color = Color(1, 0.39962548, 0.33114496, 1)
 text = "Hardcore
 "
 
+[node name="debug" type="Button" parent="difficulties" unique_id=2024715590]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42649695, 0.6090747, 0.9951511, 1)
+text = "Debug"
+
 [node name="BackButton" type="Button" parent="." unique_id=2019084578]
 offset_left = 107.0
 offset_top = 525.0
@@ -119,4 +124,5 @@ text = "Main Menu"
 [connection signal="pressed" from="difficulties/normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="difficulties/hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="difficulties/harder" to="." method="_on_harder_pressed"]
+[connection signal="pressed" from="difficulties/debug" to="." method="_on_debug_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
