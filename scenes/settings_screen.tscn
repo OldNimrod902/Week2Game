@@ -27,12 +27,23 @@ text = "Settings"
 clip_contents = false
 offset_left = 103.00001
 offset_top = 269.0
-offset_right = 1094.0375
+offset_right = 531.0537
 offset_bottom = 320.35077
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/normal_font_size = 36
 text = "Difficulty"
+
+[node name="difficulty_title2" type="RichTextLabel" parent="." unique_id=337688191]
+clip_contents = false
+offset_left = 572.0
+offset_top = 269.00003
+offset_right = 1000.0537
+offset_bottom = 320.3508
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 36
+text = "Controls"
 
 [node name="difficulty_description" type="RichTextLabel" parent="." unique_id=591011176]
 clip_contents = false
@@ -45,6 +56,21 @@ theme_override_colors/default_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/normal_font_size = 26
 text = "Changing the difficulty modifies the number of lives, and the amount of time given for levels"
+
+[node name="difficulty_description2" type="RichTextLabel" parent="." unique_id=1921565606]
+clip_contents = false
+offset_left = 574.0
+offset_top = 309.00003
+offset_right = 1087.3542
+offset_bottom = 512.847
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/normal_font_size = 26
+text = "Move right: [D] [right arrow]
+Move left: [A] [left arrow]
+Jump: [space] [W] [up arrow]
+On some levels you need to use the left mouse button"
 
 [node name="modifier" type="RichTextLabel" parent="." unique_id=136831284]
 clip_contents = false

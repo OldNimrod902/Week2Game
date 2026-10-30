@@ -343,7 +343,7 @@ shape = SubResource("RectangleShape2D_fd0vc")
 position = Vector2(114, 520)
 
 [node name="timer" parent="." unique_id=2075219886 instance=ExtResource("9_d0rxa")]
-position = Vector2(69, 53)
+position = Vector2(78, 54)
 
 [node name="door" type="Node2D" parent="." unique_id=1191289248]
 position = Vector2(1056, 482)
@@ -367,6 +367,16 @@ script = ExtResource("14_nmlbg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="outside_the_box" unique_id=97215969]
 position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_i51xv")
+
+[node name="quest_text" type="RichTextLabel" parent="." unique_id=789734208]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 210.0
+offset_bottom = 194.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Find your way to the door on the right side"
 
 [connection signal="trap_entered" from="spike" to="." method="_on_spike_trap_entered"]
 [connection signal="trap_entered" from="spike2" to="." method="_on_spike_trap_entered"]
