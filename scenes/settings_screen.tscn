@@ -59,7 +59,7 @@ text = "Changing the difficulty modifies the number of lives, and the amount of 
 
 [node name="difficulty_description2" type="RichTextLabel" parent="." unique_id=1921565606]
 clip_contents = false
-offset_left = 574.0
+offset_left = 574.00006
 offset_top = 309.00003
 offset_right = 1087.3542
 offset_bottom = 512.847
