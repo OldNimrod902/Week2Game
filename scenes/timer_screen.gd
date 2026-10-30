@@ -6,6 +6,7 @@ extends Node2D
 @onready var heart_4: TextureRect = $HeartContainer/Heart4
 @onready var heart_5: TextureRect = $HeartContainer/Heart5
 @onready var heart_debug: TextureRect = $HeartContainer/HeartDebug
+@onready var heart_none: TextureRect = $HeartContainer/HeartNone
 @onready var level: RichTextLabel = $Level
 @onready var timer: RichTextLabel = $Timer
 @onready var message: RichTextLabel = $Message
@@ -15,9 +16,12 @@ var time
 func _ready() -> void:
 	
 	heart_debug.hide()
+	heart_none.hide()
 	message.text = str(Global.intermission_message)
 	
 	if Global.lives == 0:
+		heart_none.show()
+		await Timer(3.0)
 		get_tree().change_scene_to_file("res://scenes/dead_screen.tscn")
 		return
 	
@@ -48,12 +52,20 @@ func _process(delta: float) -> void: #hides lost hearts
 			heart_3.hide()
 			heart_4.hide()
 		0:
-			heart_container.hide() 
+			heart.hide()
+			heart_2.hide()
+			heart_3.hide()
+			heart_4.hide()
+			heart_5.hide()
 	
 	if Global.lives>5:
 		heart_debug.show()
 	
-	timer.text = "Starting in " + str(time) 
+	if Global.lives>0:
+		timer.text = "Starting in " + str(time) 
+	else:
+		timer.text = ""
+	
 	level.text = "Level " + str(Global.minigames_done+1) 
 
 func Timer(start_time: float): 
