@@ -112,7 +112,7 @@ offset_bottom = 163.0
 theme_override_colors/default_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 16
-text = "Eliminate all guards with your mouse! QUICK!"
+text = "Eliminate all guards! QUICK!"
 
 [node name="player" type="TextureRect" parent="." unique_id=25308003]
 offset_left = 299.0

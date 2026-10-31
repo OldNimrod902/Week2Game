@@ -6,5 +6,6 @@ extends Node2D
 signal door_entered
 
 func _process(delta: float) -> void:
-	if player_area.overlaps_area(self_area):
-		emit_signal("door_entered")
+	if self.visible:
+		if player_area.overlaps_area(self_area):
+			emit_signal("door_entered")

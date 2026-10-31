@@ -68,8 +68,7 @@ offset_bottom = 163.0
 theme_override_colors/default_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 16
-text = "Pick up your items, before going out on the adventure!
-Use your mouse!"
+text = "Pick up your items, before going out on the adventure!"
 
 [connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]

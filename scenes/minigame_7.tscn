@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://bdagq2gnkciql"]
+
+[ext_resource type="Texture2D" uid="uid://bpjkpcuu2osi2" path="res://assets/level7_background.png" id="1_f4oek"]
+[ext_resource type="Script" uid="uid://w1xq7r46kie4" path="res://scenes/minigame_7.gd" id="1_vuxkx"]
+[ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="2_vodl3"]
+[ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="3_vuxkx"]
+[ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_me5al"]
+[ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="6_me5al"]
+[ext_resource type="Texture2D" uid="uid://dgba370gnn8gu" path="res://assets/clock.png" id="7_ol02w"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="8_0fn5h"]
+[ext_resource type="Script" uid="uid://tnshk5b3evcv" path="res://scenes/door_lv5.gd" id="9_sren0"]
+[ext_resource type="Texture2D" uid="uid://c2fi2yqj3t8s7" path="res://assets/door.png" id="10_2i8f8"]
+[ext_resource type="Script" uid="uid://hmuebgo6ajis" path="res://scenes/close_to_clock.gd" id="11_2i8f8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol02w"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fn5h"]
+size = Vector2(2145, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1av5u"]
+size = Vector2(33, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
+size = Vector2(256, 214)
+
+[node name="minigame_7" type="Node2D" unique_id=122582533]
+script = ExtResource("1_vuxkx")
+
+[node name="Background" type="TextureRect" parent="." unique_id=324331012]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_f4oek")
+metadata/_edit_use_anchors_ = true
+
+[node name="platfrom" type="StaticBody2D" parent="." unique_id=2103538946]
+position = Vector2(754, 375)
+scale = Vector2(5.2817883, 1.2911274)
+
+[node name="TextureRect" type="TextureRect" parent="platfrom" unique_id=484689065]
+offset_right = 1569.4935
+offset_bottom = 143.23578
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("2_vodl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platfrom" unique_id=32578680]
+position = Vector2(20, 19.999992)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_ol02w")
+
+[node name="platfrom2" type="StaticBody2D" parent="." unique_id=91030136]
+position = Vector2(414, 477.99997)
+scale = Vector2(5.2817883, 1.2911274)
+
+[node name="TextureRect" type="TextureRect" parent="platfrom2" unique_id=1657070993]
+offset_right = 1569.4935
+offset_bottom = 143.23578
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("2_vodl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platfrom2" unique_id=1955660267]
+position = Vector2(20, 19.999992)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_ol02w")
+
+[node name="platfrom3" type="StaticBody2D" parent="." unique_id=1822976178]
+position = Vector2(-22, 565)
+scale = Vector2(7.921788, 2.0111177)
+
+[node name="TextureRect" type="TextureRect" parent="platfrom3" unique_id=441350267]
+offset_right = 1569.4935
+offset_bottom = 143.23578
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("2_vodl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platfrom3" unique_id=165244059]
+position = Vector2(20.000002, 19.99997)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_ol02w")
+
+[node name="Player" parent="." unique_id=599305279 instance=ExtResource("3_vuxkx")]
+position = Vector2(170, 512)
+
+[node name="quest_text" type="RichTextLabel" parent="." unique_id=393323901]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 568.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Finally, your moment came!
+Take what you deserve!"
+
+[node name="timer" parent="." unique_id=2075219886 instance=ExtResource("4_me5al")]
+position = Vector2(78, 47)
+
+[node name="outside_the_box" type="Area2D" parent="." unique_id=1674608801]
+position = Vector2(646, 899)
+script = ExtResource("6_me5al")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outside_the_box" unique_id=9086163]
+position = Vector2(4.5, 0)
+shape = SubResource("RectangleShape2D_0fn5h")
+
+[node name="Clock" type="TextureRect" parent="." unique_id=1992037265]
+offset_left = 820.0
+offset_top = 169.0
+offset_right = 1140.0
+offset_bottom = 729.0
+scale = Vector2(0.36874261, 0.3684233)
+texture = ExtResource("7_ol02w")
+
+[node name="ClockPickup" type="Button" parent="." unique_id=711752805]
+offset_left = 728.0
+offset_top = 191.0
+offset_right = 819.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0, 0.37573355, 0.40828523, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("8_0fn5h")
+theme_override_font_sizes/font_size = 22
+text = "PICK UP"
+
+[node name="door" type="Node2D" parent="." unique_id=1602500413]
+position = Vector2(89, 469)
+scale = Vector2(-1.04, 1)
+script = ExtResource("9_sren0")
+
+[node name="TextureRect" type="TextureRect" parent="door" unique_id=579404161]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_2i8f8")
+
+[node name="Area2D" type="Area2D" parent="door" unique_id=1436759791]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door/Area2D" unique_id=1720992090]
+position = Vector2(53.5, 70)
+shape = SubResource("RectangleShape2D_1av5u")
+
+[node name="CloseToClock" type="Area2D" parent="." unique_id=875479789]
+position = Vector2(732, 166)
+script = ExtResource("11_2i8f8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloseToClock" unique_id=1942316229]
+position = Vector2(128, 97)
+shape = SubResource("RectangleShape2D_x1h7o")
+
+[connection signal="fallen_out" from="outside_the_box" to="." method="_on_outside_the_box_fallen_out"]
+[connection signal="pressed" from="ClockPickup" to="." method="_on_clock_pickup_pressed"]
+[connection signal="door_entered" from="door" to="." method="_on_door_entered"]
+[connection signal="got_away_from_clock" from="CloseToClock" to="." method="_on_got_away_from_clock"]
+[connection signal="got_close_to_clock" from="CloseToClock" to="." method="_on_got_close_to_clock"]
