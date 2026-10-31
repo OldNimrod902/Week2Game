@@ -7,16 +7,30 @@ extends Node2D
 @onready var heart_5: TextureRect = $HeartContainer/Heart5
 @onready var heart_debug: TextureRect = $HeartContainer/HeartDebug
 @onready var heart_none: TextureRect = $HeartContainer/HeartNone
+@onready var mouse: TextureRect = $mouse
+@onready var keyboard: TextureRect = $keyboard
 @onready var level: RichTextLabel = $Level
 @onready var timer: RichTextLabel = $Timer
 @onready var message: RichTextLabel = $Message
 
 var time
+var controls = {
+	1: 1,
+	2: 2,
+	3: 1,
+	4: 2,
+	5: 1,
+	6: 2,
+	7: 1,
+	8: 1
+}
 
 func _ready() -> void:
 	
 	heart_debug.hide()
 	heart_none.hide()
+	keyboard.hide()
+	mouse.hide()
 	message.text = str(Global.intermission_message)
 	
 	if Global.lives == 0:
@@ -25,10 +39,17 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://scenes/dead_screen.tscn")
 		return
 	
-	await Timer(3.0)
+	if controls[Global.minigames_done+1]==1:
+		keyboard.show()
+	else:
+		mouse.show()
 	
-	Global.minigames_done = Global.minigames_done +1
-	get_tree().change_scene_to_file("res://scenes/minigame_" + str(Global.minigames_done) + ".tscn") 
+	await Timer(3.0)
+	if Global.minigames_done < 8:
+		Global.minigames_done = Global.minigames_done +1
+		get_tree().change_scene_to_file("res://scenes/minigame_" + str(Global.minigames_done) + ".tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/done_screen.tscn") 
 
 func _process(delta: float) -> void:
 	
@@ -56,12 +77,14 @@ func _process(delta: float) -> void:
 	else:
 		heart_debug.show()
 	
-	if Global.lives>0:
-		timer.text = "Starting in " + str(time) 
+	if Global.minigames_done<8:
+		if Global.lives>0:
+			timer.text = "Starting in " + str(time) 
+		else:
+			timer.text = ""
+		level.text = "LEVEL " + str(Global.minigames_done+1) 
 	else:
-		timer.text = ""
-	
-	level.text = "LEVEL " + str(Global.minigames_done+1) 
+		timer.text= "Compliment coming in " + str(time)
 
 func Timer(start_time: float): 
 	

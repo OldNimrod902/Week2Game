@@ -10,7 +10,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	lives.text="You start with " + str(Global.lives) + " lives"
+	if Global.lives == 1:
+		lives.text="You start with 1 life"
+	else:
+		lives.text="You start with " + str(Global.lives) + " lives"
 	if Global.time_adjustment < 0:
 		time.text="Each level starts with " + str(abs(Global.time_adjustment)) + " seconds less time"
 	else:

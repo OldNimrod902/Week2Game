@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bdb5y3hjt1am1" path="res://scenes/settings_screen.gd" id="1_assm4"]
 [ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="2_qrqa7"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="3_pt01f"]
+[ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="4_n20dh"]
 
 [node name="settings_screen" type="Node2D" unique_id=1599589894]
 script = ExtResource("1_assm4")
@@ -20,8 +22,9 @@ offset_right = 1094.0375
 offset_bottom = 343.5105
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_constants/outline_size = 40
+theme_override_fonts/normal_font = ExtResource("3_pt01f")
 theme_override_font_sizes/normal_font_size = 108
-text = "Settings"
+text = "SETTINGS"
 
 [node name="difficulty_title" type="RichTextLabel" parent="." unique_id=1268260688]
 clip_contents = false
@@ -130,7 +133,8 @@ text = "Hard
 [node name="harder" type="Button" parent="difficulties" unique_id=422835257]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.39962548, 0.33114496, 1)
-text = "Hardcore
+theme_override_fonts/font = ExtResource("4_n20dh")
+text = "HARDCORE
 "
 
 [node name="debug" type="Button" parent="difficulties" unique_id=2024715590]

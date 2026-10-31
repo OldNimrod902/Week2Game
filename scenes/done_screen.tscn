@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_mioa6"]
 [ext_resource type="Script" uid="uid://pundkftqgtrm" path="res://scenes/done_screen.gd" id="1_uqm27"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="3_c2erd"]
+[ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="4_t6dg5"]
 
 [node name="done_screen" type="Node2D" unique_id=461110403]
 script = ExtResource("1_uqm27")
@@ -20,15 +22,16 @@ offset_right = 1093.0375
 offset_bottom = 303.5105
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_constants/outline_size = 40
+theme_override_fonts/normal_font = ExtResource("3_c2erd")
 theme_override_font_sizes/normal_font_size = 108
-text = "The hunt is over!"
+text = "THE HUNT IS OVER!"
 
 [node name="Subtitle" type="RichTextLabel" parent="." unique_id=583706440]
 clip_contents = false
 offset_left = 102.0
-offset_top = 210.00002
+offset_top = 184.00002
 offset_right = 1093.0375
-offset_bottom = 404.5105
+offset_bottom = 378.5105
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 48
@@ -36,11 +39,45 @@ text = "You found the Antique Watch!"
 
 [node name="Elapsed_time" type="RichTextLabel" parent="." unique_id=1178692176]
 clip_contents = false
-offset_left = 103.00001
-offset_top = 342.0
-offset_right = 1094.0375
-offset_bottom = 536.5105
+offset_left = 100.00001
+offset_top = 316.00003
+offset_right = 963.86206
+offset_bottom = 510.51053
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/normal_font_size = 37
 text = "You found the Antique Clock in 100.00 seconds! (aprox., it blah blah blah)"
+
+[node name="Record_time" type="RichTextLabel" parent="." unique_id=1366239310]
+clip_contents = false
+offset_left = 100.00001
+offset_top = 406.0
+offset_right = 963.86206
+offset_bottom = 600.5105
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(1, 0.6279864, 0.5713508, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("4_t6dg5")
+theme_override_font_sizes/normal_font_size = 49
+text = "YOUR SHORTEST TIME: 99.00"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1066011393]
+offset_left = 94.0
+offset_top = 483.0
+offset_right = 231.0
+offset_bottom = 544.0
+
+[node name="main_menu" type="Button" parent="HBoxContainer" unique_id=812788532]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_t6dg5")
+theme_override_font_sizes/font_size = 20
+text = "I WANT TO TRY AGAIN"
+
+[node name="quit" type="Button" parent="HBoxContainer" unique_id=192746117]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "QUIT GAME"
+
+[connection signal="pressed" from="HBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]

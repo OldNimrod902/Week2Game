@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b0wtaje80dqk0" path="res://assets/hearts_lost.png" id="5_fkwfp"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="6_2m3ut"]
 [ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="7_ojpky"]
+[ext_resource type="Texture2D" uid="uid://640g1q0ev6n6" path="res://assets/kayboard.png" id="8_1lj4f"]
+[ext_resource type="Texture2D" uid="uid://dyfh87w0wt48v" path="res://assets/mouse.png" id="9_0jxn2"]
 
 [node name="level_scene" type="Node2D" unique_id=2063433828]
 position = Vector2(0, -1)
@@ -84,3 +86,19 @@ theme_override_colors/default_color = Color(0.9471993, 0.9471994, 0.9471993, 1)
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/normal_font_size = 22
 text = "You really shouldnt see this piece of text"
+
+[node name="keyboard" type="TextureRect" parent="." unique_id=2101256569]
+offset_left = 457.00003
+offset_top = 317.0
+offset_right = 697.0
+offset_bottom = 557.0
+scale = Vector2(0.60734534, 0.6055661)
+texture = ExtResource("8_1lj4f")
+
+[node name="mouse" type="TextureRect" parent="." unique_id=2061676265]
+offset_left = 457.00003
+offset_top = 317.0
+offset_right = 697.0
+offset_bottom = 557.0
+scale = Vector2(0.60734534, 0.6055661)
+texture = ExtResource("9_0jxn2")
