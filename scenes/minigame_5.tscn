@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="14_nmlbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
-size = Vector2(99, 32)
+size = Vector2(69, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fd0vc"]
 size = Vector2(38.30072, 40)
@@ -88,7 +88,7 @@ stretch_mode = 1
 [node name="Area2D" type="Area2D" parent="spike" unique_id=1934886997]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spike/Area2D" unique_id=1741019365]
-position = Vector2(49.5, 16)
+position = Vector2(55.5, 16)
 shape = SubResource("RectangleShape2D_x1h7o")
 
 [node name="spike2" type="Node2D" parent="." unique_id=1875545133]
