@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 	else:
 		timer.text = ""
 	
-	level.text = "Level " + str(Global.minigames_done+1) 
+	level.text = "LEVEL " + str(Global.minigames_done+1) 
 
 func Timer(start_time: float): 
 	

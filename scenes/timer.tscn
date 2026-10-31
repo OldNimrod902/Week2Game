@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b25o8x3abyrg3"]
 
 [ext_resource type="Script" uid="uid://7fh47aakkc8k" path="res://scenes/timer.gd" id="1_srplv"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="2_5lxq6"]
 
 [node name="timer" type="Node2D" unique_id=2075219886]
 script = ExtResource("1_srplv")
@@ -10,5 +11,6 @@ clip_contents = false
 offset_right = 361.0
 offset_bottom = 76.0
 theme_override_constants/outline_size = 7
-theme_override_font_sizes/normal_font_size = 24
-text = "0.0s remaining"
+theme_override_fonts/normal_font = ExtResource("2_5lxq6")
+theme_override_font_sizes/normal_font_size = 37
+text = "0.0S LEFT"

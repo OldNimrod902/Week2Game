@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:	
 	if lock_pressed == 20:
 		Global.intermission_message = "You almost squashed him!"
-		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
+		get_tree().change_scene_to_file("res://scenes/done_screen.tscn")
 	if timer_end:
 		Global.intermission_message = "They catched you. Embarassingly slow."
 		Global.lives -= 1
@@ -36,6 +36,7 @@ func _on_lock_button_pressed() -> void:
 		spider.show()
 		await Timer(3)
 		lock.show()
+		spider.hide()
 
 func Timer(start_time: float): 
 	

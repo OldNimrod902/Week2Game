@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ce805tjq16jcs" path="res://assets/heart.png" id="3_fkwfp"]
 [ext_resource type="Texture2D" uid="uid://cw5ocgxonrhv" path="res://assets/heart_infinite.png" id="4_c8xsp"]
 [ext_resource type="Texture2D" uid="uid://b0wtaje80dqk0" path="res://assets/hearts_lost.png" id="5_fkwfp"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="6_2m3ut"]
+[ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="7_ojpky"]
 
 [node name="level_scene" type="Node2D" unique_id=2063433828]
 position = Vector2(0, -1)
@@ -59,8 +61,9 @@ offset_top = 309.0
 offset_right = 313.0
 offset_bottom = 390.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("6_2m3ut")
 theme_override_font_sizes/normal_font_size = 48
-text = "Level #"
+text = "LEVEL #"
 
 [node name="Timer" type="RichTextLabel" parent="." unique_id=1051152969]
 offset_left = 85.0
@@ -68,15 +71,16 @@ offset_top = 406.0
 offset_right = 388.0
 offset_bottom = 527.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_ojpky")
 theme_override_font_sizes/normal_font_size = 40
 text = "Starting in 0.0"
 
 [node name="Message" type="RichTextLabel" parent="." unique_id=481475599]
 offset_left = 86.0
 offset_top = 491.0
-offset_right = 466.0
+offset_right = 571.0
 offset_bottom = 594.0
-theme_override_colors/default_color = Color(0.8776157, 0.8776158, 0.8776157, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 20
+theme_override_colors/default_color = Color(0.9471993, 0.9471994, 0.9471993, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 22
 text = "You really shouldnt see this piece of text"

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c8hqd8nmyl1yb"]
 
 [ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_mioa6"]
+[ext_resource type="Script" uid="uid://pundkftqgtrm" path="res://scenes/done_screen.gd" id="1_uqm27"]
 
 [node name="done_screen" type="Node2D" unique_id=461110403]
+script = ExtResource("1_uqm27")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1741585933]
 offset_right = 1920.0
@@ -31,3 +33,14 @@ scale = Vector2(0.64477885, 0.64263874)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 48
 text = "You found the Antique Watch!"
+
+[node name="Elapsed_time" type="RichTextLabel" parent="." unique_id=1178692176]
+clip_contents = false
+offset_left = 103.00001
+offset_top = 342.0
+offset_right = 1094.0375
+offset_bottom = 536.5105
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 37
+text = "You found the Antique Clock in 100.00 seconds! (aprox., it blah blah blah)"

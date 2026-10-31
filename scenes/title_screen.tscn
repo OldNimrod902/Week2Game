@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_fgkus"]
 [ext_resource type="Script" uid="uid://bdbgkk8v1ldg7" path="res://scenes/title_screen.gd" id="1_sa3yf"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="3_dc4i4"]
 [ext_resource type="Texture2D" uid="uid://vk5ci71cu2v3" path="res://assets/gametitle.png" id="3_mgrm8"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="4_dc4i4"]
 
@@ -38,9 +39,10 @@ theme_override_constants/separation = 13
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=383823823]
 layout_mode = 2
-theme_override_constants/outline_size = 14
-theme_override_font_sizes/font_size = 30
-text = "Start game"
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_dc4i4")
+theme_override_font_sizes/font_size = 40
+text = "START GAME"
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=812819598]
 layout_mode = 2
