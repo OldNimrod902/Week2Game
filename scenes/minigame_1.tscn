@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="8_xpvfh"]
 [ext_resource type="Texture2D" uid="uid://p2i6hvjfoasa" path="res://assets/map_piece_2.png" id="9_6n0yg"]
 [ext_resource type="Texture2D" uid="uid://crnm68csf2jq" path="res://assets/map_piece_3.png" id="10_2gcu5"]
+[ext_resource type="AudioStream" uid="uid://dyaeiod7pwpv7" path="res://sounds/collect.mp3" id="14_2gcu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
 size = Vector2(38.30072, 40)
@@ -261,6 +262,9 @@ script = ExtResource("8_xpvfh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="outside_the_box" unique_id=112099618]
 position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_b7bry")
+
+[node name="AudioCollect" type="AudioStreamPlayer" parent="." unique_id=10178212]
+stream = ExtResource("14_2gcu5")
 
 [connection signal="mappiece_collected" from="MapPiece1" to="." method="piece_collect"]
 [connection signal="mappiece_collected" from="MapPiece2" to="." method="piece_collect"]

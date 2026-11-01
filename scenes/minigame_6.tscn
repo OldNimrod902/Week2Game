@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dnn0mwypl5e1m" path="res://assets/lock.png" id="3_0js1j"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_eouyj"]
 [ext_resource type="Texture2D" uid="uid://dxf6byune53y4" path="res://assets/spider.png" id="5_v57x5"]
+[ext_resource type="AudioStream" uid="uid://nifwibwl7hfr" path="res://sounds/lock_hit.mp3" id="6_fmbmj"]
 
 [node name="minigame_6" type="Node2D" unique_id=1164677942]
 script = ExtResource("1_brg8y")
@@ -45,6 +46,9 @@ offset_right = 646.0
 offset_bottom = 545.0
 scale = Vector2(0.50996685, 0.51070917)
 texture_normal = ExtResource("5_v57x5")
+
+[node name="lock_sound" type="AudioStreamPlayer" parent="." unique_id=2036304612]
+stream = ExtResource("6_fmbmj")
 
 [connection signal="pressed" from="Lock_button" to="." method="_on_lock_button_pressed"]
 [connection signal="pressed" from="Spider_button" to="." method="_on_poor_little_thing_obliterated"]

@@ -13,11 +13,13 @@ func _process(delta: float) -> void:
 		Global.lives -= 1
 		Global.minigames_done -= 1
 		Global.intermission_message = "Don't go near those pointy things!"
+		Global.death_cause = "spike"
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 	if timer_end:
 		Global.lives -= 1
 		Global.minigames_done -=1
 		Global.intermission_message = "Quickly, they catched you!"
+		Global.death_cause = "time"
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 func _on_spike_trap_entered() -> void:
@@ -32,4 +34,5 @@ func _on_outside_the_box_fallen_out() -> void:
 	Global.lives -= 1
 	Global.minigames_done-= 1
 	Global.intermission_message = "You fell into the endless pit. Legends say you're still falling."
+	Global.death_cause = "fall"
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")

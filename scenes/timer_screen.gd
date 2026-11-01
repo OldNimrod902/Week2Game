@@ -13,6 +13,13 @@ extends Node2D
 @onready var timer: RichTextLabel = $Timer
 @onready var message: RichTextLabel = $Message
 
+@onready var spike_sound = $spike_sound
+@onready var fall_sound = $fall_sound
+@onready var guard_sound = $guard_sound
+@onready var time_sound = $time_sound
+@onready var spider_sound = $spider_sound
+@onready var victory_sound = $victory_sound
+
 var time
 var controls = {
 	1: 1,
@@ -33,6 +40,19 @@ func _ready() -> void:
 	mouse.hide()
 	message.text = str(Global.intermission_message)
 	
+	if Global.death_cause == "spike":
+		spike_sound.play()
+	elif Global.death_cause == "fall":
+		fall_sound.play()
+	elif Global.death_cause == "guard":
+		guard_sound.play()
+	elif Global.death_cause == "time":
+		time_sound.play()
+	elif Global.death_cause == "spider":
+		spider_sound.play()
+	elif Global.death_cause == "alive":
+		victory_sound.play()
+	
 	if Global.lives == 0:
 		heart_none.show()
 		await Timer(3.0)
@@ -46,6 +66,7 @@ func _ready() -> void:
 			mouse.show()
 	
 	await Timer(3.0)
+	Global.death_cause = "alive"
 	if Global.minigames_done < 8:
 		Global.minigames_done = Global.minigames_done +1
 		get_tree().change_scene_to_file("res://scenes/minigame_" + str(Global.minigames_done) + ".tscn")
@@ -85,6 +106,7 @@ func _process(delta: float) -> void:
 			timer.text = ""
 		level.text = "LEVEL " + str(Global.minigames_done+1) 
 	else:
+		level.text = " "
 		timer.text= "Compliment coming in " + str(time)
 
 func Timer(start_time: float): 

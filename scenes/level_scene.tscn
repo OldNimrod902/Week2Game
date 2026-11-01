@@ -9,6 +9,12 @@
 [ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="7_ojpky"]
 [ext_resource type="Texture2D" uid="uid://640g1q0ev6n6" path="res://assets/kayboard.png" id="8_1lj4f"]
 [ext_resource type="Texture2D" uid="uid://dyfh87w0wt48v" path="res://assets/mouse.png" id="9_0jxn2"]
+[ext_resource type="AudioStream" uid="uid://luuww3ki23hq" path="res://sounds/spike_death.mp3" id="10_0jxn2"]
+[ext_resource type="AudioStream" uid="uid://58w5dqjxck8t" path="res://sounds/fall_death.mp3" id="11_cupps"]
+[ext_resource type="AudioStream" uid="uid://bwcxnm8srn4ji" path="res://sounds/guard_death.mp3" id="12_vw353"]
+[ext_resource type="AudioStream" uid="uid://dg2axjpr4cbiu" path="res://sounds/time_death.mp3" id="13_lusm8"]
+[ext_resource type="AudioStream" uid="uid://b6elgciwq2bf" path="res://sounds/spider_death.mp3" id="14_8i8xs"]
+[ext_resource type="AudioStream" uid="uid://bcrhovlr0aoqy" path="res://sounds/victory_intermission.mp3" id="15_vw353"]
 
 [node name="level_scene" type="Node2D" unique_id=2063433828]
 position = Vector2(0, -1)
@@ -70,8 +76,8 @@ text = "LEVEL #"
 [node name="Timer" type="RichTextLabel" parent="." unique_id=1051152969]
 offset_left = 85.0
 offset_top = 406.0
-offset_right = 388.0
-offset_bottom = 527.0
+offset_right = 589.0
+offset_bottom = 491.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("7_ojpky")
 theme_override_font_sizes/normal_font_size = 40
@@ -102,3 +108,22 @@ offset_right = 697.0
 offset_bottom = 557.0
 scale = Vector2(0.60734534, 0.6055661)
 texture = ExtResource("9_0jxn2")
+
+[node name="spike_sound" type="AudioStreamPlayer" parent="." unique_id=564446786]
+stream = ExtResource("10_0jxn2")
+
+[node name="fall_sound" type="AudioStreamPlayer" parent="." unique_id=1417950539]
+stream = ExtResource("11_cupps")
+
+[node name="guard_sound" type="AudioStreamPlayer" parent="." unique_id=824776598]
+stream = ExtResource("12_vw353")
+
+[node name="time_sound" type="AudioStreamPlayer" parent="." unique_id=594698026]
+stream = ExtResource("13_lusm8")
+
+[node name="spider_sound" type="AudioStreamPlayer" parent="." unique_id=660266709]
+stream = ExtResource("14_8i8xs")
+
+[node name="victory_sound" type="AudioStreamPlayer" parent="." unique_id=2091122012]
+stream = ExtResource("15_vw353")
+volume_db = -15.746

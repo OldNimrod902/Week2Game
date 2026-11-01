@@ -7,6 +7,7 @@ var intermission_message = "Good luck..."
 var total_time = 0
 var record_time = 100000
 var game_finished = false
+var death_cause = "none"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

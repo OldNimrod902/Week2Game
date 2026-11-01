@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 		Global.minigames_done -=1 
 		Global.lives -= 1
 		Global.intermission_message = "You had plenty of time to climb up to that key."
+		Global.death_cause = "time"
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 		
 
@@ -25,6 +26,7 @@ func _on_enemy_1_touched_enemy() -> void:
 	Global.minigames_done -= 1
 	Global.lives -= 1
 	Global.intermission_message = "You got caught by the guard. I expected better of you"
+	Global.death_cause = "guard"
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn") 
 
 

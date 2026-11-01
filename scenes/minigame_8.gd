@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 		Global.lives -= 1
 		Global.minigames_done -= 1
 		Global.intermission_message = "I get that you're slower but c'mon"
+		Global.death_cause = "time"
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 
@@ -23,6 +24,7 @@ func _on_outside_the_box_fallen_out() -> void:
 	Global.lives -= 1
 	Global.minigames_done -= 1
 	Global.intermission_message = "Stumbled in the finish line"
+	Global.death_cause = "fall"
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 
@@ -30,6 +32,7 @@ func _on_spike_trap_entered() -> void:
 	Global.lives -= 1
 	Global.minigames_done -= 1
 	Global.intermission_message = "Ouch"
+	Global.death_cause = "spike"
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 
@@ -37,6 +40,7 @@ func _on_enemy_1_touched_enemy() -> void:
 	Global.lives -= 1
 	Global.minigames_done -= 1
 	Global.intermission_message = "You're supposed to jump over the guard, not run into him"
+	Global.death_cause = "guard"
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 
@@ -44,6 +48,7 @@ func _on_enemy_2_touched_enemy() -> void:
 	Global.lives -= 1
 	Global.minigames_done -= 1
 	Global.intermission_message = "Guess this one was harder to miss"
+	Global.death_cause = "guard"
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 

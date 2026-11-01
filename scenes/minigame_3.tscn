@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dvxjjm2c4tjay" path="res://assets/enemy.png" id="6_rguwe"]
 [ext_resource type="Script" uid="uid://du7eny21oscyc" path="res://scenes/key.gd" id="10_sfvvs"]
 [ext_resource type="Texture2D" uid="uid://cg6npigv4fuq2" path="res://assets/key.png" id="11_j0t4l"]
+[ext_resource type="AudioStream" uid="uid://dyaeiod7pwpv7" path="res://sounds/collect.mp3" id="12_j0t4l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yiing"]
 size = Vector2(40, 40)
@@ -238,6 +239,9 @@ theme_override_colors/default_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 16
 text = "Find the key to the Antique House!"
+
+[node name="AudioCollect" type="AudioStreamPlayer" parent="." unique_id=1361396099]
+stream = ExtResource("12_j0t4l")
 
 [connection signal="touched_enemy" from="enemy1" to="." method="_on_enemy_1_touched_enemy"]
 [connection signal="key_collected" from="key" to="." method="_on_key_key_collected"]

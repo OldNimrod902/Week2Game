@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://tnshk5b3evcv" path="res://scenes/door_lv5.gd" id="9_sren0"]
 [ext_resource type="Texture2D" uid="uid://c2fi2yqj3t8s7" path="res://assets/door.png" id="10_2i8f8"]
 [ext_resource type="Script" uid="uid://hmuebgo6ajis" path="res://scenes/close_to_clock.gd" id="11_2i8f8"]
+[ext_resource type="AudioStream" uid="uid://ccp2jep5qf3k6" path="res://sounds/clock_pickup.mp3" id="12_1av5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol02w"]
 size = Vector2(40, 40)
@@ -148,6 +149,9 @@ script = ExtResource("11_2i8f8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseToClock" unique_id=1942316229]
 position = Vector2(128, 97)
 shape = SubResource("RectangleShape2D_x1h7o")
+
+[node name="clock_pickup_sound" type="AudioStreamPlayer" parent="." unique_id=199362936]
+stream = ExtResource("12_1av5u")
 
 [connection signal="fallen_out" from="outside_the_box" to="." method="_on_outside_the_box_fallen_out"]
 [connection signal="pressed" from="ClockPickup" to="." method="_on_clock_pickup_pressed"]

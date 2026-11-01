@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cd1wq6aj5ojjp" path="res://assets/coin.png" id="5_my5wa"]
 [ext_resource type="Texture2D" uid="uid://bhfyi3fwwl2sw" path="res://assets/paper.png" id="6_r0kah"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="7_q3ivc"]
+[ext_resource type="AudioStream" uid="uid://dyaeiod7pwpv7" path="res://sounds/collect.mp3" id="8_6tcq3"]
 
 [node name="minigame_2" type="Node2D" unique_id=576456243]
 script = ExtResource("1_eachr")
@@ -69,6 +70,9 @@ theme_override_colors/default_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 16
 text = "Pick up your items, before going out on the adventure!"
+
+[node name="AudioCollect" type="AudioStreamPlayer" parent="." unique_id=857810890]
+stream = ExtResource("8_6tcq3")
 
 [connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
 [connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]

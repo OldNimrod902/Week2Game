@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dx7sk8e30nsb3" path="res://scenes/dead_screen.gd" id="1_id3ew"]
 [ext_resource type="Texture2D" uid="uid://b2b8q5dfqolam" path="res://assets/dead_background.png" id="2_urrme"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="3_urrme"]
+[ext_resource type="AudioStream" uid="uid://vbe7l2pc2n13" path="res://sounds/game_over.mp3" id="4_g6ylt"]
 
 [node name="dead_screen" type="Node2D" unique_id=1976498233]
 script = ExtResource("1_id3ew")
@@ -59,6 +60,9 @@ theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.2369943, 2.5419052e-07, 7.821247e-08, 1)
 theme_override_constants/outline_size = 5
 text = "RAGE QUIT"
+
+[node name="game_over_sound" type="AudioStreamPlayer" parent="." unique_id=473087919]
+stream = ExtResource("4_g6ylt")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Ragequit" to="." method="_on_ragequit_pressed"]

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="6_fdmdp"]
 [ext_resource type="Script" uid="uid://j0secxqau61n" path="res://scenes/door.gd" id="7_tvbfo"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="8_f70gt"]
+[ext_resource type="AudioStream" uid="uid://dyaeiod7pwpv7" path="res://sounds/collect.mp3" id="9_f70gt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvkra"]
 size = Vector2(40, 40)
@@ -112,5 +113,8 @@ theme_override_colors/default_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 16
 text = "Enter the Antique House using the key!"
+
+[node name="AudioCollect" type="AudioStreamPlayer" parent="." unique_id=1493582365]
+stream = ExtResource("9_f70gt")
 
 [connection signal="touched_door" from="door" to="." method="_on_door_touched_door"]

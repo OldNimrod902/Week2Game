@@ -1,5 +1,6 @@
 extends Node2D
 @onready var themed_timer: Node2D = $timer
+@onready var collect_sound = $AudioCollect
 
 var buttons_pressed := 0
 var timer_end = false
@@ -19,4 +20,5 @@ func _process(delta: float) -> void:
 		Global.lives -= 1
 		Global.minigames_done -=1
 		Global.intermission_message = "You ran out of time. Could be a little faster."
+		Global.death_cause = "time"
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")

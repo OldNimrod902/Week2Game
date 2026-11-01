@@ -4,6 +4,8 @@ extends Node2D
 @onready var button: Button = $ClockPickup
 @onready var door: Node2D = $door
 @onready var player = $Player
+@onready var clock_pickup_sound = $clock_pickup_sound
+
 
 var timer_end = false
 var button_not_yet_pressed = true
@@ -19,6 +21,7 @@ func _process(delta: float) -> void:
 		Global.lives -= 1
 		Global.minigames_done -= 1
 		Global.intermission_message = "You really are slow as a turtle!"
+		Global.death_cause = "time"
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 
@@ -26,10 +29,12 @@ func _on_outside_the_box_fallen_out() -> void:
 	Global.lives -= 1
 	Global.minigames_done -= 1
 	Global.intermission_message = "You were so close yet so far away!"
+	Global.death_cause = "fall"
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 
 func _on_clock_pickup_pressed() -> void:
+	clock_pickup_sound.play()
 	clock.hide()
 	button.hide()
 	door.show()

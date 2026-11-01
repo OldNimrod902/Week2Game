@@ -18,4 +18,5 @@ func _process(delta: float) -> void:
 		Global.lives -= 1
 		Global.minigames_done -=1
 		Global.intermission_message = "They noticed you. You weren't fast enough."
+		Global.death_cause = "time"
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")

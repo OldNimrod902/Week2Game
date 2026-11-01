@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_88pdw"]
 [ext_resource type="Script" uid="uid://bsiyoqfvgi5gg" path="res://pressableEnemy.gd" id="4_jlkes"]
 [ext_resource type="Script" uid="uid://bbmxwa2eedqid" path="res://scenes/animation_enemy_lv4.gd" id="5_88pdw"]
+[ext_resource type="AudioStream" uid="uid://b060wrgg8r304" path="res://sounds/guard_hit.mp3" id="8_kd6k2"]
 
 [sub_resource type="Animation" id="Animation_jlkes"]
 length = 0.001
@@ -123,6 +124,9 @@ texture = ExtResource("3_jlkes")
 
 [node name="timer" parent="." unique_id=2075219886 instance=ExtResource("4_88pdw")]
 position = Vector2(76, 55)
+
+[node name="guard_hit" type="AudioStreamPlayer" parent="." unique_id=46567064]
+stream = ExtResource("8_kd6k2")
 
 [connection signal="pressed" from="Enemy" to="Enemy" method="_on_pressed"]
 [connection signal="pressed" from="Enemy2" to="Enemy2" method="_on_pressed"]

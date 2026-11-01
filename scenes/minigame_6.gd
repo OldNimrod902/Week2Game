@@ -3,6 +3,7 @@ extends Node2D
 @onready var lock = $Lock_button
 @onready var spider = $Spider_button
 @onready var themed_timer: Node2D = $timer
+@onready var lock_hit_sound = $lock_sound
 
 var lock_pressed = 0
 var timer_end = false
@@ -21,16 +22,19 @@ func _process(delta: float) -> void:
 		Global.intermission_message = "They catched you. Embarassingly slow."
 		Global.lives -= 1
 		Global.minigames_done -= 1
+		Global.death_cause = "time"
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 func _on_poor_little_thing_obliterated() -> void:
 	Global.intermission_message = "You have woken up Peter Parker"
 	Global.lives -= 1
 	Global.minigames_done -= 1
+	Global.death_cause = "spider"
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 func _on_lock_button_pressed() -> void:
 	lock_pressed += 1
+	lock_hit_sound.play()
 	if lock_pressed == 15:
 		lock.hide()
 		spider.show()

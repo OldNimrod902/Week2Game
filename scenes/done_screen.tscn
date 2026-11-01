@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://pundkftqgtrm" path="res://scenes/done_screen.gd" id="1_uqm27"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="3_c2erd"]
 [ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="4_t6dg5"]
+[ext_resource type="AudioStream" uid="uid://bl0vwc1w63irl" path="res://sounds/victory.mp3" id="5_t6dg5"]
 
 [node name="done_screen" type="Node2D" unique_id=461110403]
 script = ExtResource("1_uqm27")
@@ -78,6 +79,9 @@ text = "I WANT TO TRY AGAIN"
 layout_mode = 2
 theme_override_font_sizes/font_size = 17
 text = "QUIT GAME"
+
+[node name="AudioVictory" type="AudioStreamPlayer" parent="." unique_id=390844092]
+stream = ExtResource("5_t6dg5")
 
 [connection signal="pressed" from="HBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]
