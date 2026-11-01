@@ -39,10 +39,11 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://scenes/dead_screen.tscn")
 		return
 	
-	if controls[Global.minigames_done+1]==1:
-		keyboard.show()
-	else:
-		mouse.show()
+	if Global.minigames_done < 8:
+		if controls[Global.minigames_done+1]==1:
+			keyboard.show()
+		else:
+			mouse.show()
 	
 	await Timer(3.0)
 	if Global.minigames_done < 8:
@@ -74,7 +75,7 @@ func _process(delta: float) -> void:
 		heart_4.hide()
 		heart_5.hide()
 		heart_none.show()
-	else:
+	elif Global.lives > 5:
 		heart_debug.show()
 	
 	if Global.minigames_done<8:

@@ -3,6 +3,7 @@ extends Node2D
 @onready var clock: TextureRect = $Clock
 @onready var button: Button = $ClockPickup
 @onready var door: Node2D = $door
+@onready var player = $Player
 
 var timer_end = false
 var button_not_yet_pressed = true
@@ -33,10 +34,12 @@ func _on_clock_pickup_pressed() -> void:
 	button.hide()
 	door.show()
 	button_not_yet_pressed = false
+	player.SPEED = 200
+	player.JUMP_VELOCITY = -500
 
 
 func _on_door_entered() -> void:
-	Global.intermission_message = "Good work. Almost there. Almost."
+	Global.intermission_message = "How did that fit in your pocket? It sure looks heavy. Might slow you down."
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
 
 

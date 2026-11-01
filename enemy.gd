@@ -10,10 +10,9 @@ signal touched_enemy
 func _ready():
 	anim.play("walking")
 
-func _process(delta: float) -> void: # this runs EVERY FRAME! 
-	
-	if player_area.overlaps_area(self_area): # checks if overlapping
+func _process(delta: float) -> void:
+	if player_area.overlaps_area(self_area):
 		if self.visible:
-			emit_signal("touched_enemy") #signal broadcast
-			self.hide() #removed from player sight; collected
+			emit_signal("touched_enemy") 
+			self.hide()
 		
