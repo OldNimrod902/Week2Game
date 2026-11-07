@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dyqbyytpcf1ne" path="res://assets/spooky_nature.png" id="2_r1t00"]
 [ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="3_r1t00"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="4_fb5gs"]
+[ext_resource type="Texture2D" uid="uid://douyhkiy582hx" path="res://assets/dirt_background.png" id="4_lelfy"]
 [ext_resource type="Texture2D" uid="uid://cepvlxuobjqxi" path="res://assets/wooden_platform.png" id="5_r1t00"]
 [ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="6_mqslf"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="7_1cqkh"]
@@ -414,6 +415,19 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("2_r1t00")
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollingBackgroundNature2" type="Parallax2D" parent="." unique_id=2060241193]
+scroll_offset = Vector2(0, 654)
+repeat_size = Vector2(1152, 0)
+repeat_times = 7
+
+[node name="Background" type="TextureRect" parent="ScrollingBackgroundNature2" unique_id=777784181]
+offset_top = -10.0
+offset_right = 1920.0
+offset_bottom = 1070.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("4_lelfy")
 metadata/_edit_use_anchors_ = true
 
 [node name="ground" type="StaticBody2D" parent="." unique_id=68139483]
