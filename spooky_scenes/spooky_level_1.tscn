@@ -245,6 +245,139 @@ size = Vector2(69, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrvkb"]
 size = Vector2(103, 170)
 
+[sub_resource type="Animation" id="Animation_km3pl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 460)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Coin3/Coin:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 460)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Coin2/Coin:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 460)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Coin4/Coin:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 460)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Coin5/Coin:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 460)]
+}
+
+[sub_resource type="Animation" id="Animation_lelfy"]
+resource_name = "coin flying"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coin:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 460), Vector2(640, 435)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Coin3/Coin:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 460), Vector2(640, 436)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Coin2/Coin:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 460), Vector2(640, 439)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Coin4/Coin:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 460), Vector2(640, 444)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Coin5/Coin:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 460), Vector2(640, 443)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4pspp"]
+_data = {
+&"RESET": SubResource("Animation_km3pl"),
+&"coin flying": SubResource("Animation_lelfy")
+}
+
 [node name="spooky_level_1" type="Node2D" unique_id=1631377125]
 script = ExtResource("1_grhv3")
 
@@ -594,30 +727,13 @@ script = ExtResource("8_dqg45")
 offset_left = 640.0
 offset_top = 460.0
 offset_right = 736.0
-offset_bottom = 556.00256
+offset_bottom = 556.0017
 texture = ExtResource("9_3msfp")
 
 [node name="Area2D" type="Area2D" parent="Coin1" unique_id=1832179648]
 position = Vector2(684, 511)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin1/Area2D" unique_id=491035993]
-shape = SubResource("CircleShape2D_i8j6e")
-
-[node name="Coin3" type="Node2D" parent="." unique_id=171281921]
-position = Vector2(-353, -695)
-script = ExtResource("8_dqg45")
-
-[node name="Coin" type="TextureRect" parent="Coin3" unique_id=1083280267]
-offset_left = 640.0
-offset_top = 460.0
-offset_right = 736.0
-offset_bottom = 556.00256
-texture = ExtResource("9_3msfp")
-
-[node name="Area2D" type="Area2D" parent="Coin3" unique_id=429840143]
-position = Vector2(684, 511)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin3/Area2D" unique_id=826496903]
 shape = SubResource("CircleShape2D_i8j6e")
 
 [node name="Coin2" type="Node2D" parent="." unique_id=779628529]
@@ -637,6 +753,23 @@ position = Vector2(684, 511)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin2/Area2D" unique_id=1681796229]
 shape = SubResource("CircleShape2D_i8j6e")
 
+[node name="Coin3" type="Node2D" parent="." unique_id=171281921]
+position = Vector2(-353, -695)
+script = ExtResource("8_dqg45")
+
+[node name="Coin" type="TextureRect" parent="Coin3" unique_id=1083280267]
+offset_left = 640.0
+offset_top = 460.0
+offset_right = 736.0
+offset_bottom = 556.00195
+texture = ExtResource("9_3msfp")
+
+[node name="Area2D" type="Area2D" parent="Coin3" unique_id=429840143]
+position = Vector2(684, 511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin3/Area2D" unique_id=826496903]
+shape = SubResource("CircleShape2D_i8j6e")
+
 [node name="Coin4" type="Node2D" parent="." unique_id=1868981619]
 position = Vector2(1418, -551)
 script = ExtResource("8_dqg45")
@@ -645,13 +778,30 @@ script = ExtResource("8_dqg45")
 offset_left = 640.0
 offset_top = 460.0
 offset_right = 736.0
-offset_bottom = 556.00256
+offset_bottom = 556.0025
 texture = ExtResource("9_3msfp")
 
 [node name="Area2D" type="Area2D" parent="Coin4" unique_id=1533849485]
 position = Vector2(684, 511)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin4/Area2D" unique_id=1801671877]
+shape = SubResource("CircleShape2D_i8j6e")
+
+[node name="Coin5" type="Node2D" parent="." unique_id=792870218]
+position = Vector2(3542, -36)
+script = ExtResource("8_dqg45")
+
+[node name="Coin" type="TextureRect" parent="Coin5" unique_id=411756407]
+offset_left = 640.0
+offset_top = 460.0
+offset_right = 736.0
+offset_bottom = 556.0032
+texture = ExtResource("9_3msfp")
+
+[node name="Area2D" type="Area2D" parent="Coin5" unique_id=1461099315]
+position = Vector2(684, 511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin5/Area2D" unique_id=490851950]
 shape = SubResource("CircleShape2D_i8j6e")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1209929739]
@@ -952,11 +1102,17 @@ drag_top_margin = 1.0
 drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 
+[node name="CoinAnimator" type="AnimationPlayer" parent="." unique_id=686711636]
+root_node = NodePath("../Coin1")
+libraries/ = SubResource("AnimationLibrary_4pspp")
+autoplay = &"coin flying"
+
 [connection signal="fallen_out" from="outside_the_box" to="." method="_on_outside_the_box_fallen_out"]
 [connection signal="coin_collected" from="Coin1" to="." method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coin3" to="." method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin2" to="." method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coin3" to="." method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin4" to="." method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coin5" to="." method="_on_coin_collected"]
 [connection signal="touched_enemy" from="enemy1" to="." method="_on_touched_enemy"]
 [connection signal="touched_enemy" from="enemy2" to="." method="_on_touched_enemy"]
 [connection signal="touched_enemy" from="enemy3" to="." method="_on_touched_enemy"]
