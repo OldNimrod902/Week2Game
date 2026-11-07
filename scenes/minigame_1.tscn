@@ -11,15 +11,57 @@
 [ext_resource type="Texture2D" uid="uid://cepvlxuobjqxi" path="res://assets/wooden_platform.png" id="4_r58ir"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="6_j1cg4"]
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="8_xpvfh"]
-[ext_resource type="Texture2D" uid="uid://p2i6hvjfoasa" path="res://assets/map_piece_2.png" id="9_6n0yg"]
 [ext_resource type="Texture2D" uid="uid://crnm68csf2jq" path="res://assets/map_piece_3.png" id="10_2gcu5"]
 [ext_resource type="AudioStream" uid="uid://dyaeiod7pwpv7" path="res://sounds/collect.mp3" id="14_2gcu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
 size = Vector2(38.30072, 40)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6n0yg"]
+load_path = "res://.godot/imported/map_piece_2.png-bba31430475582c6d3f8c66ec5b8cc53.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1h7o"]
+radius = 40.012497
+
 [sub_resource type="Animation" id="Animation_v5ebm"]
-length = 0.001
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MapPiece1/MapPiece:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(634, 449), Vector2(634, 427)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MapPiece2/MapPiece:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(628, 443), Vector2(628, 469)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MapPiece3/MapPiece:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(628, 457), Vector2(628, 437)]
+}
 
 [sub_resource type="Animation" id="Animation_fa05o"]
 resource_name = "floating"
@@ -31,9 +73,6 @@ _data = {
 &"RESET": SubResource("Animation_v5ebm"),
 &"floating": SubResource("Animation_fa05o")
 }
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_x1h7o"]
-radius = 40.012497
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7bry"]
 size = Vector2(2145, 142)
@@ -187,12 +226,8 @@ script = ExtResource("4_j1cg4")
 offset_left = 634.0
 offset_top = 449.0
 offset_right = 730.0
-offset_bottom = 545.0008
-texture = ExtResource("9_6n0yg")
-
-[node name="animation" type="AnimationPlayer" parent="MapPiece1" unique_id=1878136762]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_j1cg4")
+offset_bottom = 545.00256
+texture = SubResource("CompressedTexture2D_6n0yg")
 
 [node name="Area2D" type="Area2D" parent="MapPiece1" unique_id=350741965]
 position = Vector2(684, 511)
@@ -206,9 +241,9 @@ script = ExtResource("4_j1cg4")
 
 [node name="MapPiece" type="TextureRect" parent="MapPiece2" unique_id=51524474]
 offset_left = 628.0
-offset_top = 457.0
+offset_top = 443.0
 offset_right = 724.0
-offset_bottom = 553.0
+offset_bottom = 539.00134
 texture = ExtResource("10_2gcu5")
 
 [node name="animation" type="AnimationPlayer" parent="MapPiece2" unique_id=575131266]
@@ -229,7 +264,7 @@ script = ExtResource("4_j1cg4")
 offset_left = 628.0
 offset_top = 457.0
 offset_right = 724.0
-offset_bottom = 553.0
+offset_bottom = 553.0001
 texture = ExtResource("3_lmjug")
 
 [node name="animation" type="AnimationPlayer" parent="MapPiece3" unique_id=161937540]
@@ -265,6 +300,10 @@ shape = SubResource("RectangleShape2D_b7bry")
 
 [node name="AudioCollect" type="AudioStreamPlayer" parent="." unique_id=10178212]
 stream = ExtResource("14_2gcu5")
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=1878136762]
+libraries/ = SubResource("AnimationLibrary_j1cg4")
+autoplay = &"RESET"
 
 [connection signal="mappiece_collected" from="MapPiece1" to="." method="piece_collect"]
 [connection signal="mappiece_collected" from="MapPiece2" to="." method="piece_collect"]

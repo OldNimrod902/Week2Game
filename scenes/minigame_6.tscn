@@ -6,6 +6,44 @@
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_eouyj"]
 [ext_resource type="Texture2D" uid="uid://dxf6byune53y4" path="res://assets/spider.png" id="5_v57x5"]
 [ext_resource type="AudioStream" uid="uid://nifwibwl7hfr" path="res://sounds/lock_hit.mp3" id="6_fmbmj"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="7_0js1j"]
+
+[sub_resource type="Animation" id="Animation_eouyj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lock_button:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5240394, 0.52836657)]
+}
+
+[sub_resource type="Animation" id="Animation_v57x5"]
+resource_name = "lock_scale"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lock_button:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5240394, 0.52836657), Vector2(0.6518823, 0.7073081), Vector2(0.5035306, 0.5216549)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6wdo5"]
+_data = {
+&"RESET": SubResource("Animation_eouyj"),
+&"lock_scale": SubResource("Animation_v57x5")
+}
 
 [node name="minigame_6" type="Node2D" unique_id=1164677942]
 script = ExtResource("1_brg8y")
@@ -49,6 +87,29 @@ texture_normal = ExtResource("5_v57x5")
 
 [node name="lock_sound" type="AudioStreamPlayer" parent="." unique_id=2036304612]
 stream = ExtResource("6_fmbmj")
+
+[node name="text_wait" type="RichTextLabel" parent="." unique_id=1585368832]
+offset_left = 653.0
+offset_top = 274.0
+offset_right = 828.0
+offset_bottom = 366.0
+theme_override_colors/default_color = Color(0.9999961, 0.38382798, 0.38584304, 1)
+theme_override_fonts/normal_font = ExtResource("7_0js1j")
+theme_override_font_sizes/normal_font_size = 85
+text = "WAIT!"
+
+[node name="text_click" type="RichTextLabel" parent="." unique_id=1563831197]
+offset_left = 124.0
+offset_top = 352.0
+offset_right = 310.0
+offset_bottom = 444.0
+theme_override_colors/default_color = Color(0.9999961, 0.38382798, 0.38584304, 1)
+theme_override_fonts/normal_font = ExtResource("7_0js1j")
+theme_override_font_sizes/normal_font_size = 85
+text = "CLICK!"
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=891089370]
+libraries/ = SubResource("AnimationLibrary_6wdo5")
 
 [connection signal="pressed" from="Lock_button" to="." method="_on_lock_button_pressed"]
 [connection signal="pressed" from="Spider_button" to="." method="_on_poor_little_thing_obliterated"]

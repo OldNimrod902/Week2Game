@@ -4,6 +4,9 @@ extends Node2D
 @onready var spider = $Spider_button
 @onready var themed_timer: Node2D = $timer
 @onready var lock_hit_sound = $lock_sound
+@onready var animation = $animation
+@onready var wait_text = $text_wait
+@onready var click_text = $text_click
 
 var lock_pressed = 0
 var timer_end = false
@@ -11,6 +14,7 @@ var time
 
 func _ready() -> void:
 	spider.hide()
+	wait_text.hide()
 	await themed_timer.Timer(10.0)
 	timer_end = true
 
@@ -35,11 +39,16 @@ func _on_poor_little_thing_obliterated() -> void:
 func _on_lock_button_pressed() -> void:
 	lock_pressed += 1
 	lock_hit_sound.play()
+	animation.play("lock_scale")
 	if lock_pressed == 15:
+		click_text.hide()
 		lock.hide()
+		wait_text.show()
 		spider.show()
 		await Timer(3)
+		click_text.show()
 		lock.show()
+		wait_text.hide()
 		spider.hide()
 
 func Timer(start_time: float): 

@@ -16,6 +16,9 @@ func _process(delta: float) -> void:
 
 
 func _on_main_menu_pressed() -> void:
+	Global.minigames_done=0
+	Global.intermission_message="I see you're trying for a better time"
+	Global.death_cause="none"
 	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
 
 func _on_quit_pressed() -> void:

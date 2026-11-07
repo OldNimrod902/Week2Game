@@ -11,9 +11,11 @@ var death_cause = "none"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	while not game_finished:
-		await wait(0.1)
-		total_time += 0.1
+	while true:
+		while not game_finished:
+			await wait(0.1)
+			total_time += 0.1
+		await wait(0.3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

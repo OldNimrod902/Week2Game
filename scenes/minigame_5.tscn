@@ -328,11 +328,12 @@ scale = Vector2(9.059881, 1.2206199)
 
 [node name="TextureRect" type="TextureRect" parent="wall" unique_id=268687397]
 offset_left = -0.11038102
-offset_top = -2.4578214
-offset_right = 468.1044
-offset_bottom = 93.542175
-scale = Vector2(0.008886739, 0.8263297)
+offset_top = -94.21447
+offset_right = 31.88962
+offset_bottom = 99.55424
+scale = Vector2(0.11746833, 0.93850726)
 texture = ExtResource("3_rtm12")
+stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=345601239]
 position = Vector2(2.3179083, -3.0517578e-05)

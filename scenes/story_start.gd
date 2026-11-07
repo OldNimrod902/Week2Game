@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	Global.total_time = 0
+	Global.game_finished = false
 	get_tree().change_scene_to_file("res://scenes/level_scene.tscn")
