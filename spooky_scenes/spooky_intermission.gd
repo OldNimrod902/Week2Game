@@ -30,13 +30,9 @@ extends Node2D
 var time
 var controls = {
 	1: 1,
-	2: 2,
-	3: 1,
-	4: 2,
-	5: 1,
-	6: 2,
-	7: 1,
-	8: 1
+	2: 1,
+	3: 2,
+	4: 1,
 }
 
 func _ready() -> void:
@@ -66,7 +62,7 @@ func _ready() -> void:
 	if Global.lives == 0:
 		heart_none.show()
 		await Timer(3.0)
-		get_tree().change_scene_to_file("res://scenes/dead_screen.tscn")
+		get_tree().change_scene_to_file("res://spooky_scenes/dead_screen_spooky.tscn")
 		return
 	
 	if Global.spooky_levels_done < 8:
@@ -81,7 +77,7 @@ func _ready() -> void:
 		Global.spooky_levels_done = Global.spooky_levels_done +1
 		get_tree().change_scene_to_file("res://spooky_scenes/spooky_level_" + str(Global.spooky_levels_done) + ".tscn")
 	else:
-		get_tree().change_scene_to_file("res://spooky_scenes/done_screen.tscn") 
+		get_tree().change_scene_to_file("res://spooky_scenes/done_screen_spooky.tscn") 
 
 func _process(delta: float) -> void:
 	if Global.lives==4:
@@ -124,7 +120,7 @@ func _process(delta: float) -> void:
 		cookie_1.hide()
 		no_cookie_1.show()
 	
-	if Global.minigames_done<8:
+	if Global.minigames_done<4:
 		if Global.lives>0:
 			timer.text = "Starting in " + str(time) 
 		else:
