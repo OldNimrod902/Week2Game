@@ -9,6 +9,44 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e54dn"]
 size = Vector2(40, 40)
 
+[sub_resource type="Animation" id="Animation_dc4i4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e54dn"]
+resource_name = "scaling"
+length = 0.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1909204, 1.2553376)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yumr"]
+_data = {
+&"RESET": SubResource("Animation_dc4i4"),
+&"scaling": SubResource("Animation_e54dn")
+}
+
 [node name="TitleScreen" type="Node2D" unique_id=1674956820]
 script = ExtResource("1_sa3yf")
 
@@ -50,7 +88,7 @@ theme_override_colors/font_color = Color(0.6507226, 0.95839447, 0.7545797, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_dc4i4")
 theme_override_font_sizes/font_size = 33
-text = "NEW! SPOOKIE EXPANSION"
+text = "SPOOKIE EXPANSION"
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=812819598]
 layout_mode = 2
@@ -114,6 +152,25 @@ shape = SubResource("RectangleShape2D_e54dn")
 
 [node name="Player" parent="." unique_id=599305279 instance=ExtResource("4_dc4i4")]
 position = Vector2(1248, 584)
+
+[node name="ad" type="RichTextLabel" parent="." unique_id=84797682]
+offset_left = 73.99999
+offset_top = 359.99997
+offset_right = 161.0
+offset_bottom = 400.99997
+rotation = -0.27486113
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("3_dc4i4")
+theme_override_font_sizes/normal_font_size = 28
+text = "NEW!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ad" unique_id=1193212737]
+libraries/ = SubResource("AnimationLibrary_3yumr")
+autoplay = &"scaling"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start_spookie" to="." method="_on_start_spookie_pressed"]
