@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://26ypjf33vgeq"]
+
+[ext_resource type="Script" uid="uid://ibwpro8ljs2d" path="res://spooky_scenes/spooky_story.gd" id="1_di7bo"]
+[ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_hgps6"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="3_uqwfm"]
+
+[node name="spooky_story" type="Node2D" unique_id=1753656532]
+script = ExtResource("1_di7bo")
+
+[node name="Background" type="TextureRect" parent="." unique_id=636109839]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("1_hgps6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=606392497]
+offset_left = 92.0
+offset_top = 149.0
+offset_right = 840.0
+offset_bottom = 512.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 18
+text = "The armless creature lived happily ever since it got back the Antique Clock
+But ever since you entered that building, something has been haunting you.
+So its your job to make it stop haunting the armless creature.
+
+The legends say that the haunting ghost only likes cookies.
+But the legends also say that when a ghost goes trick or treating, everyone starts screaming, instead of giving him cookies.
+
+So you made an agreement
+
+You will find three cookies for the ghost and in return he won't haunt you until next Halloween
+
+SO FIND THE THREE COOKIES"
+horizontal_alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=391001043]
+offset_left = 92.0
+offset_top = 62.0
+offset_right = 840.0
+offset_bottom = 139.0
+theme_override_colors/default_color = Color(0.4, 1, 0.28235295, 1)
+theme_override_colors/font_outline_color = Color(0, 0.24313726, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/normal_font = ExtResource("3_uqwfm")
+theme_override_font_sizes/normal_font_size = 52
+text = "SPOOKIE DLC"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=577271254]
+offset_left = 329.0
+offset_top = 535.0
+offset_right = 609.0
+offset_bottom = 610.0
+theme_override_fonts/font = ExtResource("3_uqwfm")
+theme_override_font_sizes/font_size = 24
+text = "I DON'T WANT TO READ ALL THAT
+LET'S GET TRICK-OR-TREATIN'"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

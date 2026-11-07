@@ -9,7 +9,8 @@ var record_time = 100000
 var game_finished = false
 var death_cause = "none"
 
-# Called when the node enters the scene tree for the first time.
+var spooky_levels_done = 0
+
 func _ready() -> void:
 	while true:
 		while not game_finished:
@@ -17,8 +18,6 @@ func _ready() -> void:
 			total_time += 0.1
 		await wait(0.3)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 

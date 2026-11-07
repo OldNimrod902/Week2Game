@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://dohd7uwaofw0t"]
+
+[ext_resource type="Script" uid="uid://cseiji68uibkj" path="res://spooky_scenes/spooky_intermission.gd" id="1_eobq4"]
+[ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="2_v62to"]
+[ext_resource type="Texture2D" uid="uid://ce805tjq16jcs" path="res://assets/heart.png" id="3_j3gjl"]
+[ext_resource type="Texture2D" uid="uid://cw5ocgxonrhv" path="res://assets/heart_infinite.png" id="4_mm8pb"]
+[ext_resource type="Texture2D" uid="uid://b0wtaje80dqk0" path="res://assets/hearts_lost.png" id="5_syjsp"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="6_k5uh5"]
+[ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="7_ty5y0"]
+[ext_resource type="Texture2D" uid="uid://640g1q0ev6n6" path="res://assets/kayboard.png" id="8_wsnly"]
+[ext_resource type="Texture2D" uid="uid://dyfh87w0wt48v" path="res://assets/mouse.png" id="9_28rdk"]
+[ext_resource type="AudioStream" uid="uid://luuww3ki23hq" path="res://sounds/spike_death.mp3" id="10_c3yfn"]
+[ext_resource type="AudioStream" uid="uid://58w5dqjxck8t" path="res://sounds/fall_death.mp3" id="11_rp1vx"]
+[ext_resource type="AudioStream" uid="uid://bwcxnm8srn4ji" path="res://sounds/guard_death.mp3" id="12_f1mn5"]
+[ext_resource type="AudioStream" uid="uid://dg2axjpr4cbiu" path="res://sounds/time_death.mp3" id="13_whssu"]
+[ext_resource type="AudioStream" uid="uid://b6elgciwq2bf" path="res://sounds/spider_death.mp3" id="14_5lbwv"]
+[ext_resource type="AudioStream" uid="uid://bcrhovlr0aoqy" path="res://sounds/victory_intermission.mp3" id="15_ycayi"]
+
+[node name="spooky_intermission" type="Node2D" unique_id=2063433828]
+position = Vector2(2, -1)
+script = ExtResource("1_eobq4")
+
+[node name="Background" type="TextureRect" parent="." unique_id=508519362]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000162, 0.6000356)
+texture = ExtResource("2_v62to")
+
+[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=1873210527]
+offset_left = 80.0
+offset_top = 184.0
+offset_right = 1146.0
+offset_bottom = 394.0
+scale = Vector2(0.4158402, 0.4158047)
+theme_override_constants/separation = 20
+
+[node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=1373908474]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=1979288836]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=1000313331]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="Heart4" type="TextureRect" parent="HeartContainer" unique_id=2118480028]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="Heart5" type="TextureRect" parent="HeartContainer" unique_id=411249196]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="HeartDebug" type="TextureRect" parent="HeartContainer" unique_id=41260960]
+layout_mode = 2
+texture = ExtResource("4_mm8pb")
+
+[node name="HeartNone" type="TextureRect" parent="HeartContainer" unique_id=897334982]
+layout_mode = 2
+texture = ExtResource("5_syjsp")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=26259005]
+clip_contents = false
+offset_left = 83.0
+offset_top = 309.0
+offset_right = 378.0
+offset_bottom = 390.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("6_k5uh5")
+theme_override_font_sizes/normal_font_size = 48
+text = "SPOOKIE LEVEL #"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1051152969]
+offset_left = 85.0
+offset_top = 406.0
+offset_right = 589.0
+offset_bottom = 491.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_ty5y0")
+theme_override_font_sizes/normal_font_size = 40
+text = "Starting in 0.0"
+
+[node name="Message" type="RichTextLabel" parent="." unique_id=481475599]
+offset_left = 86.0
+offset_top = 491.0
+offset_right = 571.0
+offset_bottom = 594.0
+theme_override_colors/default_color = Color(0.9471993, 0.9471994, 0.9471993, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "You really shouldnt see this piece of text"
+
+[node name="keyboard" type="TextureRect" parent="." unique_id=2101256569]
+offset_left = 457.00003
+offset_top = 317.0
+offset_right = 697.0
+offset_bottom = 557.0
+scale = Vector2(0.60734534, 0.6055661)
+texture = ExtResource("8_wsnly")
+
+[node name="mouse" type="TextureRect" parent="." unique_id=2061676265]
+offset_left = 457.00003
+offset_top = 317.0
+offset_right = 697.0
+offset_bottom = 557.0
+scale = Vector2(0.60734534, 0.6055661)
+texture = ExtResource("9_28rdk")
+
+[node name="spike_sound" type="AudioStreamPlayer" parent="." unique_id=564446786]
+stream = ExtResource("10_c3yfn")
+
+[node name="fall_sound" type="AudioStreamPlayer" parent="." unique_id=1417950539]
+stream = ExtResource("11_rp1vx")
+
+[node name="guard_sound" type="AudioStreamPlayer" parent="." unique_id=824776598]
+stream = ExtResource("12_f1mn5")
+
+[node name="time_sound" type="AudioStreamPlayer" parent="." unique_id=594698026]
+stream = ExtResource("13_whssu")
+
+[node name="spider_sound" type="AudioStreamPlayer" parent="." unique_id=660266709]
+stream = ExtResource("14_5lbwv")
+
+[node name="victory_sound" type="AudioStreamPlayer" parent="." unique_id=2091122012]
+stream = ExtResource("15_ycayi")
+volume_db = -15.746

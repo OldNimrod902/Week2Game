@@ -42,7 +42,15 @@ layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_dc4i4")
 theme_override_font_sizes/font_size = 40
-text = "START GAME"
+text = "START MAIN GAME"
+
+[node name="Start_spookie" type="Button" parent="VBoxContainer" unique_id=877378847]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6507226, 0.95839447, 0.7545797, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_dc4i4")
+theme_override_font_sizes/font_size = 33
+text = "NEW! SPOOKIE EXPANSION"
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=812819598]
 layout_mode = 2
@@ -108,5 +116,6 @@ shape = SubResource("RectangleShape2D_e54dn")
 position = Vector2(1248, 584)
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start_spookie" to="." method="_on_start_spookie_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dsqcevr6v4tg3"]
+
+[ext_resource type="Texture2D" uid="uid://dydpv08tkxdh5" path="res://assets/level1_background.png" id="1_pud0i"]
+[ext_resource type="Texture2D" uid="uid://8ktnibtvbbx5" path="res://assets/overlay_background.png" id="2_fb5gs"]
+[ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="3_r1t00"]
+[ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="4_fb5gs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qjkk"]
+size = Vector2(88.22052, 40)
+
+[node name="spooky_level_1" type="Node2D" unique_id=1631377125]
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1767247746]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 3
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=167091938]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_pud0i")
+metadata/_edit_use_anchors_ = true
+
+[node name="nature" type="TextureRect" parent="." unique_id=1466578524]
+offset_top = -37.99999
+offset_right = 1920.0
+offset_bottom = 1042.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("2_fb5gs")
+metadata/_edit_use_anchors_ = true
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=68139483]
+position = Vector2(-25, 561.00006)
+scale = Vector2(24.519997, 2.799999)
+
+[node name="TextureRect" type="TextureRect" parent="ground" unique_id=1499246180]
+offset_right = 3543.9163
+offset_bottom = 144.0
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("3_r1t00")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=1425271702]
+position = Vector2(44.959908, 20)
+shape = SubResource("RectangleShape2D_0qjkk")
+
+[node name="Player" parent="." unique_id=599305279 instance=ExtResource("4_fb5gs")]
+position = Vector2(165, 505)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=169394087]
+position = Vector2(2, -180)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_bottom_margin = 1.0
