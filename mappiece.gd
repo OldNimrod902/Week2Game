@@ -3,13 +3,13 @@ extends Node2D
 @onready var self_area = $Area2D
 @onready var player_area = $"../Player/Area2D"
 
-signal mappiece_collected
+signal coin_collected
 
 
 func _process(delta: float) -> void:
 	
 	if player_area.overlaps_area(self_area):
 		if self.visible:
-			emit_signal("mappiece_collected")
+			emit_signal("coin_collected")
 			self.hide()
 		
