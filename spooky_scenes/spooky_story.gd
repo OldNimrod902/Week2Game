@@ -15,3 +15,7 @@ func _on_button_pressed() -> void:
 	Global.total_time = 0
 	Global.game_finished = false
 	get_tree().change_scene_to_file("res://spooky_scenes/spooky_intermission.tscn")
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")

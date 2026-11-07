@@ -55,4 +55,14 @@ theme_override_font_sizes/font_size = 24
 text = "I DON'T WANT TO READ ALL THAT
 LET'S GET HUNTING!"
 
+[node name="Back_button" type="Button" parent="." unique_id=2103020091]
+offset_left = 33.0
+offset_top = 578.0
+offset_right = 139.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("4_jgyom")
+theme_override_font_sizes/font_size = 24
+text = "BACK"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Back_button" to="." method="_on_back_button_pressed"]

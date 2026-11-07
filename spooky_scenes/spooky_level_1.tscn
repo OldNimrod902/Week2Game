@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dsqcevr6v4tg3"]
 
-[ext_resource type="Texture2D" uid="uid://dydpv08tkxdh5" path="res://assets/level1_background.png" id="1_pud0i"]
-[ext_resource type="Texture2D" uid="uid://8ktnibtvbbx5" path="res://assets/overlay_background.png" id="2_fb5gs"]
+[ext_resource type="Texture2D" uid="uid://cr3l4vkeal31l" path="res://assets/spooky_background.png" id="1_fb5gs"]
+[ext_resource type="Texture2D" uid="uid://dyqbyytpcf1ne" path="res://assets/spooky_nature.png" id="2_r1t00"]
 [ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="3_r1t00"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="4_fb5gs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qjkk"]
-size = Vector2(88.22052, 40)
+size = Vector2(88.750694, 40)
 
 [node name="spooky_level_1" type="Node2D" unique_id=1631377125]
 
@@ -19,15 +19,18 @@ repeat_times = 3
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.6000017, 0.60001403)
-texture = ExtResource("1_pud0i")
+texture = ExtResource("1_fb5gs")
 metadata/_edit_use_anchors_ = true
 
-[node name="nature" type="TextureRect" parent="." unique_id=1466578524]
-offset_top = -37.99999
+[node name="ScrollingBackgroundNature" type="Parallax2D" parent="." unique_id=1062924939]
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Background" type="TextureRect" parent="ScrollingBackgroundNature" unique_id=1542811807]
 offset_right = 1920.0
-offset_bottom = 1042.0
+offset_bottom = 1080.0
 scale = Vector2(0.6000017, 0.60001403)
-texture = ExtResource("2_fb5gs")
+texture = ExtResource("2_r1t00")
 metadata/_edit_use_anchors_ = true
 
 [node name="ground" type="StaticBody2D" parent="." unique_id=68139483]
@@ -42,7 +45,7 @@ texture = ExtResource("3_r1t00")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=1425271702]
-position = Vector2(44.959908, 20)
+position = Vector2(45.22499, 20)
 shape = SubResource("RectangleShape2D_0qjkk")
 
 [node name="Player" parent="." unique_id=599305279 instance=ExtResource("4_fb5gs")]

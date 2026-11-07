@@ -24,4 +24,4 @@ func _on_settings_pressed() -> void:
 
 
 func _on_start_spookie_pressed() -> void:
-	get_tree().change_scene_to_file("res://spooky_scenes/spooky_intermission.tscn")
+	get_tree().change_scene_to_file("res://spooky_scenes/spooky_story.tscn")

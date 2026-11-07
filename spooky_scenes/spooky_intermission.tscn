@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dohd7uwaofw0t"]
 
 [ext_resource type="Script" uid="uid://cseiji68uibkj" path="res://spooky_scenes/spooky_intermission.gd" id="1_eobq4"]
-[ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="2_v62to"]
+[ext_resource type="Texture2D" uid="uid://ca3ehbpfssm1q" path="res://assets/background_spooky_menu.png" id="2_eobq4"]
 [ext_resource type="Texture2D" uid="uid://ce805tjq16jcs" path="res://assets/heart.png" id="3_j3gjl"]
 [ext_resource type="Texture2D" uid="uid://cw5ocgxonrhv" path="res://assets/heart_infinite.png" id="4_mm8pb"]
 [ext_resource type="Texture2D" uid="uid://b0wtaje80dqk0" path="res://assets/hearts_lost.png" id="5_syjsp"]
@@ -17,14 +17,13 @@
 [ext_resource type="AudioStream" uid="uid://bcrhovlr0aoqy" path="res://sounds/victory_intermission.mp3" id="15_ycayi"]
 
 [node name="spooky_intermission" type="Node2D" unique_id=2063433828]
-position = Vector2(2, -1)
 script = ExtResource("1_eobq4")
 
 [node name="Background" type="TextureRect" parent="." unique_id=508519362]
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.6000162, 0.6000356)
-texture = ExtResource("2_v62to")
+texture = ExtResource("2_eobq4")
 
 [node name="HeartContainer" type="HBoxContainer" parent="." unique_id=1873210527]
 offset_left = 80.0

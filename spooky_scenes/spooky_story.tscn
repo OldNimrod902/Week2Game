@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://26ypjf33vgeq"]
 
 [ext_resource type="Script" uid="uid://ibwpro8ljs2d" path="res://spooky_scenes/spooky_story.gd" id="1_di7bo"]
-[ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_hgps6"]
+[ext_resource type="Texture2D" uid="uid://ca3ehbpfssm1q" path="res://assets/background_spooky_menu.png" id="2_hgps6"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="3_uqwfm"]
 
 [node name="spooky_story" type="Node2D" unique_id=1753656532]
@@ -11,7 +11,7 @@ script = ExtResource("1_di7bo")
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.5999985, 0.60000694)
-texture = ExtResource("1_hgps6")
+texture = ExtResource("2_hgps6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=606392497]
 offset_left = 92.0
@@ -57,4 +57,14 @@ theme_override_font_sizes/font_size = 24
 text = "I DON'T WANT TO READ ALL THAT
 LET'S GET TRICK-OR-TREATIN'"
 
+[node name="Back_button" type="Button" parent="." unique_id=425884493]
+offset_left = 33.0
+offset_top = 578.0
+offset_right = 139.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("3_uqwfm")
+theme_override_font_sizes/font_size = 24
+text = "BACK"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Back_button" to="." method="_on_back_button_pressed"]
