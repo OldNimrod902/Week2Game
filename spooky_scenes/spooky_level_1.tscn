@@ -417,12 +417,12 @@ scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("2_r1t00")
 metadata/_edit_use_anchors_ = true
 
-[node name="ScrollingBackgroundNature2" type="Parallax2D" parent="." unique_id=2060241193]
+[node name="ScrollingBackgroundDirt" type="Parallax2D" parent="." unique_id=2060241193]
 scroll_offset = Vector2(0, 654)
 repeat_size = Vector2(1152, 0)
 repeat_times = 7
 
-[node name="Background" type="TextureRect" parent="ScrollingBackgroundNature2" unique_id=777784181]
+[node name="Background" type="TextureRect" parent="ScrollingBackgroundDirt" unique_id=777784181]
 offset_top = -10.0
 offset_right = 1920.0
 offset_bottom = 1070.0

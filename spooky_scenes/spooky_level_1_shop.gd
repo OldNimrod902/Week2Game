@@ -6,13 +6,23 @@ extends Node2D
 @onready var button = $CookieButton
 
 var button_not_yet_pressed = true
+var timer_end = false
 
 func _ready() -> void:
 	cookie_notice.hide()
 	button.hide()
+	await themed_timer.Timer(20.0) 
+	timer_end = true 
 
 func _process(delta: float) -> void:
 	coin_counter.text=str(Global.spooky_coins) + "/5"
+	if timer_end:
+		Global.spooky_levels_done -=1
+		Global.lives -=1
+		Global.intermission_message = "You were so slow that the shop closed"
+		Global.death_cause = "time"
+		Global.spooky_coins = 0
+		get_tree().change_scene_to_file("res://spooky_scenes/spooky_intermission.tscn")
 
 func _on_got_close_to_vending_machine() -> void:
 	if button_not_yet_pressed:

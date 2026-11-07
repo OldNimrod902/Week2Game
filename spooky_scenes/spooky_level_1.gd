@@ -10,7 +10,7 @@ var timer_end = false
 func _ready() -> void:
 	poor_warning.hide()
 	heart_message.hide()
-	await themed_timer.Timer(100.0) 
+	await themed_timer.Timer(80.0) 
 	timer_end = true 
 
 func _process(delta: float) -> void:
