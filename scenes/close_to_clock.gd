@@ -14,4 +14,3 @@ func _process(delta: float) -> void:
 	if entered_area and not player_area.overlaps_area(self_area):
 		emit_signal("got_away_from_clock")
 		entered_area = false
-	

@@ -228,6 +228,7 @@ offset_top = 449.0
 offset_right = 730.0
 offset_bottom = 545.00256
 texture = SubResource("CompressedTexture2D_6n0yg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="MapPiece1" unique_id=350741965]
 position = Vector2(684, 511)
@@ -305,7 +306,7 @@ stream = ExtResource("14_2gcu5")
 libraries/ = SubResource("AnimationLibrary_j1cg4")
 autoplay = &"RESET"
 
-[connection signal="mappiece_collected" from="MapPiece1" to="." method="piece_collect"]
-[connection signal="mappiece_collected" from="MapPiece2" to="." method="piece_collect"]
-[connection signal="mappiece_collected" from="MapPiece3" to="." method="piece_collect"]
+[connection signal="mappiece_collected" from="MapPiece1" to="." method="_on_piece_collect"]
+[connection signal="mappiece_collected" from="MapPiece2" to="." method="_on_piece_collect"]
+[connection signal="mappiece_collected" from="MapPiece3" to="." method="_on_piece_collect"]
 [connection signal="fallen_out" from="outside_the_box" to="." method="_on_player_fallen_out"]

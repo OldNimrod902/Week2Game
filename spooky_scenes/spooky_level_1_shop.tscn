@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://cp6rw0wgqlcu8"]
+
+[ext_resource type="Texture2D" uid="uid://cwy0h4b0qk4bu" path="res://assets/shop_background.png" id="1_3osic"]
+[ext_resource type="Script" uid="uid://dbt7ii7yh1513" path="res://spooky_scenes/spooky_level_1_shop.gd" id="1_k6nxy"]
+[ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="2_fn1aw"]
+[ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="3_k6nxy"]
+[ext_resource type="Texture2D" uid="uid://cd1wq6aj5ojjp" path="res://assets/coin.png" id="4_xntpt"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="5_2oulj"]
+[ext_resource type="Script" uid="uid://bnx0oj5y7htko" path="res://spooky_scenes/close_to_vm.gd" id="7_k6nxy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3txbb"]
+size = Vector2(45.42784, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keb6w"]
+size = Vector2(2.1966705, 243.57152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf4yq"]
+size = Vector2(256, 214)
+
+[node name="spooky_level_1_shop" type="Node2D" unique_id=385678674]
+script = ExtResource("1_k6nxy")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1679796674]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_3osic")
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." unique_id=599305279 instance=ExtResource("2_fn1aw")]
+position = Vector2(97, 547)
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=1804781043]
+position = Vector2(-29.000002, 605)
+scale = Vector2(31.319996, 2.799999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=459785796]
+position = Vector2(17.286077, 20.000015)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_3txbb")
+
+[node name="wall2" type="StaticBody2D" parent="." unique_id=1511255332]
+position = Vector2(-29.000002, 605)
+scale = Vector2(31.319996, 2.799999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=183457414]
+position = Vector2(38.90166, -81.785736)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_keb6w")
+
+[node name="wall1" type="StaticBody2D" parent="." unique_id=406898527]
+position = Vector2(-1378.9999, 587)
+scale = Vector2(31.319996, 2.799999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=1901836940]
+position = Vector2(42.911877, -86.785736)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_keb6w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=557310767]
+
+[node name="timer" parent="CanvasLayer" unique_id=2075219886 instance=ExtResource("3_k6nxy")]
+position = Vector2(78, 51)
+
+[node name="quest_text" type="RichTextLabel" parent="CanvasLayer" unique_id=695526045]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 568.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Buy a cookie using your coins"
+
+[node name="CoinIcon" type="TextureRect" parent="CanvasLayer" unique_id=743474168]
+offset_left = 963.0
+offset_top = 54.0
+offset_right = 1123.0
+offset_bottom = 214.0
+scale = Vector2(0.300313, 0.30013674)
+texture = ExtResource("4_xntpt")
+
+[node name="CoinCounter" type="RichTextLabel" parent="CanvasLayer" unique_id=1918441335]
+offset_left = 1035.0
+offset_top = 60.0
+offset_right = 1100.0
+offset_bottom = 96.0
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("5_2oulj")
+theme_override_font_sizes/normal_font_size = 31
+text = "0/5"
+
+[node name="CookieNotice" type="RichTextLabel" parent="CanvasLayer" unique_id=2126297036]
+offset_left = 332.0
+offset_top = 196.0
+offset_right = 800.0
+offset_bottom = 303.0
+theme_override_colors/default_color = Color(1.4439225e-06, 0.71749973, 0.75178134, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("5_2oulj")
+theme_override_font_sizes/normal_font_size = 36
+text = "YOU FOUND A COOKIE!"
+horizontal_alignment = 1
+
+[node name="CookieButton" type="Button" parent="." unique_id=995519334]
+offset_left = 552.0
+offset_top = 395.0
+offset_right = 666.0
+offset_bottom = 427.0
+theme_override_colors/font_color = Color(0, 0.3656663, 0.46959245, 1)
+theme_override_colors/font_hover_color = Color(0.74616724, 0.95040196, 0.99999994, 1)
+theme_override_colors/font_outline_color = Color(0.8408312, 0.99999994, 0.9506677, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2oulj")
+theme_override_font_sizes/font_size = 22
+text = "BUY COOKIE"
+
+[node name="CloseToVM" type="Area2D" parent="." unique_id=1741990235]
+position = Vector2(640, 387)
+script = ExtResource("7_k6nxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloseToVM" unique_id=1113508013]
+position = Vector2(128, 97)
+shape = SubResource("RectangleShape2D_kf4yq")
+
+[connection signal="pressed" from="CookieButton" to="." method="_on_cookie_button_pressed"]
+[connection signal="got_away_from_vending_machine" from="CloseToVM" to="." method="_on_got_away_from_vending_machine"]
+[connection signal="got_close_to_vending_machine" from="CloseToVM" to="." method="_on_got_close_to_vending_machine"]

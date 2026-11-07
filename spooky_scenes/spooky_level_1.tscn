@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="6_mqslf"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="7_1cqkh"]
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="7_lb26f"]
-[ext_resource type="Script" uid="uid://0vuxe626j7he" path="res://mappiece.gd" id="8_dqg45"]
+[ext_resource type="Script" uid="uid://bcgnehfileahx" path="res://spooky_scenes/coin.gd" id="8_km3pl"]
 [ext_resource type="Texture2D" uid="uid://cinyh4l4rtoi1" path="res://assets/coin_spooky.png" id="9_3msfp"]
 [ext_resource type="Texture2D" uid="uid://cd1wq6aj5ojjp" path="res://assets/coin.png" id="11_rusvr"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="12_mqslf"]
@@ -721,7 +721,7 @@ shape = SubResource("RectangleShape2D_cow3w")
 
 [node name="Coin1" type="Node2D" parent="." unique_id=790222325]
 position = Vector2(-1483, -31)
-script = ExtResource("8_dqg45")
+script = ExtResource("8_km3pl")
 
 [node name="Coin" type="TextureRect" parent="Coin1" unique_id=1465273210]
 offset_left = 640.0
@@ -738,7 +738,7 @@ shape = SubResource("CircleShape2D_i8j6e")
 
 [node name="Coin2" type="Node2D" parent="." unique_id=779628529]
 position = Vector2(1033, -250)
-script = ExtResource("8_dqg45")
+script = ExtResource("8_km3pl")
 
 [node name="Coin" type="TextureRect" parent="Coin2" unique_id=1750345162]
 offset_left = 640.0
@@ -755,7 +755,7 @@ shape = SubResource("CircleShape2D_i8j6e")
 
 [node name="Coin3" type="Node2D" parent="." unique_id=171281921]
 position = Vector2(-353, -695)
-script = ExtResource("8_dqg45")
+script = ExtResource("8_km3pl")
 
 [node name="Coin" type="TextureRect" parent="Coin3" unique_id=1083280267]
 offset_left = 640.0
@@ -772,7 +772,7 @@ shape = SubResource("CircleShape2D_i8j6e")
 
 [node name="Coin4" type="Node2D" parent="." unique_id=1868981619]
 position = Vector2(1418, -551)
-script = ExtResource("8_dqg45")
+script = ExtResource("8_km3pl")
 
 [node name="Coin" type="TextureRect" parent="Coin4" unique_id=1223610298]
 offset_left = 640.0
@@ -789,7 +789,7 @@ shape = SubResource("CircleShape2D_i8j6e")
 
 [node name="Coin5" type="Node2D" parent="." unique_id=792870218]
 position = Vector2(3542, -36)
-script = ExtResource("8_dqg45")
+script = ExtResource("8_km3pl")
 
 [node name="Coin" type="TextureRect" parent="Coin5" unique_id=411756407]
 offset_left = 640.0
@@ -803,39 +803,6 @@ position = Vector2(684, 511)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin5/Area2D" unique_id=490851950]
 shape = SubResource("CircleShape2D_i8j6e")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1209929739]
-
-[node name="timer" parent="CanvasLayer" unique_id=2075219886 instance=ExtResource("7_1cqkh")]
-position = Vector2(78, 51)
-
-[node name="quest_text" type="RichTextLabel" parent="CanvasLayer" unique_id=752666460]
-offset_left = 76.0
-offset_top = 98.0
-offset_right = 568.0
-offset_bottom = 163.0
-theme_override_colors/default_color = Color(1, 1, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 16
-text = "Collect 5 coins to purchase the first cookie"
-
-[node name="CoinIcon" type="TextureRect" parent="CanvasLayer" unique_id=1341227953]
-offset_left = 963.0
-offset_top = 54.0
-offset_right = 1123.0
-offset_bottom = 214.0
-scale = Vector2(0.300313, 0.30013674)
-texture = ExtResource("11_rusvr")
-
-[node name="CoinCounter" type="RichTextLabel" parent="CanvasLayer" unique_id=1873804018]
-offset_left = 1035.0
-offset_top = 60.0
-offset_right = 1100.0
-offset_bottom = 96.0
-theme_override_constants/outline_size = 7
-theme_override_fonts/normal_font = ExtResource("12_mqslf")
-theme_override_font_sizes/normal_font_size = 31
-text = "0/5"
 
 [node name="AudioCollect" type="AudioStreamPlayer" parent="." unique_id=1974320823]
 stream = ExtResource("13_3msfp")
@@ -1106,6 +1073,50 @@ drag_bottom_margin = 0.0
 root_node = NodePath("../Coin1")
 libraries/ = SubResource("AnimationLibrary_4pspp")
 autoplay = &"coin flying"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1209929739]
+
+[node name="timer" parent="CanvasLayer" unique_id=2075219886 instance=ExtResource("7_1cqkh")]
+position = Vector2(78, 51)
+
+[node name="quest_text" type="RichTextLabel" parent="CanvasLayer" unique_id=752666460]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 568.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Collect 5 coins to purchase the first cookie"
+
+[node name="CoinIcon" type="TextureRect" parent="CanvasLayer" unique_id=1341227953]
+offset_left = 963.0
+offset_top = 54.0
+offset_right = 1123.0
+offset_bottom = 214.0
+scale = Vector2(0.300313, 0.30013674)
+texture = ExtResource("11_rusvr")
+
+[node name="CoinCounter" type="RichTextLabel" parent="CanvasLayer" unique_id=1873804018]
+offset_left = 1035.0
+offset_top = 60.0
+offset_right = 1100.0
+offset_bottom = 96.0
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("12_mqslf")
+theme_override_font_sizes/normal_font_size = 31
+text = "0/5"
+
+[node name="PoorWarning" type="RichTextLabel" parent="CanvasLayer" unique_id=459037804]
+offset_left = 332.0
+offset_top = 196.0
+offset_right = 800.0
+offset_bottom = 303.0
+theme_override_colors/default_color = Color(1, 0.42491135, 0.31686577, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("12_mqslf")
+theme_override_font_sizes/normal_font_size = 36
+text = "YOU ARE TOO POOR TO ENTER THE SHOP"
 
 [connection signal="fallen_out" from="outside_the_box" to="." method="_on_outside_the_box_fallen_out"]
 [connection signal="coin_collected" from="Coin1" to="." method="_on_coin_collected"]

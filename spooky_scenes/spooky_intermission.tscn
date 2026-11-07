@@ -27,9 +27,9 @@ texture = ExtResource("2_eobq4")
 
 [node name="HeartContainer" type="HBoxContainer" parent="." unique_id=1873210527]
 offset_left = 80.0
-offset_top = 184.0
-offset_right = 1146.0
-offset_bottom = 394.0
+offset_top = 205.0
+offset_right = 1670.0
+offset_bottom = 415.0
 scale = Vector2(0.4158402, 0.4158047)
 theme_override_constants/separation = 20
 

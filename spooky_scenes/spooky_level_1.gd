@@ -2,10 +2,12 @@ extends Node2D
 @onready var themed_timer: Node2D = $"CanvasLayer/timer" 
 @onready var coin_counter = $"CanvasLayer/CoinCounter"
 @onready var coin_collect_audio = $AudioCollect
+@onready var poor_warning = $"CanvasLayer/PoorWarning"
 
 var timer_end = false
 
 func _ready() -> void:
+	poor_warning.hide()
 	await themed_timer.Timer(100.0) 
 	timer_end = true 
 
@@ -53,4 +55,12 @@ func _on_trap_entered() -> void:
 
 
 func _on_touched_door() -> void:
-	pass # Replace with function body.
+	if Global.spooky_coins == 5:
+		get_tree().change_scene_to_file("res://spooky_scenes/spooky_level_1_shop.tscn")
+	else:
+		poor_warning.show()
+		await wait(3)
+		poor_warning.hide()
+
+func wait(seconds: float) -> void: 
+	await get_tree().create_timer(seconds).timeout 

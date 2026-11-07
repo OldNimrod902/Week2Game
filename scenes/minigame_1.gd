@@ -24,12 +24,6 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://scenes/level_scene.tscn") # back to intermission
 		
 
-func piece_collect() -> void:
-	collect_sound.play()
-	piece_collected = piece_collected +1
-	return
-
-
 func _on_player_fallen_out() -> void:
 	Global.minigames_done -=1
 	Global.lives -=1
@@ -39,3 +33,10 @@ func _on_player_fallen_out() -> void:
 	
 func wait(seconds: float) -> void: 
 	await get_tree().create_timer(seconds).timeout
+
+
+
+func _on_piece_collect() -> void:
+	collect_sound.play()
+	piece_collected = piece_collected +1
+	return
