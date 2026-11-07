@@ -29,6 +29,7 @@ func _on_cookie_button_pressed() -> void:
 	Global.spooky_coins=0
 	cookie_notice.show()
 	await wait(3.0)
+	Global.spooky_cookies += 1
 	Global.intermission_message = "That's an expensive one"
 	get_tree().change_scene_to_file("res://spooky_scenes/spooky_intermission.tscn")
 	

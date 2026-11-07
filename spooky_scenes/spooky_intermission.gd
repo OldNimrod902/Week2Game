@@ -7,6 +7,13 @@ extends Node2D
 @onready var heart_5: TextureRect = $HeartContainer/Heart5
 @onready var heart_debug: TextureRect = $HeartContainer/HeartDebug
 @onready var heart_none: TextureRect = $HeartContainer/HeartNone
+@onready var cookie_1: TextureRect = $"CookieContainer/Cookie1"
+@onready var cookie_2: TextureRect = $"CookieContainer/Cookie2"
+@onready var cookie_3: TextureRect = $"CookieContainer/Cookie3"
+@onready var no_cookie_1: TextureRect = $"CookieContainer/NoCookie1"
+@onready var no_cookie_2: TextureRect = $"CookieContainer/NoCookie2"
+@onready var no_cookie_3: TextureRect = $"CookieContainer/NoCookie3"
+
 @onready var mouse: TextureRect = $mouse
 @onready var keyboard: TextureRect = $keyboard
 @onready var level: RichTextLabel = $Level
@@ -36,6 +43,9 @@ func _ready() -> void:
 	
 	heart_debug.hide()
 	heart_none.hide()
+	no_cookie_1.hide()
+	no_cookie_2.hide()
+	no_cookie_3.hide()
 	keyboard.hide()
 	mouse.hide()
 	message.text = str(Global.intermission_message)
@@ -74,7 +84,6 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://spooky_scenes/done_screen.tscn") 
 
 func _process(delta: float) -> void:
-	
 	if Global.lives==4:
 		heart.hide()
 	elif Global.lives==3:
@@ -99,6 +108,22 @@ func _process(delta: float) -> void:
 	elif Global.lives > 5:
 		heart_debug.show()
 	
+	if Global.spooky_cookies == 0:
+		cookie_1.hide()
+		cookie_2.hide()
+		cookie_3.hide()
+		no_cookie_1.show()
+		no_cookie_2.show()
+		no_cookie_3.show()
+	elif Global.spooky_cookies == 1:
+		cookie_1.hide()
+		cookie_2.hide()
+		no_cookie_1.show()
+		no_cookie_2.show()
+	elif Global.spooky_cookies == 2:
+		cookie_1.hide()
+		no_cookie_1.show()
+	
 	if Global.minigames_done<8:
 		if Global.lives>0:
 			timer.text = "Starting in " + str(time) 
@@ -107,7 +132,7 @@ func _process(delta: float) -> void:
 		level.text = "SPOOKIE LEVEL " + str(Global.spooky_levels_done+1) 
 	else:
 		level.text = " "
-		timer.text= "Compliment coming in " + str(time)
+		timer.text= "Finish your duty in " + str(time)
 
 func Timer(start_time: float): 
 	

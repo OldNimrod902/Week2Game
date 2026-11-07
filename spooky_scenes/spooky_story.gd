@@ -15,6 +15,7 @@ func _on_button_pressed() -> void:
 	Global.total_time = 0
 	Global.game_finished = false
 	Global.spooky_coins = 0
+	Global.spooky_cookies = 0
 	get_tree().change_scene_to_file("res://spooky_scenes/spooky_intermission.tscn")
 
 

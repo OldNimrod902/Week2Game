@@ -10,6 +10,7 @@ var game_finished = false
 var death_cause = "none"
 
 var spooky_coins = 0
+var spooky_cookies = 0
 var spooky_levels_done = 0
 
 func _ready() -> void:
