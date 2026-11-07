@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="7_lb26f"]
 [ext_resource type="Script" uid="uid://bcgnehfileahx" path="res://spooky_scenes/coin.gd" id="8_km3pl"]
 [ext_resource type="Texture2D" uid="uid://cinyh4l4rtoi1" path="res://assets/coin_spooky.png" id="9_3msfp"]
+[ext_resource type="Script" uid="uid://dh1qsyoaicrn1" path="res://spooky_scenes/heart.gd" id="10_jrvkb"]
+[ext_resource type="Texture2D" uid="uid://ce805tjq16jcs" path="res://assets/heart.png" id="11_lelfy"]
 [ext_resource type="Texture2D" uid="uid://cd1wq6aj5ojjp" path="res://assets/coin.png" id="11_rusvr"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="12_mqslf"]
 [ext_resource type="AudioStream" uid="uid://bqhdc6rpe5fj3" path="res://sounds/coin_collect.mp3" id="13_3msfp"]
@@ -804,6 +806,24 @@ position = Vector2(684, 511)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin5/Area2D" unique_id=490851950]
 shape = SubResource("CircleShape2D_i8j6e")
 
+[node name="Heart" type="Node2D" parent="." unique_id=848455485]
+position = Vector2(4760, -42)
+script = ExtResource("10_jrvkb")
+
+[node name="Heart" type="TextureRect" parent="Heart" unique_id=986523674]
+offset_left = 653.0
+offset_top = 481.0
+offset_right = 863.0
+offset_bottom = 691.0
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("11_lelfy")
+
+[node name="Area2D" type="Area2D" parent="Heart" unique_id=860843719]
+position = Vector2(684, 511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart/Area2D" unique_id=732519325]
+shape = SubResource("CircleShape2D_i8j6e")
+
 [node name="AudioCollect" type="AudioStreamPlayer" parent="." unique_id=1974320823]
 stream = ExtResource("13_3msfp")
 
@@ -1117,6 +1137,20 @@ theme_override_constants/outline_size = 7
 theme_override_fonts/normal_font = ExtResource("12_mqslf")
 theme_override_font_sizes/normal_font_size = 36
 text = "YOU ARE TOO POOR TO ENTER THE SHOP"
+horizontal_alignment = 1
+
+[node name="HeartMessage" type="RichTextLabel" parent="CanvasLayer" unique_id=1050689324]
+offset_left = 332.0
+offset_top = 244.0
+offset_right = 800.0
+offset_bottom = 351.0
+theme_override_colors/default_color = Color(0.8165249, 0.8917776, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("12_mqslf")
+theme_override_font_sizes/normal_font_size = 36
+text = "YOU FOUND A HEART!
+YOU NOW HAVE 0 LIVES"
+horizontal_alignment = 1
 
 [connection signal="fallen_out" from="outside_the_box" to="." method="_on_outside_the_box_fallen_out"]
 [connection signal="coin_collected" from="Coin1" to="." method="_on_coin_collected"]
@@ -1124,6 +1158,7 @@ text = "YOU ARE TOO POOR TO ENTER THE SHOP"
 [connection signal="coin_collected" from="Coin3" to="." method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin4" to="." method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coin5" to="." method="_on_coin_collected"]
+[connection signal="heart_collected" from="Heart" to="." method="_on_heart_collected"]
 [connection signal="touched_enemy" from="enemy1" to="." method="_on_touched_enemy"]
 [connection signal="touched_enemy" from="enemy2" to="." method="_on_touched_enemy"]
 [connection signal="touched_enemy" from="enemy3" to="." method="_on_touched_enemy"]

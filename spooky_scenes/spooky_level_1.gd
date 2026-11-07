@@ -3,11 +3,13 @@ extends Node2D
 @onready var coin_counter = $"CanvasLayer/CoinCounter"
 @onready var coin_collect_audio = $AudioCollect
 @onready var poor_warning = $"CanvasLayer/PoorWarning"
+@onready var heart_message = $"CanvasLayer/HeartMessage"
 
 var timer_end = false
 
 func _ready() -> void:
 	poor_warning.hide()
+	heart_message.hide()
 	await themed_timer.Timer(100.0) 
 	timer_end = true 
 
@@ -64,3 +66,11 @@ func _on_touched_door() -> void:
 
 func wait(seconds: float) -> void: 
 	await get_tree().create_timer(seconds).timeout 
+
+func _on_heart_collected() -> void:
+	Global.lives += 1
+	heart_message.text="YOU FOUND A HEART!\nYOU NOW HAVE " + str(Global.lives) + " LIVES"
+	heart_message.show()
+	await wait(3)
+	heart_message.hide()
+	
