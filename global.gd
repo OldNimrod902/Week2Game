@@ -13,6 +13,8 @@ var spooky_record_time = 100000
 var spooky_coins = 0
 var spooky_cookies = 0
 var spooky_levels_done = 0
+var spooky_speed_modifier = 0
+var spooky_modified_speed = false
 
 func _ready() -> void:
 	while true:

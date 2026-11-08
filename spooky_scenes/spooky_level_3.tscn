@@ -1,0 +1,517 @@
+[gd_scene format=3 uid="uid://btwdaj7txyixp"]
+
+[ext_resource type="Script" uid="uid://1t0rqdarc6ha" path="res://spooky_scenes/spooky_level_3.gd" id="1_1jher"]
+[ext_resource type="Texture2D" uid="uid://ctim31ndgy87h" path="res://assets/spooky_city_background.png" id="1_7sp80"]
+[ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="2_et26d"]
+[ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_1ejl6"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="5_s3jyo"]
+[ext_resource type="Script" uid="uid://dx1odb0iol3oe" path="res://scenes/spike.gd" id="6_e37vc"]
+[ext_resource type="Texture2D" uid="uid://ce4kd0ak8j4ba" path="res://assets/spikes.png" id="7_47fee"]
+[ext_resource type="Texture2D" uid="uid://cevg6j3xobbfo" path="res://assets/spikes_wooden.png" id="8_00tyf"]
+[ext_resource type="Texture2D" uid="uid://jbmkwnchxyrf" path="res://assets/bear_trap.png" id="9_osd4c"]
+[ext_resource type="Script" uid="uid://bsgs0dfmnoymm" path="res://spooky_scenes/cookie_pickup.gd" id="10_gn8eh"]
+[ext_resource type="Texture2D" uid="uid://d37biocb05sg" path="res://assets/cookie.png" id="11_urqtw"]
+[ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="12_osd4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et26d"]
+size = Vector2(624.8982, 33.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kmw0"]
+size = Vector2(69, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jw6vp"]
+radius = 40.012497
+
+[sub_resource type="Animation" id="Animation_0gkkb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(633, 460)]
+}
+
+[sub_resource type="Animation" id="Animation_xjd2l"]
+resource_name = "floating"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coin:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(633, 460), Vector2(633, 430.00003)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4d63"]
+_data = {
+&"RESET": SubResource("Animation_0gkkb"),
+&"floating": SubResource("Animation_xjd2l")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn8eh"]
+size = Vector2(10221, 142)
+
+[node name="spooky_level_3" type="Node2D" unique_id=1820416240]
+script = ExtResource("1_1jher")
+
+[node name="ScrollingBackgroundNature" type="Parallax2D" parent="." unique_id=1040087975]
+repeat_size = Vector2(1152, 0)
+repeat_times = 17
+
+[node name="Background" type="TextureRect" parent="ScrollingBackgroundNature" unique_id=1253704920]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_7sp80")
+metadata/_edit_use_anchors_ = true
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=804045288]
+position = Vector2(-3449, 600)
+scale = Vector2(24.519997, 2.799999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=1245025316]
+position = Vector2(310.83813, 17.857147)
+shape = SubResource("RectangleShape2D_et26d")
+
+[node name="Player" parent="." unique_id=599305279 instance=ExtResource("2_et26d")]
+position = Vector2(-3131, 534)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=569860998]
+position = Vector2(252, -211)
+zoom = Vector2(1.06, 1.06)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.74
+drag_top_margin = 1.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1741379]
+
+[node name="timer" parent="CanvasLayer" unique_id=2075219886 instance=ExtResource("4_1ejl6")]
+position = Vector2(78, 51)
+
+[node name="quest_text" type="RichTextLabel" parent="CanvasLayer" unique_id=1517588379]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 370.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "JUMP! And catch the cookie!"
+
+[node name="CookieNotice" type="RichTextLabel" parent="CanvasLayer" unique_id=832096858]
+offset_left = 332.0
+offset_top = 196.0
+offset_right = 800.0
+offset_bottom = 303.0
+theme_override_colors/default_color = Color(1.4439225e-06, 0.71749973, 0.75178134, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("5_s3jyo")
+theme_override_font_sizes/normal_font_size = 36
+text = "YOU FOUND A COOKIE!"
+horizontal_alignment = 1
+
+[node name="spike" type="Node2D" parent="." unique_id=939796574]
+position = Vector2(-2672, 563)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike" unique_id=402884610]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("7_47fee")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike" unique_id=1990607545]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike/Area2D" unique_id=1014561072]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike2" type="Node2D" parent="." unique_id=1919706426]
+position = Vector2(-2151, 554)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike2" unique_id=1473321801]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("8_00tyf")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike2" unique_id=1528854256]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike2/Area2D" unique_id=503369113]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike3" type="Node2D" parent="." unique_id=456212253]
+position = Vector2(-1363, 559)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike3" unique_id=758214364]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("9_osd4c")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike3" unique_id=1820904925]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike3/Area2D" unique_id=84521519]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike4" type="Node2D" parent="." unique_id=263721881]
+position = Vector2(-859, 557)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike4" unique_id=1250804363]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("7_47fee")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike4" unique_id=47740303]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike4/Area2D" unique_id=929374156]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike5" type="Node2D" parent="." unique_id=2085895963]
+position = Vector2(-709, 548)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike5" unique_id=2055467776]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("7_47fee")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike5" unique_id=191474803]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike5/Area2D" unique_id=1896642382]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike6" type="Node2D" parent="." unique_id=1737973285]
+position = Vector2(-113, 557)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike6" unique_id=1862321596]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("8_00tyf")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike6" unique_id=1895825270]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike6/Area2D" unique_id=1664257064]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike7" type="Node2D" parent="." unique_id=28445517]
+position = Vector2(544, 549)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike7" unique_id=322253504]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("9_osd4c")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike7" unique_id=769605052]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike7/Area2D" unique_id=13853538]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike8" type="Node2D" parent="." unique_id=1211090358]
+position = Vector2(870, 547)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike8" unique_id=1528572950]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("7_47fee")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike8" unique_id=868633620]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike8/Area2D" unique_id=827561712]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike9" type="Node2D" parent="." unique_id=1200206194]
+position = Vector2(1514, 549)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike9" unique_id=1435677286]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("9_osd4c")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike9" unique_id=1096715676]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike9/Area2D" unique_id=1207848862]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike10" type="Node2D" parent="." unique_id=595450908]
+position = Vector2(2231, 547)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike10" unique_id=471272947]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("8_00tyf")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike10" unique_id=591573908]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike10/Area2D" unique_id=392159272]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike11" type="Node2D" parent="." unique_id=750675451]
+position = Vector2(2782, 539)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike11" unique_id=2088028255]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("8_00tyf")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike11" unique_id=915088750]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike11/Area2D" unique_id=1394161974]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike12" type="Node2D" parent="." unique_id=1570922548]
+position = Vector2(3334, 550)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike12" unique_id=855379686]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("9_osd4c")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike12" unique_id=37086362]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike12/Area2D" unique_id=1832039128]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike13" type="Node2D" parent="." unique_id=1899587632]
+position = Vector2(4294, 559)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike13" unique_id=220480342]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("7_47fee")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike13" unique_id=960261094]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike13/Area2D" unique_id=389003093]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike14" type="Node2D" parent="." unique_id=1104734891]
+position = Vector2(5184, 540)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike14" unique_id=340494028]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("9_osd4c")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike14" unique_id=1527443201]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike14/Area2D" unique_id=2090715043]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike15" type="Node2D" parent="." unique_id=1832919544]
+position = Vector2(5664, 554)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike15" unique_id=1042225529]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("8_00tyf")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike15" unique_id=221547986]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike15/Area2D" unique_id=318957823]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike16" type="Node2D" parent="." unique_id=1742092742]
+position = Vector2(5777, 560)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike16" unique_id=2078481850]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("8_00tyf")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike16" unique_id=1172728150]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike16/Area2D" unique_id=2093631265]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike17" type="Node2D" parent="." unique_id=1374097450]
+position = Vector2(6343, 547)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike17" unique_id=429053987]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("7_47fee")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike17" unique_id=270268785]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike17/Area2D" unique_id=892646481]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike18" type="Node2D" parent="." unique_id=1497112390]
+position = Vector2(6883, 556)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike18" unique_id=500045147]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("9_osd4c")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike18" unique_id=1795317964]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike18/Area2D" unique_id=903046568]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike19" type="Node2D" parent="." unique_id=702239044]
+position = Vector2(7248, 465)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike19" unique_id=1365356855]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("7_47fee")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike19" unique_id=2144023837]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike19/Area2D" unique_id=1581159716]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike20" type="Node2D" parent="." unique_id=608225941]
+position = Vector2(7588, 556)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike20" unique_id=224776017]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("9_osd4c")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike20" unique_id=2008562058]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike20/Area2D" unique_id=2034330273]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="spike21" type="Node2D" parent="." unique_id=995618068]
+position = Vector2(8153, 556)
+script = ExtResource("6_e37vc")
+
+[node name="TextureRect" type="TextureRect" parent="spike21" unique_id=897721257]
+offset_right = 99.0
+offset_bottom = 40.0
+texture = ExtResource("8_00tyf")
+stretch_mode = 1
+
+[node name="Area2D" type="Area2D" parent="spike21" unique_id=1876239847]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike21/Area2D" unique_id=521266599]
+position = Vector2(49.5, 16)
+shape = SubResource("RectangleShape2D_6kmw0")
+
+[node name="Cookie_pickup" type="Node2D" parent="." unique_id=304630484]
+position = Vector2(7941, 28)
+script = ExtResource("10_gn8eh")
+
+[node name="Coin" type="TextureRect" parent="Cookie_pickup" unique_id=1151109908]
+offset_left = 633.0
+offset_top = 460.0
+offset_right = 773.0
+offset_bottom = 600.0001
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("11_urqtw")
+
+[node name="Area2D" type="Area2D" parent="Cookie_pickup" unique_id=1015275546]
+position = Vector2(684, 511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cookie_pickup/Area2D" unique_id=1501938905]
+shape = SubResource("CircleShape2D_jw6vp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cookie_pickup" unique_id=1226652180]
+libraries/ = SubResource("AnimationLibrary_j4d63")
+autoplay = &"floating"
+
+[node name="outside_the_box" type="Area2D" parent="." unique_id=835425923]
+position = Vector2(11732, 882)
+script = ExtResource("12_osd4c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outside_the_box" unique_id=209244776]
+position = Vector2(312.5, 0)
+shape = SubResource("RectangleShape2D_gn8eh")
+
+[connection signal="trap_entered" from="spike" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike2" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike3" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike4" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike5" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike6" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike7" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike8" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike9" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike10" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike11" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike12" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike13" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike14" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike15" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike16" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike17" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike18" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike19" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike20" to="." method="_on_trap_entered"]
+[connection signal="trap_entered" from="spike21" to="." method="_on_trap_entered"]
+[connection signal="cookie_collected" from="Cookie_pickup" to="." method="_on_cookie_collected"]
+[connection signal="fallen_out" from="outside_the_box" to="." method="_on_outside_the_box_fallen_out"]

@@ -100,6 +100,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Quit"
 
+[node name="loader" type="Button" parent="VBoxContainer" unique_id=2058419813]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "load SP3 (DELETE THIS)"
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=97818273]
 offset_left = 85.0
 offset_top = 152.0
@@ -176,3 +181,4 @@ autoplay = &"scaling"
 [connection signal="pressed" from="VBoxContainer/Start_spookie" to="." method="_on_start_spookie_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/loader" to="." method="_on_loader_pressed"]

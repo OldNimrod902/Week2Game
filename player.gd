@@ -19,9 +19,12 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("move_left", "move_right")
 	
-	if direction:
+	if direction and not Global.spooky_modified_speed:
 		body.flip_h = direction < 0
 		velocity.x = direction * SPEED
+	elif Global.spooky_modified_speed:
+		body.flip_h = direction < 0
+		velocity.x = Global.spooky_speed_modifier
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
@@ -29,6 +32,10 @@ func _physics_process(delta: float) -> void:
 		walking_sound.stop()
 		body.play("jumping")
 	elif direction:
+		if not walking_sound.playing:
+			walking_sound.play()
+		body.play("moving")
+	elif Global.spooky_modified_speed:
 		if not walking_sound.playing:
 			walking_sound.play()
 		body.play("moving")
