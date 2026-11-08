@@ -14,6 +14,13 @@ offset_bottom = 1080.0
 scale = Vector2(0.5999985, 0.60000694)
 texture = ExtResource("1_e5oti")
 
+[node name="Background2" type="TextureRect" parent="." unique_id=231351877]
+offset_left = 1127.0001
+offset_right = 3047.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("1_e5oti")
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=881020444]
 offset_left = 216.99997
 offset_top = 64.0

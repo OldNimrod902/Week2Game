@@ -26,6 +26,13 @@ offset_bottom = 1080.0
 scale = Vector2(0.6000162, 0.6000356)
 texture = ExtResource("2_c8xsp")
 
+[node name="Background2" type="TextureRect" parent="." unique_id=1617938274]
+offset_left = 1125.0
+offset_right = 3045.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000162, 0.6000356)
+texture = ExtResource("2_c8xsp")
+
 [node name="HeartContainer" type="HBoxContainer" parent="." unique_id=1873210527]
 offset_left = 80.0
 offset_top = 184.0

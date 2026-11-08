@@ -5,6 +5,84 @@
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="3_yghlq"]
 [ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="4_uqplo"]
 [ext_resource type="AudioStream" uid="uid://bl0vwc1w63irl" path="res://sounds/victory.mp3" id="5_x7jc0"]
+[ext_resource type="Texture2D" uid="uid://d3o885gljxlti" path="res://assets/spooky_ghost.png" id="6_yghlq"]
+[ext_resource type="Texture2D" uid="uid://d37biocb05sg" path="res://assets/cookie.png" id="7_uqplo"]
+
+[sub_resource type="Animation" id="Animation_x7jc0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(786, 257)]
+}
+
+[sub_resource type="Animation" id="Animation_tccow"]
+resource_name = "floating"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(786, 257), Vector2(786, 220)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p38t0"]
+_data = {
+&"RESET": SubResource("Animation_x7jc0"),
+&"floating": SubResource("Animation_tccow")
+}
+
+[sub_resource type="Animation" id="Animation_o18b5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(650, 349)]
+}
+
+[sub_resource type="Animation" id="Animation_3ggco"]
+resource_name = "floating"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(650, 349), Vector2(650, 323)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_862uk"]
+_data = {
+&"RESET": SubResource("Animation_o18b5"),
+&"floating": SubResource("Animation_3ggco")
+}
 
 [node name="done_screen_spooky" type="Node2D" unique_id=461110403]
 script = ExtResource("1_xuv2r")
@@ -14,6 +92,14 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.5999985, 0.60000694)
 texture = ExtResource("2_xuv2r")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=2028606776]
+offset_left = 1149.0
+offset_right = 3069.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("2_xuv2r")
+flip_h = true
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=1992180714]
 clip_contents = false
@@ -43,7 +129,7 @@ clip_contents = false
 offset_left = 100.0
 offset_top = 264.0
 offset_right = 718.81683
-offset_bottom = 458.5105
+offset_bottom = 492.7444
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/normal_font_size = 37
@@ -51,10 +137,10 @@ text = "You found all 3 cookies and gave it to the ghost in 100.00 seconds! (apr
 
 [node name="Record_time" type="RichTextLabel" parent="." unique_id=1366239310]
 clip_contents = false
-offset_left = 100.00001
-offset_top = 406.0
+offset_left = 100.0
+offset_top = 429.0
 offset_right = 963.86206
-offset_bottom = 600.5105
+offset_bottom = 623.5105
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_colors/default_color = Color(9.62615e-07, 0.8748844, 0.59405166, 1)
 theme_override_colors/font_outline_color = Color(0, 0.37630513, 0.28585282, 1)
@@ -82,6 +168,28 @@ text = "QUIT GAME"
 
 [node name="AudioVictory" type="AudioStreamPlayer" parent="." unique_id=390844092]
 stream = ExtResource("5_x7jc0")
+
+[node name="Ghost" type="TextureRect" parent="." unique_id=36564377]
+offset_left = 786.0
+offset_top = 257.0
+offset_right = 1026.0
+offset_bottom = 497.00122
+texture = ExtResource("6_yghlq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ghost" unique_id=493370167]
+libraries/ = SubResource("AnimationLibrary_p38t0")
+autoplay = &"floating"
+
+[node name="Cookie" type="TextureRect" parent="." unique_id=1780762046]
+offset_left = 650.0
+offset_top = 349.0
+offset_right = 790.0
+offset_bottom = 489.0
+texture = ExtResource("7_uqplo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cookie" unique_id=2054992503]
+libraries/ = SubResource("AnimationLibrary_862uk")
+autoplay = &"floating"
 
 [connection signal="pressed" from="HBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]

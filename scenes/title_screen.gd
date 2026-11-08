@@ -25,8 +25,3 @@ func _on_settings_pressed() -> void:
 
 func _on_start_spookie_pressed() -> void:
 	get_tree().change_scene_to_file("res://spooky_scenes/spooky_story.tscn")
-
-
-func _on_loader_pressed() -> void:
-	Global.spooky_levels_done=3
-	get_tree().change_scene_to_file("res://spooky_scenes/spooky_level_3.tscn")

@@ -1,0 +1,278 @@
+[gd_scene format=3 uid="uid://bvnrofe1tcrsm"]
+
+[ext_resource type="Script" uid="uid://bxsubixu1tq8l" path="res://spooky_scenes/spooky_level_4.gd" id="1_1gsfi"]
+[ext_resource type="Texture2D" uid="uid://cr3l4vkeal31l" path="res://assets/spooky_background.png" id="1_rb33h"]
+[ext_resource type="Texture2D" uid="uid://dyqbyytpcf1ne" path="res://assets/spooky_nature.png" id="2_s7bnn"]
+[ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="3_j2r43"]
+[ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="4_1bgrj"]
+[ext_resource type="Texture2D" uid="uid://d3o885gljxlti" path="res://assets/spooky_ghost.png" id="5_0yqr5"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="7_3n7ea"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="8_ue41w"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="9_2uyn0"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="10_ncokw"]
+[ext_resource type="Script" uid="uid://c3y2fteua1e4v" path="res://spooky_scenes/close_to_ghost.gd" id="11_3n7ea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gsfi"]
+size = Vector2(66.76183, 40)
+
+[sub_resource type="Animation" id="Animation_3n7ea"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(856.99994, 368)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2uyn0"]
+resource_name = "flyaway"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(856.99994, 368), Vector2(1213, 368)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ue41w"]
+resource_name = "ghosting"
+length = 3.0000000000000004
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(856.99994, 368), Vector2(857, 342)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2uyn0"]
+_data = {
+&"RESET": SubResource("Animation_3n7ea"),
+&"flyaway": SubResource("Animation_2uyn0"),
+&"ghosting": SubResource("Animation_ue41w")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncokw"]
+size = Vector2(1.2420752, 255.35722)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ww54"]
+size = Vector2(160, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue41w"]
+size = Vector2(256, 214)
+
+[node name="spooky_level_4" type="Node2D" unique_id=1558439704]
+script = ExtResource("1_1gsfi")
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=907532177]
+scroll_offset = Vector2(10592, 0)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 2
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=772650253]
+offset_left = 616.0
+offset_top = -563.0
+offset_right = 2536.0
+offset_bottom = 517.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_rb33h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background2" type="TextureRect" parent="ScrollingBackground" unique_id=1045019004]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_rb33h")
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollingBackgroundNature" type="Parallax2D" parent="." unique_id=966364113]
+repeat_size = Vector2(1152, 0)
+repeat_times = 2
+
+[node name="Background" type="TextureRect" parent="ScrollingBackgroundNature" unique_id=1717517363]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("2_s7bnn")
+metadata/_edit_use_anchors_ = true
+
+[node name="ground2" type="StaticBody2D" parent="." unique_id=340585291]
+position = Vector2(-151, 574)
+scale = Vector2(24.519997, 2.799999)
+
+[node name="TextureRect" type="TextureRect" parent="ground2" unique_id=1724251363]
+offset_right = 2620.738
+offset_bottom = 144.0
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("3_j2r43")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground2" unique_id=1862319454]
+position = Vector2(33.4217, 20.000015)
+shape = SubResource("RectangleShape2D_1gsfi")
+
+[node name="Player" parent="." unique_id=599305279 instance=ExtResource("4_1bgrj")]
+position = Vector2(112, 521)
+
+[node name="Ghost" type="TextureRect" parent="." unique_id=189141150]
+offset_left = 856.99994
+offset_top = 368.0
+offset_right = 1097.0017
+offset_bottom = 608.0001
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("5_0yqr5")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ghost" unique_id=174696248]
+libraries/ = SubResource("AnimationLibrary_2uyn0")
+autoplay = &"ghosting"
+
+[node name="wall1" type="StaticBody2D" parent="." unique_id=782284790]
+position = Vector2(-1378.9999, 587)
+scale = Vector2(31.319996, 2.799999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=484250623]
+position = Vector2(42.961334, -95.178604)
+scale = Vector2(0.9999994, 1)
+shape = SubResource("RectangleShape2D_ncokw")
+
+[node name="wall2" type="StaticBody2D" parent="." unique_id=1047960514]
+position = Vector2(-158.00002, 657)
+scale = Vector2(31.319996, 2.799999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=124528569]
+position = Vector2(42.656456, -130.35718)
+scale = Vector2(0.9999993, 1)
+shape = SubResource("RectangleShape2D_ncokw")
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=245435578]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=41771440]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("7_3n7ea")
+shape = SubResource("RectangleShape2D_8ww54")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1365466141]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("8_ue41w")
+shape = SubResource("RectangleShape2D_8ww54")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1123202388]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("9_2uyn0")
+shape = SubResource("RectangleShape2D_8ww54")
+action = "jump"
+visibility_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=933346390]
+
+[node name="quest_text" type="RichTextLabel" parent="CanvasLayer" unique_id=1258801399]
+offset_left = 76.0
+offset_top = 98.0
+offset_right = 370.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "Give the Cookies to the Ghost"
+
+[node name="thanks_notice" type="RichTextLabel" parent="CanvasLayer" unique_id=617497287]
+offset_left = 332.0
+offset_top = 196.0
+offset_right = 800.0
+offset_bottom = 344.0
+theme_override_colors/default_color = Color(1.4439225e-06, 0.71749973, 0.75178134, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("10_ncokw")
+theme_override_font_sizes/normal_font_size = 36
+text = "THANK YOU!
+I SHALL NOT HAUNT YOU FOR THE NEXT 365 DAYS"
+horizontal_alignment = 1
+
+[node name="CookieButton" type="Button" parent="." unique_id=2054333772]
+offset_left = 597.0
+offset_top = 363.0
+offset_right = 823.0
+offset_bottom = 409.0
+theme_override_colors/font_color = Color(0, 0.3656663, 0.46959245, 1)
+theme_override_colors/font_hover_color = Color(0.74616724, 0.95040196, 0.99999994, 1)
+theme_override_colors/font_outline_color = Color(0.8408312, 0.99999994, 0.9506677, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("10_ncokw")
+theme_override_font_sizes/font_size = 22
+text = "GIVE 3 COOKIES TO GHOST"
+
+[node name="CloseToGhost" type="Area2D" parent="." unique_id=1099031145]
+position = Vector2(640, 387)
+script = ExtResource("11_3n7ea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloseToGhost" unique_id=2097249296]
+position = Vector2(283, 70)
+shape = SubResource("RectangleShape2D_ue41w")
+
+[connection signal="pressed" from="CookieButton" to="." method="_on_cookie_button_pressed"]
+[connection signal="got_away_from_ghost" from="CloseToGhost" to="." method="_on_got_away_from_ghost"]
+[connection signal="got_close_to_ghost" from="CloseToGhost" to="." method="_on_got_close_to_ghost"]

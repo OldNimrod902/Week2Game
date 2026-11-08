@@ -9,8 +9,6 @@
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="6_k5uh5"]
 [ext_resource type="Texture2D" uid="uid://bxm3k7m7jyrl4" path="res://assets/no_cookie.png" id="7_mm8pb"]
 [ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="7_ty5y0"]
-[ext_resource type="Texture2D" uid="uid://640g1q0ev6n6" path="res://assets/kayboard.png" id="8_wsnly"]
-[ext_resource type="Texture2D" uid="uid://dyfh87w0wt48v" path="res://assets/mouse.png" id="9_28rdk"]
 [ext_resource type="AudioStream" uid="uid://luuww3ki23hq" path="res://sounds/spike_death.mp3" id="10_c3yfn"]
 [ext_resource type="AudioStream" uid="uid://58w5dqjxck8t" path="res://sounds/fall_death.mp3" id="11_rp1vx"]
 [ext_resource type="AudioStream" uid="uid://bwcxnm8srn4ji" path="res://sounds/guard_death.mp3" id="12_f1mn5"]
@@ -26,6 +24,14 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.6000162, 0.6000356)
 texture = ExtResource("2_eobq4")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=2051009192]
+offset_left = 1148.0
+offset_right = 3068.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000162, 0.6000356)
+texture = ExtResource("2_eobq4")
+flip_h = true
 
 [node name="HeartContainer" type="HBoxContainer" parent="." unique_id=1873210527]
 offset_left = 80.0
@@ -65,9 +71,9 @@ texture = ExtResource("5_syjsp")
 
 [node name="CookieContainer" type="HBoxContainer" parent="." unique_id=673117270]
 offset_left = 242.99997
-offset_top = 119.000015
+offset_top = 316.0
 offset_right = 1441.0226
-offset_bottom = 259.0
+offset_bottom = 456.0
 scale = Vector2(0.4158402, 0.4158047)
 theme_override_constants/separation = 20
 
@@ -101,23 +107,12 @@ layout_mode = 2
 texture = ExtResource("7_mm8pb")
 stretch_mode = 3
 
-[node name="Level" type="RichTextLabel" parent="." unique_id=26259005]
-clip_contents = false
-offset_left = 83.0
-offset_top = 309.0
-offset_right = 378.0
-offset_bottom = 390.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("6_k5uh5")
-theme_override_font_sizes/normal_font_size = 48
-text = "SPOOKIE LEVEL #"
-
 [node name="CookieText" type="RichTextLabel" parent="." unique_id=585371810]
 clip_contents = false
 offset_left = 83.0
-offset_top = 118.0
+offset_top = 315.0
 offset_right = 237.0
-offset_bottom = 179.0
+offset_bottom = 376.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("6_k5uh5")
 theme_override_font_sizes/normal_font_size = 48
@@ -143,22 +138,6 @@ theme_override_colors/default_color = Color(0.9471993, 0.9471994, 0.9471993, 1)
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/normal_font_size = 22
 text = "You really shouldnt see this piece of text"
-
-[node name="keyboard" type="TextureRect" parent="." unique_id=2101256569]
-offset_left = 457.00003
-offset_top = 317.0
-offset_right = 697.0
-offset_bottom = 557.0
-scale = Vector2(0.60734534, 0.6055661)
-texture = ExtResource("8_wsnly")
-
-[node name="mouse" type="TextureRect" parent="." unique_id=2061676265]
-offset_left = 457.00003
-offset_top = 317.0
-offset_right = 697.0
-offset_bottom = 557.0
-scale = Vector2(0.60734534, 0.6055661)
-texture = ExtResource("9_28rdk")
 
 [node name="spike_sound" type="AudioStreamPlayer" parent="." unique_id=564446786]
 stream = ExtResource("10_c3yfn")

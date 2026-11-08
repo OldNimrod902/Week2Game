@@ -14,9 +14,6 @@ extends Node2D
 @onready var no_cookie_2: TextureRect = $"CookieContainer/NoCookie2"
 @onready var no_cookie_3: TextureRect = $"CookieContainer/NoCookie3"
 
-@onready var mouse: TextureRect = $mouse
-@onready var keyboard: TextureRect = $keyboard
-@onready var level: RichTextLabel = $Level
 @onready var timer: RichTextLabel = $Timer
 @onready var message: RichTextLabel = $Message
 
@@ -28,12 +25,6 @@ extends Node2D
 @onready var victory_sound = $victory_sound
 
 var time
-var controls = {
-	1: 1,
-	2: 1,
-	3: 1,
-	4: 1,
-}
 
 func _ready() -> void:
 	
@@ -42,8 +33,6 @@ func _ready() -> void:
 	no_cookie_1.hide()
 	no_cookie_2.hide()
 	no_cookie_3.hide()
-	keyboard.hide()
-	mouse.hide()
 	message.text = str(Global.intermission_message)
 	
 	if Global.death_cause == "spike":
@@ -65,15 +54,9 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://spooky_scenes/dead_screen_spooky.tscn")
 		return
 	
-	if Global.spooky_levels_done < 8:
-		if controls[Global.spooky_levels_done+1]==1:
-			keyboard.show()
-		else:
-			mouse.show()
-	
 	await Timer(3.0)
 	Global.death_cause = "alive"
-	if Global.spooky_levels_done < 8:
+	if Global.spooky_levels_done < 4:
 		Global.spooky_levels_done = Global.spooky_levels_done +1
 		get_tree().change_scene_to_file("res://spooky_scenes/spooky_level_" + str(Global.spooky_levels_done) + ".tscn")
 	else:
@@ -120,15 +103,15 @@ func _process(delta: float) -> void:
 		cookie_1.hide()
 		no_cookie_1.show()
 	
-	if Global.minigames_done<4:
+	if Global.spooky_levels_done<3:
 		if Global.lives>0:
 			timer.text = "Starting in " + str(time) 
 		else:
 			timer.text = ""
-		level.text = "SPOOKIE LEVEL " + str(Global.spooky_levels_done+1) 
-	else:
-		level.text = " "
+	elif Global.spooky_levels_done == 3:
 		timer.text= "Finish your duty in " + str(time)
+	else:
+		timer.text = "Compliment coming in " + str(time)
 
 func Timer(start_time: float): 
 	

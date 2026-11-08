@@ -41,6 +41,14 @@ scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("1_f4oek")
 metadata/_edit_use_anchors_ = true
 
+[node name="Background2" type="TextureRect" parent="." unique_id=1431902546]
+offset_left = 1140.0
+offset_right = 3060.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_f4oek")
+metadata/_edit_use_anchors_ = true
+
 [node name="platfrom" type="StaticBody2D" parent="." unique_id=2103538946]
 position = Vector2(754, 375)
 scale = Vector2(5.2817883, 1.2911274)

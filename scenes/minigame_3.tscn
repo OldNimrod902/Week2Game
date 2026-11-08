@@ -140,6 +140,7 @@ script = ExtResource("1_yiing")
 [node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=1179922297]
 repeat_size = Vector2(1000, 0)
 autoscroll = Vector2(10, 0)
+repeat_times = 2
 
 [node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=1562765283]
 offset_right = 1920.0
@@ -156,12 +157,22 @@ scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("2_4c0c6")
 metadata/_edit_use_anchors_ = true
 
+[node name="nature2" type="TextureRect" parent="." unique_id=66453487]
+offset_left = 1151.0
+offset_top = -64.0
+offset_right = 3071.0
+offset_bottom = 1016.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("2_4c0c6")
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
 [node name="ground" type="StaticBody2D" parent="." unique_id=110860143]
 position = Vector2(-25, 561.00006)
 scale = Vector2(31.319996, 2.799999)
 
 [node name="TextureRect" type="TextureRect" parent="ground" unique_id=1360275817]
-offset_right = 1574.5039
+offset_right = 2124.3904
 offset_bottom = 144.0
 scale = Vector2(0.02549, 0.27925992)
 texture = ExtResource("4_ybnx4")
@@ -248,11 +259,6 @@ shape = SubResource("RectangleShape2D_yiing")
 [node name="wall2" type="StaticBody2D" parent="." unique_id=1538521970]
 position = Vector2(1166, -41)
 scale = Vector2(1.5999211, 15.889328)
-
-[node name="ColorRect" type="ColorRect" parent="wall2" unique_id=1591024735]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=1076934897]
 position = Vector2(20, 20)

@@ -6,7 +6,15 @@
 [ext_resource type="AudioStream" uid="uid://vbe7l2pc2n13" path="res://sounds/game_over.mp3" id="4_g6ylt"]
 
 [node name="dead_screen" type="Node2D" unique_id=1976498233]
+position = Vector2(0, -1)
 script = ExtResource("1_id3ew")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=142443961]
+offset_left = 1112.0
+offset_right = 3032.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("2_urrme")
 
 [node name="Background" type="TextureRect" parent="." unique_id=424748248]
 offset_right = 1920.0

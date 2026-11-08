@@ -13,6 +13,14 @@ offset_bottom = 1080.0
 scale = Vector2(0.5999985, 0.60000694)
 texture = ExtResource("2_hgps6")
 
+[node name="Background2" type="TextureRect" parent="." unique_id=1029082688]
+offset_left = 1153.0001
+offset_right = 3073.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("2_hgps6")
+flip_h = true
+
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=606392497]
 offset_left = 92.0
 offset_top = 149.0

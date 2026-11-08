@@ -81,6 +81,14 @@ scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("1_mye35")
 metadata/_edit_use_anchors_ = true
 
+[node name="Background2" type="TextureRect" parent="." unique_id=1289291317]
+offset_left = 1147.0
+offset_right = 3067.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_mye35")
+metadata/_edit_use_anchors_ = true
+
 [node name="spike" type="Node2D" parent="." unique_id=1829497432]
 position = Vector2(286, 547)
 script = ExtResource("3_c7se5")

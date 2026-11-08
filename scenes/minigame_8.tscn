@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="17_58gcy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58gcy"]
-size = Vector2(38.30072, 40)
+size = Vector2(45.893654, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdloy"]
 size = Vector2(76, 32)
@@ -170,6 +170,14 @@ scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("1_yyfgh")
 metadata/_edit_use_anchors_ = true
 
+[node name="Background2" type="TextureRect" parent="." unique_id=1915834645]
+offset_left = 1108.0
+offset_right = 3028.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("1_yyfgh")
+metadata/_edit_use_anchors_ = true
+
 [node name="Player" parent="." unique_id=599305279 instance=ExtResource("3_i6bex")]
 position = Vector2(1025, 110)
 
@@ -212,9 +220,16 @@ offset_bottom = 64.0
 scale = Vector2(0.04118688, 0.6170451)
 texture = ExtResource("4_qbx5t")
 
+[node name="TextureRect6" type="TextureRect" parent="Platform1" unique_id=1882333701]
+offset_left = 95.475876
+offset_right = 563.6906
+offset_bottom = 64.0
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("4_qbx5t")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1314354087]
-position = Vector2(47.903503, 19.66214)
-scale = Vector2(2.5011234, 1)
+position = Vector2(57.398964, 19.66214)
+scale = Vector2(2.501124, 1)
 shape = SubResource("RectangleShape2D_58gcy")
 
 [node name="spike" type="Node2D" parent="." unique_id=1765924096]

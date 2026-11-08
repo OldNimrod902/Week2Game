@@ -56,6 +56,13 @@ offset_bottom = 1080.0
 scale = Vector2(0.5999985, 0.60000694)
 texture = ExtResource("1_fgkus")
 
+[node name="Background2" type="TextureRect" parent="." unique_id=1105508825]
+offset_left = 1147.0001
+offset_right = 3067.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("1_fgkus")
+
 [node name="footnote" type="RichTextLabel" parent="." unique_id=1288224699]
 clip_contents = false
 offset_left = 13.000001
@@ -88,7 +95,7 @@ theme_override_colors/font_color = Color(0.6507226, 0.95839447, 0.7545797, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_dc4i4")
 theme_override_font_sizes/font_size = 33
-text = "SPOOKIE EXPANSION"
+text = "SPOOKIE HAUNT EXPANSION"
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=812819598]
 layout_mode = 2
@@ -99,11 +106,6 @@ text = "Settings"
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Quit"
-
-[node name="loader" type="Button" parent="VBoxContainer" unique_id=2058419813]
-layout_mode = 2
-theme_override_font_sizes/font_size = 26
-text = "load SP3 (DELETE THIS)"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=97818273]
 offset_left = 85.0
@@ -117,12 +119,6 @@ texture = ExtResource("3_mgrm8")
 position = Vector2(-81, 28)
 scale = Vector2(1.5999211, 15.889328)
 
-[node name="ColorRect" type="ColorRect" parent="wall1" unique_id=1072744432]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=313235116]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_e54dn")
@@ -131,12 +127,6 @@ shape = SubResource("RectangleShape2D_e54dn")
 position = Vector2(1332, 11)
 scale = Vector2(1.5999211, 15.889328)
 
-[node name="ColorRect" type="ColorRect" parent="wall2" unique_id=1396772649]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=2109179001]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_e54dn")
@@ -144,12 +134,6 @@ shape = SubResource("RectangleShape2D_e54dn")
 [node name="wall3" type="StaticBody2D" parent="." unique_id=125579192]
 position = Vector2(3, 649)
 scale = Vector2(33.514343, 1.9290721)
-
-[node name="ColorRect" type="ColorRect" parent="wall3" unique_id=21044884]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
-metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3" unique_id=1763706685]
 position = Vector2(20, 20)
@@ -181,4 +165,3 @@ autoplay = &"scaling"
 [connection signal="pressed" from="VBoxContainer/Start_spookie" to="." method="_on_start_spookie_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="VBoxContainer/loader" to="." method="_on_loader_pressed"]

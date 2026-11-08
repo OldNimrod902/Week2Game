@@ -89,6 +89,7 @@ script = ExtResource("1_fa05o")
 [node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=468419843]
 repeat_size = Vector2(1000, 0)
 autoscroll = Vector2(10, 0)
+repeat_times = 3
 
 [node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=2027947468]
 offset_right = 1920.0
@@ -103,6 +104,16 @@ offset_right = 1920.0
 offset_bottom = 1042.0
 scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("3_1digs")
+metadata/_edit_use_anchors_ = true
+
+[node name="nature3" type="TextureRect" parent="." unique_id=812053136]
+offset_left = 1152.0
+offset_top = -38.0
+offset_right = 3072.0
+offset_bottom = 1042.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("3_1digs")
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="nature2" type="TextureRect" parent="." unique_id=1435237419]
@@ -133,26 +144,7 @@ shape = SubResource("RectangleShape2D_x1h7o")
 position = Vector2(-76, -20)
 scale = Vector2(1.5999211, 15.889328)
 
-[node name="ColorRect" type="ColorRect" parent="wall1" unique_id=828569176]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=336109276]
-position = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_x1h7o")
-
-[node name="wall2" type="StaticBody2D" parent="." unique_id=214578965]
-position = Vector2(1166, -41)
-scale = Vector2(1.5999211, 15.889328)
-
-[node name="ColorRect" type="ColorRect" parent="wall2" unique_id=1118573104]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=1286797877]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_x1h7o")
 

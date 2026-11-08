@@ -45,6 +45,15 @@ scale = Vector2(0.6000017, 0.60001403)
 texture = ExtResource("3_tvbfo")
 metadata/_edit_use_anchors_ = true
 
+[node name="nature2" type="TextureRect" parent="." unique_id=1929853227]
+offset_left = 949.0
+offset_top = -73.0
+offset_right = 2869.0
+offset_bottom = 1007.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("3_tvbfo")
+metadata/_edit_use_anchors_ = true
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=816256354]
 offset_left = 684.00006
 offset_top = 53.000004
@@ -65,6 +74,16 @@ texture = ExtResource("5_e6pfr")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect2" type="TextureRect" parent="ground" unique_id=68177508]
+offset_left = 39.62325
+offset_top = -2.1798276e-05
+offset_right = 1614.1272
+offset_bottom = 143.99998
+scale = Vector2(0.02549, 0.27925992)
+texture = ExtResource("5_e6pfr")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=2077358499]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_bvkra")
@@ -73,12 +92,6 @@ shape = SubResource("RectangleShape2D_bvkra")
 position = Vector2(-76, -20)
 scale = Vector2(1.5999211, 15.889328)
 
-[node name="ColorRect" type="ColorRect" parent="wall1" unique_id=56111032]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall1" unique_id=172099240]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_bvkra")
@@ -86,11 +99,6 @@ shape = SubResource("RectangleShape2D_bvkra")
 [node name="wall2" type="StaticBody2D" parent="." unique_id=1991241211]
 position = Vector2(1166, -41)
 scale = Vector2(1.5999211, 15.889328)
-
-[node name="ColorRect" type="ColorRect" parent="wall2" unique_id=373691551]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(2.4065375e-08, 0.5828688, 0.20470807, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=404793990]
 position = Vector2(20, 20)

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://1t0rqdarc6ha" path="res://spooky_scenes/spooky_level_3.gd" id="1_1jher"]
 [ext_resource type="Texture2D" uid="uid://ctim31ndgy87h" path="res://assets/spooky_city_background.png" id="1_7sp80"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="2_et26d"]
-[ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_1ejl6"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="5_s3jyo"]
 [ext_resource type="Script" uid="uid://dx1odb0iol3oe" path="res://scenes/spike.gd" id="6_e37vc"]
 [ext_resource type="Texture2D" uid="uid://ce4kd0ak8j4ba" path="res://assets/spikes.png" id="7_47fee"]
@@ -13,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d37biocb05sg" path="res://assets/cookie.png" id="11_urqtw"]
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="12_osd4c"]
 [ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="13_gn8eh"]
+[ext_resource type="Texture2D" uid="uid://dpvy3u1obj0he" path="res://assets/spooky_guard.png" id="15_0gkkb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et26d"]
 size = Vector2(624.8982, 33.75)
@@ -61,10 +61,47 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn8eh"]
-size = Vector2(10221, 142)
+size = Vector2(7141, 142)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urqtw"]
 size = Vector2(160, 160)
+
+[sub_resource type="Animation" id="Animation_j4d63"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemypic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(166, -49)]
+}
+
+[sub_resource type="Animation" id="Animation_swk5q"]
+resource_name = "chasing"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemypic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1503668, 2.6666667, 3.0333333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(166, -49), Vector2(737.99756, -49), Vector2(874.99994, -95), Vector2(1000, -39.999985), Vector2(1230, -49)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dne0r"]
+_data = {
+&"RESET": SubResource("Animation_j4d63"),
+&"chasing": SubResource("Animation_swk5q")
+}
 
 [node name="spooky_level_3" type="Node2D" unique_id=1820416240]
 script = ExtResource("1_1jher")
@@ -104,9 +141,6 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1741379]
-
-[node name="timer" parent="CanvasLayer" unique_id=2075219886 instance=ExtResource("4_1ejl6")]
-position = Vector2(78, 51)
 
 [node name="quest_text" type="RichTextLabel" parent="CanvasLayer" unique_id=1517588379]
 offset_left = 76.0
@@ -493,7 +527,7 @@ position = Vector2(11732, 882)
 script = ExtResource("12_osd4c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="outside_the_box" unique_id=209244776]
-position = Vector2(312.5, 0)
+position = Vector2(165, 105)
 shape = SubResource("RectangleShape2D_gn8eh")
 
 [node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=181653157]
@@ -505,6 +539,20 @@ texture_normal = ExtResource("13_gn8eh")
 shape = SubResource("RectangleShape2D_urqtw")
 action = "jump"
 visibility_mode = 1
+
+[node name="enemy1" type="Node2D" parent="." unique_id=1450278196]
+position = Vector2(-3547, 531)
+
+[node name="enemypic" type="TextureRect" parent="enemy1" unique_id=1130251751]
+offset_left = 166.0
+offset_top = -49.0
+offset_right = 262.0028
+offset_bottom = 47.0
+texture = ExtResource("15_0gkkb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy1" unique_id=558541901]
+libraries/ = SubResource("AnimationLibrary_dne0r")
+autoplay = &"chasing"
 
 [connection signal="trap_entered" from="spike" to="." method="_on_trap_entered"]
 [connection signal="trap_entered" from="spike2" to="." method="_on_trap_entered"]
