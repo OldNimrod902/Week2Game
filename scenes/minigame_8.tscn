@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="12_kmoo8"]
 [ext_resource type="Script" uid="uid://tnshk5b3evcv" path="res://scenes/door_lv5.gd" id="13_gwdd2"]
 [ext_resource type="Texture2D" uid="uid://c2fi2yqj3t8s7" path="res://assets/door.png" id="14_vrutk"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="15_1sbed"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="16_cd4yh"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="17_58gcy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58gcy"]
 size = Vector2(38.30072, 40)
@@ -153,6 +156,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x2pn"]
 size = Vector2(33, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8pwd"]
+size = Vector2(160, 160)
 
 [node name="minigame_8" type="Node2D" unique_id=903646348]
 script = ExtResource("1_rgcv3")
@@ -431,6 +437,32 @@ texture = ExtResource("14_vrutk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door/Area2D" unique_id=501149378]
 position = Vector2(53.5, 70)
 shape = SubResource("RectangleShape2D_6x2pn")
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=1073094531]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=353183449]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("15_1sbed")
+shape = SubResource("RectangleShape2D_c8pwd")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=440824355]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("16_cd4yh")
+shape = SubResource("RectangleShape2D_c8pwd")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1397461848]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("17_58gcy")
+shape = SubResource("RectangleShape2D_c8pwd")
+action = "jump"
+visibility_mode = 1
 
 [connection signal="trap_entered" from="spike" to="." method="_on_spike_trap_entered"]
 [connection signal="trap_entered" from="spike3" to="." method="_on_spike_trap_entered"]

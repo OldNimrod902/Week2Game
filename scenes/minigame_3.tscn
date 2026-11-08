@@ -12,6 +12,9 @@
 [ext_resource type="Script" uid="uid://du7eny21oscyc" path="res://scenes/key.gd" id="10_sfvvs"]
 [ext_resource type="Texture2D" uid="uid://cg6npigv4fuq2" path="res://assets/key.png" id="11_j0t4l"]
 [ext_resource type="AudioStream" uid="uid://dyaeiod7pwpv7" path="res://sounds/collect.mp3" id="12_j0t4l"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="13_ykk0i"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="14_uonhf"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="15_8vrtp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yiing"]
 size = Vector2(40, 40)
@@ -127,6 +130,9 @@ _data = {
 &"key": SubResource("Animation_j0t4l"),
 &"walking": SubResource("Animation_ybnx4")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kfio"]
+size = Vector2(160, 160)
 
 [node name="minigame_3" type="Node2D" unique_id=1668255734]
 script = ExtResource("1_yiing")
@@ -317,6 +323,32 @@ stream = ExtResource("12_j0t4l")
 root_node = NodePath("../enemy1")
 libraries/ = SubResource("AnimationLibrary_w3p2l")
 autoplay = &"walking"
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=1201931145]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1336646513]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("13_ykk0i")
+shape = SubResource("RectangleShape2D_0kfio")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1931199257]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("14_uonhf")
+shape = SubResource("RectangleShape2D_0kfio")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=935351987]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("15_8vrtp")
+shape = SubResource("RectangleShape2D_0kfio")
+action = "jump"
+visibility_mode = 1
 
 [connection signal="touched_enemy" from="enemy1" to="." method="_on_enemy_1_touched_enemy"]
 [connection signal="key_collected" from="key" to="." method="_on_key_key_collected"]

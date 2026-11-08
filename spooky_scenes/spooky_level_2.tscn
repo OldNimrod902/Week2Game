@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://jbmkwnchxyrf" path="res://assets/bear_trap.png" id="15_c0wqx"]
 [ext_resource type="Script" uid="uid://du3mrunqgb2ei" path="res://enemy.gd" id="16_lx5yk"]
 [ext_resource type="Texture2D" uid="uid://dpvy3u1obj0he" path="res://assets/spooky_guard.png" id="17_hifjv"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="18_hifjv"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="19_w2t6m"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="20_w2krc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqf5v"]
 size = Vector2(47.16559, 33.75)
@@ -388,6 +391,9 @@ _data = {
 &"RESET": SubResource("Animation_58q4l"),
 &"walking": SubResource("Animation_6j4on")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x6na"]
+size = Vector2(160, 160)
 
 [node name="spooky_level_2" type="Node2D" unique_id=1871137500]
 script = ExtResource("1_0ftym")
@@ -1418,6 +1424,32 @@ shape = SubResource("CircleShape2D_dlvmv")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemy5" unique_id=1730729917]
 libraries/ = SubResource("AnimationLibrary_715ee")
 autoplay = &"walking"
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=1244063639]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=336955946]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("18_hifjv")
+shape = SubResource("RectangleShape2D_1x6na")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=195714469]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("19_w2t6m")
+shape = SubResource("RectangleShape2D_1x6na")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1871891621]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("20_w2krc")
+shape = SubResource("RectangleShape2D_1x6na")
+action = "jump"
+visibility_mode = 1
 
 [connection signal="cookie_collected" from="Cookie_pickup" to="." method="_on_cookie_collected"]
 [connection signal="trap_entered" from="spike1" to="." method="_on_trap_entered"]

@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="8_xpvfh"]
 [ext_resource type="Texture2D" uid="uid://crnm68csf2jq" path="res://assets/map_piece_3.png" id="10_2gcu5"]
 [ext_resource type="AudioStream" uid="uid://dyaeiod7pwpv7" path="res://sounds/collect.mp3" id="14_2gcu5"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="14_g4fmr"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="15_b5m2w"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="16_vkn2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
 size = Vector2(38.30072, 40)
@@ -76,6 +79,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7bry"]
 size = Vector2(2145, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gcu5"]
+size = Vector2(160, 160)
 
 [node name="minigame_1" type="Node2D" unique_id=64859436]
 script = ExtResource("1_fa05o")
@@ -305,6 +311,32 @@ stream = ExtResource("14_2gcu5")
 [node name="animation" type="AnimationPlayer" parent="." unique_id=1878136762]
 libraries/ = SubResource("AnimationLibrary_j1cg4")
 autoplay = &"RESET"
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=1951536443]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1584709]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("14_g4fmr")
+shape = SubResource("RectangleShape2D_2gcu5")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=583276294]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("15_b5m2w")
+shape = SubResource("RectangleShape2D_2gcu5")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=850934034]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("16_vkn2u")
+shape = SubResource("RectangleShape2D_2gcu5")
+action = "jump"
+visibility_mode = 1
 
 [connection signal="mappiece_collected" from="MapPiece1" to="." method="_on_piece_collect"]
 [connection signal="mappiece_collected" from="MapPiece2" to="." method="_on_piece_collect"]

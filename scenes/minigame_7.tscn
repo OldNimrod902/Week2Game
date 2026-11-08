@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="2_vodl3"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="3_vuxkx"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_me5al"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="5_rxrep"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="6_lcs6w"]
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="6_me5al"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="7_ijls6"]
 [ext_resource type="Texture2D" uid="uid://dgba370gnn8gu" path="res://assets/clock.png" id="7_ol02w"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="8_0fn5h"]
 [ext_resource type="Script" uid="uid://tnshk5b3evcv" path="res://scenes/door_lv5.gd" id="9_sren0"]
@@ -15,6 +18,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol02w"]
 size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10io5"]
+size = Vector2(160, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fn5h"]
 size = Vector2(2145, 142)
@@ -82,6 +88,32 @@ shape = SubResource("RectangleShape2D_ol02w")
 
 [node name="Player" parent="." unique_id=599305279 instance=ExtResource("3_vuxkx")]
 position = Vector2(170, 512)
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="Player" unique_id=295255319]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="Player/TouchScreenUI" unique_id=599666202]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("5_rxrep")
+shape = SubResource("RectangleShape2D_10io5")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="Player/TouchScreenUI" unique_id=1402970415]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("6_lcs6w")
+shape = SubResource("RectangleShape2D_10io5")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="Player/TouchScreenUI" unique_id=338524612]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("7_ijls6")
+shape = SubResource("RectangleShape2D_10io5")
+action = "jump"
+visibility_mode = 1
 
 [node name="quest_text" type="RichTextLabel" parent="." unique_id=393323901]
 offset_left = 76.0

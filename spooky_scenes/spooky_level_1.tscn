@@ -12,7 +12,10 @@
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="7_lb26f"]
 [ext_resource type="Script" uid="uid://bcgnehfileahx" path="res://spooky_scenes/coin.gd" id="8_km3pl"]
 [ext_resource type="Texture2D" uid="uid://cinyh4l4rtoi1" path="res://assets/coin_spooky.png" id="9_3msfp"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="9_qx0cs"]
 [ext_resource type="Script" uid="uid://dh1qsyoaicrn1" path="res://spooky_scenes/heart.gd" id="10_jrvkb"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="10_qekqt"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="11_7meq3"]
 [ext_resource type="Texture2D" uid="uid://ce805tjq16jcs" path="res://assets/heart.png" id="11_lelfy"]
 [ext_resource type="Texture2D" uid="uid://cd1wq6aj5ojjp" path="res://assets/coin.png" id="11_rusvr"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="12_mqslf"]
@@ -46,6 +49,9 @@ size = Vector2(57.119926, 29.83107)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km3pl"]
 size = Vector2(38.135147, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52nu1"]
+size = Vector2(160, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cow3w"]
 size = Vector2(10221, 142)
@@ -726,6 +732,32 @@ texture = ExtResource("6_mqslf")
 position = Vector2(9.740768, 19.66214)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_1cqkh")
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=2091173832]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=287920697]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("9_qx0cs")
+shape = SubResource("RectangleShape2D_52nu1")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1629416191]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("10_qekqt")
+shape = SubResource("RectangleShape2D_52nu1")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1442229460]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("11_7meq3")
+shape = SubResource("RectangleShape2D_52nu1")
+action = "jump"
+visibility_mode = 1
 
 [node name="outside_the_box" type="Area2D" parent="." unique_id=1298707860]
 position = Vector2(1081, 1203)

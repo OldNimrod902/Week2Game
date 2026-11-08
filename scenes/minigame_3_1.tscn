@@ -9,12 +9,18 @@
 [ext_resource type="Script" uid="uid://j0secxqau61n" path="res://scenes/door.gd" id="7_tvbfo"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="8_f70gt"]
 [ext_resource type="AudioStream" uid="uid://dyaeiod7pwpv7" path="res://sounds/collect.mp3" id="9_f70gt"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="10_bvkra"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="11_ko77k"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="12_baq27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvkra"]
 size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
 size = Vector2(103, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t04vy"]
+size = Vector2(160, 160)
 
 [node name="minigame_3_1" type="Node2D" unique_id=916889929]
 script = ExtResource("1_6xnuo")
@@ -57,6 +63,7 @@ offset_bottom = 144.0
 scale = Vector2(0.02549, 0.27925992)
 texture = ExtResource("5_e6pfr")
 stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=2077358499]
 position = Vector2(20, 20)
@@ -116,5 +123,31 @@ text = "Enter the Antique House using the key!"
 
 [node name="AudioCollect" type="AudioStreamPlayer" parent="." unique_id=1493582365]
 stream = ExtResource("9_f70gt")
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=447176496]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=452371244]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("10_bvkra")
+shape = SubResource("RectangleShape2D_t04vy")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1661069055]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("11_ko77k")
+shape = SubResource("RectangleShape2D_t04vy")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=515524544]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("12_baq27")
+shape = SubResource("RectangleShape2D_t04vy")
+action = "jump"
+visibility_mode = 1
 
 [connection signal="touched_door" from="door" to="." method="_on_door_touched_door"]

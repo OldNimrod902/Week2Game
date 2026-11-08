@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bsgs0dfmnoymm" path="res://spooky_scenes/cookie_pickup.gd" id="10_gn8eh"]
 [ext_resource type="Texture2D" uid="uid://d37biocb05sg" path="res://assets/cookie.png" id="11_urqtw"]
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="12_osd4c"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="13_gn8eh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et26d"]
 size = Vector2(624.8982, 33.75)
@@ -61,6 +62,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn8eh"]
 size = Vector2(10221, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urqtw"]
+size = Vector2(160, 160)
 
 [node name="spooky_level_3" type="Node2D" unique_id=1820416240]
 script = ExtResource("1_1jher")
@@ -491,6 +495,16 @@ script = ExtResource("12_osd4c")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="outside_the_box" unique_id=209244776]
 position = Vector2(312.5, 0)
 shape = SubResource("RectangleShape2D_gn8eh")
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=181653157]
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=2106936280]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("13_gn8eh")
+shape = SubResource("RectangleShape2D_urqtw")
+action = "jump"
+visibility_mode = 1
 
 [connection signal="trap_entered" from="spike" to="." method="_on_trap_entered"]
 [connection signal="trap_entered" from="spike2" to="." method="_on_trap_entered"]

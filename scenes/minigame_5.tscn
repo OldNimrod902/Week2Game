@@ -14,6 +14,9 @@
 [ext_resource type="Script" uid="uid://tnshk5b3evcv" path="res://scenes/door_lv5.gd" id="12_i51xv"]
 [ext_resource type="Texture2D" uid="uid://c2fi2yqj3t8s7" path="res://assets/door.png" id="13_ftjdg"]
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="14_nmlbg"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="15_muex8"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="16_kb7od"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="17_k3yvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1h7o"]
 size = Vector2(69, 32)
@@ -64,6 +67,9 @@ size = Vector2(33, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i51xv"]
 size = Vector2(2145, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l85g"]
+size = Vector2(160, 160)
 
 [node name="minigame_5" type="Node2D" unique_id=1377841367]
 script = ExtResource("1_7pr0y")
@@ -378,6 +384,32 @@ theme_override_colors/default_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 16
 text = "Find your way to the door on the right side"
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=1877789211]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=293193885]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("15_muex8")
+shape = SubResource("RectangleShape2D_6l85g")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=423675487]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("16_kb7od")
+shape = SubResource("RectangleShape2D_6l85g")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1115659042]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("17_k3yvg")
+shape = SubResource("RectangleShape2D_6l85g")
+action = "jump"
+visibility_mode = 1
 
 [connection signal="trap_entered" from="spike" to="." method="_on_spike_trap_entered"]
 [connection signal="trap_entered" from="spike2" to="." method="_on_spike_trap_entered"]

@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cd1wq6aj5ojjp" path="res://assets/coin.png" id="4_xntpt"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="5_2oulj"]
 [ext_resource type="Script" uid="uid://bnx0oj5y7htko" path="res://spooky_scenes/close_to_vm.gd" id="7_k6nxy"]
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="8_3txbb"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="9_keb6w"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="10_kf4yq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3txbb"]
 size = Vector2(45.42784, 40)
@@ -16,6 +19,9 @@ size = Vector2(2.1966705, 243.57152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf4yq"]
 size = Vector2(256, 214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egq7p"]
+size = Vector2(160, 160)
 
 [node name="spooky_level_1_shop" type="Node2D" unique_id=385678674]
 script = ExtResource("1_k6nxy")
@@ -122,6 +128,32 @@ script = ExtResource("7_k6nxy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseToVM" unique_id=1113508013]
 position = Vector2(128, 97)
 shape = SubResource("RectangleShape2D_kf4yq")
+
+[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=1096124791]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=786127468]
+position = Vector2(179, 422.00003)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("8_3txbb")
+shape = SubResource("RectangleShape2D_egq7p")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1337044656]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("9_keb6w")
+shape = SubResource("RectangleShape2D_egq7p")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=2134093350]
+position = Vector2(990.00006, 422)
+scale = Vector2(0.62, 0.62)
+texture_normal = ExtResource("10_kf4yq")
+shape = SubResource("RectangleShape2D_egq7p")
+action = "jump"
+visibility_mode = 1
 
 [connection signal="pressed" from="CookieButton" to="." method="_on_cookie_button_pressed"]
 [connection signal="got_away_from_vending_machine" from="CloseToVM" to="." method="_on_got_away_from_vending_machine"]
