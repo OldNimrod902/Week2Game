@@ -17,3 +17,7 @@ func _on_back_button_pressed() -> void:
 
 func _on_spookie_pressed() -> void:
 	get_tree().change_scene_to_file("res://spooky_scenes/spooky_story.tscn")
+
+
+func _on_peak_pressed() -> void:
+	get_tree().change_scene_to_file("res://peak_scenes/peak_story.tscn")

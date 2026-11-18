@@ -5,6 +5,9 @@
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="3_dc4i4"]
 [ext_resource type="Texture2D" uid="uid://vk5ci71cu2v3" path="res://assets/gametitle.png" id="3_mgrm8"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="4_dc4i4"]
+[ext_resource type="Texture2D" uid="uid://o1fdja3h62kd" path="res://assets/icon_settings.png" id="6_e54dn"]
+[ext_resource type="Texture2D" uid="uid://cgo0h0s4efacy" path="res://assets/icon_challenges.png" id="7_3yumr"]
+[ext_resource type="Texture2D" uid="uid://del6y1lfwkuv2" path="res://assets/icon_main_game.png" id="8_cs5ya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e54dn"]
 size = Vector2(40, 40)
@@ -75,11 +78,19 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 32
 text = "Made by Timoti902 for Terra"
 
+[node name="Quit" type="Button" parent="." unique_id=297982037]
+offset_left = 994.0
+offset_top = 559.0
+offset_right = 1119.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1810089415]
-offset_left = 106.0
-offset_top = 306.0
-offset_right = 516.0
-offset_bottom = 551.0
+offset_left = 43.0
+offset_top = 805.0
+offset_right = 453.0
+offset_bottom = 1050.0
 theme_override_constants/separation = 13
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=383823823]
@@ -101,11 +112,6 @@ text = "CHALLENGES"
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Settings"
-
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=297982037]
-layout_mode = 2
-theme_override_font_sizes/font_size = 26
-text = "Quit"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=97818273]
 offset_left = 85.0
@@ -142,11 +148,50 @@ shape = SubResource("RectangleShape2D_e54dn")
 [node name="Player" parent="." unique_id=599305279 instance=ExtResource("4_dc4i4")]
 position = Vector2(1248, 584)
 
+[node name="Settings2" type="Button" parent="." unique_id=475124390]
+offset_left = 482.0
+offset_top = 393.0
+offset_right = 658.0
+offset_bottom = 553.0
+theme_override_constants/icon_max_width = 80
+theme_override_fonts/font = ExtResource("3_dc4i4")
+theme_override_font_sizes/font_size = 33
+theme_override_icons/icon = ExtResource("6_e54dn")
+text = "OPTIONS"
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Challenges2" type="Button" parent="." unique_id=691482390]
+offset_left = 288.0
+offset_top = 393.0
+offset_right = 464.0
+offset_bottom = 553.0
+theme_override_constants/icon_max_width = 80
+theme_override_fonts/font = ExtResource("3_dc4i4")
+theme_override_font_sizes/font_size = 33
+theme_override_icons/icon = ExtResource("7_3yumr")
+text = "CHALLENGES"
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Start2" type="Button" parent="." unique_id=1790217244]
+offset_left = 79.0
+offset_top = 373.0
+offset_right = 268.0
+offset_bottom = 553.0
+theme_override_constants/icon_max_width = 100
+theme_override_fonts/font = ExtResource("3_dc4i4")
+theme_override_font_sizes/font_size = 33
+theme_override_icons/icon = ExtResource("8_cs5ya")
+text = "MAIN GAME"
+icon_alignment = 1
+vertical_icon_alignment = 0
+
 [node name="ad" type="RichTextLabel" parent="." unique_id=84797682]
-offset_left = 73.99999
-offset_top = 359.99997
-offset_right = 161.0
-offset_bottom = 400.99997
+offset_left = 263.00003
+offset_top = 381.0
+offset_right = 350.00003
+offset_bottom = 422.0
 rotation = -0.27486113
 theme_override_colors/default_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
@@ -161,7 +206,10 @@ vertical_alignment = 1
 libraries/ = SubResource("AnimationLibrary_3yumr")
 autoplay = &"scaling"
 
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Challenges" to="." method="_on_challenges_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Settings2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Challenges2" to="." method="_on_challenges_pressed"]
+[connection signal="pressed" from="Start2" to="." method="_on_start_pressed"]
