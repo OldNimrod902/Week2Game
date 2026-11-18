@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dsskupk7rkvvr"]
+
+[ext_resource type="Script" uid="uid://ddcne423wokef" path="res://scenes/challenges_ui.gd" id="1_ac3ci"]
+[ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_h85tw"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="2_40nbh"]
+[ext_resource type="Texture2D" uid="uid://d3o885gljxlti" path="res://assets/spooky_ghost.png" id="4_n1w3y"]
+[ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="5_u00ox"]
+
+[node name="challenges_UI" type="Control" unique_id=1271138894]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ac3ci")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1055011655]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("1_h85tw")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=687559959]
+layout_mode = 0
+offset_left = 1145.0001
+offset_right = 3065.0
+offset_bottom = 1080.0
+scale = Vector2(0.5999985, 0.60000694)
+texture = ExtResource("1_h85tw")
+
+[node name="Settings_title" type="RichTextLabel" parent="." unique_id=1523333555]
+clip_contents = false
+layout_mode = 0
+offset_left = 103.00001
+offset_top = 84.00002
+offset_right = 1094.0375
+offset_bottom = 278.51053
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_constants/outline_size = 40
+theme_override_fonts/normal_font = ExtResource("2_40nbh")
+theme_override_font_sizes/normal_font_size = 108
+text = "CHALLENGES"
+
+[node name="difficulty_description" type="RichTextLabel" parent="Settings_title" unique_id=704430726]
+clip_contents = false
+layout_mode = 0
+offset_left = 6.2036743
+offset_top = 132.26704
+offset_right = 1276.2288
+offset_bottom = 340.50745
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/normal_font_size = 42
+text = "Challenges are harder expansions to the main game that test your abilities using new gamplay elements. Give them a try!"
+
+[node name="Spookie" type="Button" parent="." unique_id=1053050417]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 266.0
+offset_right = 627.0
+offset_bottom = 377.0
+theme_override_colors/font_color = Color(0.3887009, 1, 0.79712546, 1)
+theme_override_colors/font_outline_color = Color(0, 0.3206409, 0.44815522, 1)
+theme_override_constants/outline_size = 16
+theme_override_constants/h_separation = 21
+theme_override_constants/icon_max_width = 64
+theme_override_fonts/font = ExtResource("2_40nbh")
+theme_override_font_sizes/font_size = 41
+theme_override_icons/icon = ExtResource("4_n1w3y")
+text = "SPOOKIE CHALLENGE"
+alignment = 0
+
+[node name="Peak" type="Button" parent="." unique_id=1654320676]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 393.0
+offset_right = 627.0
+offset_bottom = 504.0
+theme_override_colors/font_color = Color(0.96615225, 0.85954475, 0.6837179, 1)
+theme_override_colors/font_outline_color = Color(0.7105971, 0.4687342, 0.34255612, 1)
+theme_override_constants/outline_size = 16
+theme_override_constants/h_separation = 21
+theme_override_constants/icon_max_width = 64
+theme_override_fonts/font = ExtResource("2_40nbh")
+theme_override_font_sizes/font_size = 41
+theme_override_icons/icon = ExtResource("5_u00ox")
+text = "TILL DA PEAK CHALLENGE"
+alignment = 0
+
+[node name="Back_button" type="Button" parent="." unique_id=658072591]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 554.0
+offset_right = 311.0
+offset_bottom = 605.0
+theme_override_fonts/font = ExtResource("2_40nbh")
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+
+[connection signal="pressed" from="Spookie" to="." method="_on_spookie_pressed"]
+[connection signal="pressed" from="Back_button" to="." method="_on_back_button_pressed"]

@@ -89,13 +89,13 @@ theme_override_fonts/font = ExtResource("3_dc4i4")
 theme_override_font_sizes/font_size = 40
 text = "START MAIN GAME"
 
-[node name="Start_spookie" type="Button" parent="VBoxContainer" unique_id=877378847]
+[node name="Challenges" type="Button" parent="VBoxContainer" unique_id=865770658]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.6507226, 0.95839447, 0.7545797, 1)
+theme_override_colors/font_color = Color(0.7336772, 0.9019256, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_dc4i4")
 theme_override_font_sizes/font_size = 33
-text = "SPOOKIE HAUNT EXPANSION"
+text = "CHALLENGES"
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=812819598]
 layout_mode = 2
@@ -162,6 +162,6 @@ libraries/ = SubResource("AnimationLibrary_3yumr")
 autoplay = &"scaling"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start_spookie" to="." method="_on_start_spookie_pressed"]
+[connection signal="pressed" from="VBoxContainer/Challenges" to="." method="_on_challenges_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

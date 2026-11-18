@@ -52,7 +52,7 @@ theme_override_colors/font_outline_color = Color(0, 0.24313726, 0, 1)
 theme_override_constants/outline_size = 13
 theme_override_fonts/normal_font = ExtResource("3_uqwfm")
 theme_override_font_sizes/normal_font_size = 52
-text = "SPOOKIE DLC"
+text = "SPOOKIE CHALLENGE"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=577271254]
