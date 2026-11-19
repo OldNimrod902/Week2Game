@@ -8,6 +8,13 @@ extends Node2D
 @onready var heart_debug: TextureRect = $HeartContainer/HeartDebug
 @onready var heart_none: TextureRect = $HeartContainer/HeartNone
 
+@onready var peak_stage_0: TextureRect = $mountain_status/stage_0
+@onready var peak_stage_1: TextureRect = $mountain_status/stage_1
+@onready var peak_stage_2: TextureRect = $mountain_status/stage_2
+@onready var peak_stage_3: TextureRect = $mountain_status/stage_3
+@onready var peak_stage_4: TextureRect = $mountain_status/stage_4
+@onready var height_text: RichTextLabel = $mountain_status/height_text
+
 @onready var timer: RichTextLabel = $Timer
 @onready var message: RichTextLabel = $Message
 
@@ -25,6 +32,11 @@ func _ready() -> void:
 	heart_debug.hide()
 	heart_none.hide()
 	message.text = str(Global.intermission_message)
+	
+	peak_stage_1.hide()
+	peak_stage_2.hide()
+	peak_stage_3.hide()
+	peak_stage_4.hide()
 	
 	if Global.death_cause == "spike":
 		spike_sound.play()
@@ -77,6 +89,17 @@ func _process(delta: float) -> void:
 		heart_none.show()
 	elif Global.lives > 5:
 		heart_debug.show()
+		
+	if Global.peak_levels_done == 1:
+		peak_stage_1.show()
+	elif Global.peak_levels_done == 2:
+		peak_stage_2.show()
+	elif Global.peak_levels_done == 3:
+		peak_stage_3.show()
+	elif Global.peak_levels_done == 4:
+		peak_stage_4.show()
+		
+	height_text.text = str(Global.peak_height) + "m"
 	
 	if Global.peak_levels_done<3:
 		if Global.lives>0:

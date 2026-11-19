@@ -4,14 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://ce805tjq16jcs" path="res://assets/heart.png" id="3_tlefq"]
 [ext_resource type="Texture2D" uid="uid://cw5ocgxonrhv" path="res://assets/heart_infinite.png" id="4_d5cdd"]
 [ext_resource type="Texture2D" uid="uid://b0wtaje80dqk0" path="res://assets/hearts_lost.png" id="5_c3i2p"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="8_va0ny"]
 [ext_resource type="Texture2D" uid="uid://s3d7g20koeb2" path="res://assets/peak_background.png" id="8_wm42m"]
 [ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="9_tks6a"]
 [ext_resource type="AudioStream" uid="uid://luuww3ki23hq" path="res://sounds/spike_death.mp3" id="10_l7ep5"]
 [ext_resource type="AudioStream" uid="uid://58w5dqjxck8t" path="res://sounds/fall_death.mp3" id="11_67itl"]
 [ext_resource type="AudioStream" uid="uid://bwcxnm8srn4ji" path="res://sounds/guard_death.mp3" id="12_uxwu3"]
 [ext_resource type="AudioStream" uid="uid://dg2axjpr4cbiu" path="res://sounds/time_death.mp3" id="13_plv5d"]
+[ext_resource type="Texture2D" uid="uid://cfv6ogo7cndsb" path="res://assets/peak_mountain_0.png" id="13_tlefq"]
 [ext_resource type="AudioStream" uid="uid://b6elgciwq2bf" path="res://sounds/spider_death.mp3" id="14_bu8x1"]
+[ext_resource type="Texture2D" uid="uid://djerkjrk31bbi" path="res://assets/peak_mountain_1.png" id="14_d5cdd"]
 [ext_resource type="AudioStream" uid="uid://bcrhovlr0aoqy" path="res://sounds/victory_intermission.mp3" id="15_8o4ej"]
+[ext_resource type="Texture2D" uid="uid://14ehgby8uemg" path="res://assets/peak_mountain_2.png" id="15_c3i2p"]
+[ext_resource type="Texture2D" uid="uid://ddyabl48k8px1" path="res://assets/peak_mountain_3.png" id="16_ouldo"]
+[ext_resource type="Texture2D" uid="uid://khh3h3v1t1ii" path="res://assets/peak_mountain_4.png" id="17_67jyh"]
 
 [node name="peak_intermission" type="Node2D" unique_id=2063433828]
 script = ExtResource("1_txkxw")
@@ -42,18 +48,18 @@ scale = Vector2(0.6000162, 0.6000356)
 texture = ExtResource("8_wm42m")
 
 [node name="Background2" type="TextureRect" parent="." unique_id=270468829]
-offset_left = 1148.0
-offset_right = 3068.0
+offset_left = 1151.9999
+offset_right = 3072.0
 offset_bottom = 1080.0
 scale = Vector2(0.6000162, 0.6000356)
 texture = ExtResource("8_wm42m")
 flip_h = true
 
 [node name="HeartContainer" type="HBoxContainer" parent="." unique_id=1087275685]
-offset_left = 80.0
-offset_top = 205.0
-offset_right = 1670.0
-offset_bottom = 415.0
+offset_left = 242.99997
+offset_top = 230.0
+offset_right = 1833.0
+offset_bottom = 440.0
 scale = Vector2(0.4158402, 0.4158047)
 theme_override_constants/separation = 20
 
@@ -86,21 +92,98 @@ layout_mode = 2
 texture = ExtResource("5_c3i2p")
 
 [node name="Timer" type="RichTextLabel" parent="." unique_id=774505068]
-offset_left = 85.0
-offset_top = 406.0
-offset_right = 589.0
-offset_bottom = 491.0
+offset_left = 242.0
+offset_top = 365.0
+offset_right = 746.0
+offset_bottom = 450.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("9_tks6a")
 theme_override_font_sizes/normal_font_size = 40
 text = "Starting in 0.0"
 
 [node name="Message" type="RichTextLabel" parent="." unique_id=69502938]
-offset_left = 86.0
-offset_top = 491.0
-offset_right = 571.0
-offset_bottom = 594.0
+offset_left = 243.0
+offset_top = 450.0
+offset_right = 728.0
+offset_bottom = 553.0
 theme_override_colors/default_color = Color(0.9471993, 0.9471994, 0.9471993, 1)
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/normal_font_size = 22
 text = "You really shouldnt see this piece of text"
+
+[node name="mountain_status" type="ColorRect" parent="." unique_id=1409621755]
+offset_left = 76.0
+offset_top = 216.0
+offset_right = 196.0
+offset_bottom = 621.0
+color = Color(8.663535e-07, 0.2464363, 0.34248987, 0.91764706)
+
+[node name="stage_0" type="TextureRect" parent="mountain_status" unique_id=1685046484]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 195.0
+offset_bottom = 555.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_tlefq")
+
+[node name="stage_1" type="TextureRect" parent="mountain_status" unique_id=1163848055]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 195.0
+offset_bottom = 555.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_d5cdd")
+
+[node name="stage_2" type="TextureRect" parent="mountain_status" unique_id=1057471880]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 195.0
+offset_bottom = 555.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_c3i2p")
+
+[node name="stage_3" type="TextureRect" parent="mountain_status" unique_id=242271161]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 195.0
+offset_bottom = 555.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_ouldo")
+
+[node name="stage_4" type="TextureRect" parent="mountain_status" unique_id=1297995047]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 195.0
+offset_bottom = 555.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_67jyh")
+
+[node name="text" type="RichTextLabel" parent="mountain_status" unique_id=1267425886]
+layout_mode = 0
+offset_top = 300.0
+offset_right = 120.0
+offset_bottom = 343.0
+theme_override_colors/default_color = Color(1, 1, 1, 0.84313726)
+theme_override_constants/line_separation = -12
+theme_override_fonts/normal_font = ExtResource("8_va0ny")
+theme_override_font_sizes/normal_font_size = 25
+text = "CURRENT HEIGHT:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="height_text" type="RichTextLabel" parent="mountain_status" unique_id=647354313]
+layout_mode = 0
+offset_top = 343.0
+offset_right = 120.0
+offset_bottom = 400.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("9_tks6a")
+theme_override_font_sizes/normal_font_size = 40
+text = "0000m"
+horizontal_alignment = 1
+vertical_alignment = 1
