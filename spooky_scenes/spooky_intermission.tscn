@@ -19,126 +19,6 @@
 [node name="spooky_intermission" type="Node2D" unique_id=2063433828]
 script = ExtResource("1_eobq4")
 
-[node name="Background" type="TextureRect" parent="." unique_id=508519362]
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.6000162, 0.6000356)
-texture = ExtResource("2_eobq4")
-
-[node name="Background2" type="TextureRect" parent="." unique_id=2051009192]
-offset_left = 1148.0
-offset_right = 3068.0
-offset_bottom = 1080.0
-scale = Vector2(0.6000162, 0.6000356)
-texture = ExtResource("2_eobq4")
-flip_h = true
-
-[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=1873210527]
-offset_left = 80.0
-offset_top = 205.0
-offset_right = 1670.0
-offset_bottom = 415.0
-scale = Vector2(0.4158402, 0.4158047)
-theme_override_constants/separation = 20
-
-[node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=1373908474]
-layout_mode = 2
-texture = ExtResource("3_j3gjl")
-
-[node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=1979288836]
-layout_mode = 2
-texture = ExtResource("3_j3gjl")
-
-[node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=1000313331]
-layout_mode = 2
-texture = ExtResource("3_j3gjl")
-
-[node name="Heart4" type="TextureRect" parent="HeartContainer" unique_id=2118480028]
-layout_mode = 2
-texture = ExtResource("3_j3gjl")
-
-[node name="Heart5" type="TextureRect" parent="HeartContainer" unique_id=411249196]
-layout_mode = 2
-texture = ExtResource("3_j3gjl")
-
-[node name="HeartDebug" type="TextureRect" parent="HeartContainer" unique_id=41260960]
-layout_mode = 2
-texture = ExtResource("4_mm8pb")
-
-[node name="HeartNone" type="TextureRect" parent="HeartContainer" unique_id=897334982]
-layout_mode = 2
-texture = ExtResource("5_syjsp")
-
-[node name="CookieContainer" type="HBoxContainer" parent="." unique_id=673117270]
-offset_left = 242.99997
-offset_top = 316.0
-offset_right = 1441.0226
-offset_bottom = 456.0
-scale = Vector2(0.4158402, 0.4158047)
-theme_override_constants/separation = 20
-
-[node name="Cookie1" type="TextureRect" parent="CookieContainer" unique_id=1931453591]
-layout_mode = 2
-texture = ExtResource("6_j3gjl")
-stretch_mode = 3
-
-[node name="Cookie2" type="TextureRect" parent="CookieContainer" unique_id=335077744]
-layout_mode = 2
-texture = ExtResource("6_j3gjl")
-stretch_mode = 3
-
-[node name="Cookie3" type="TextureRect" parent="CookieContainer" unique_id=1568220793]
-layout_mode = 2
-texture = ExtResource("6_j3gjl")
-stretch_mode = 3
-
-[node name="NoCookie1" type="TextureRect" parent="CookieContainer" unique_id=2140770683]
-layout_mode = 2
-texture = ExtResource("7_mm8pb")
-stretch_mode = 3
-
-[node name="NoCookie2" type="TextureRect" parent="CookieContainer" unique_id=1579057522]
-layout_mode = 2
-texture = ExtResource("7_mm8pb")
-stretch_mode = 3
-
-[node name="NoCookie3" type="TextureRect" parent="CookieContainer" unique_id=1738267750]
-layout_mode = 2
-texture = ExtResource("7_mm8pb")
-stretch_mode = 3
-
-[node name="CookieText" type="RichTextLabel" parent="." unique_id=585371810]
-clip_contents = false
-offset_left = 83.0
-offset_top = 315.0
-offset_right = 237.0
-offset_bottom = 376.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("6_k5uh5")
-theme_override_font_sizes/normal_font_size = 48
-text = "COOKIES:"
-vertical_alignment = 1
-
-[node name="Timer" type="RichTextLabel" parent="." unique_id=1051152969]
-offset_left = 85.0
-offset_top = 406.0
-offset_right = 589.0
-offset_bottom = 491.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("7_ty5y0")
-theme_override_font_sizes/normal_font_size = 40
-text = "Starting in 0.0"
-
-[node name="Message" type="RichTextLabel" parent="." unique_id=481475599]
-offset_left = 86.0
-offset_top = 491.0
-offset_right = 571.0
-offset_bottom = 594.0
-theme_override_colors/default_color = Color(0.9471993, 0.9471994, 0.9471993, 1)
-theme_override_constants/outline_size = 2
-theme_override_font_sizes/normal_font_size = 22
-text = "You really shouldnt see this piece of text"
-
 [node name="spike_sound" type="AudioStreamPlayer" parent="." unique_id=564446786]
 stream = ExtResource("10_c3yfn")
 
@@ -157,3 +37,123 @@ stream = ExtResource("14_5lbwv")
 [node name="victory_sound" type="AudioStreamPlayer" parent="." unique_id=2091122012]
 stream = ExtResource("15_ycayi")
 volume_db = -15.746
+
+[node name="Background" type="TextureRect" parent="." unique_id=83487442]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000162, 0.6000356)
+texture = ExtResource("2_eobq4")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=566171985]
+offset_left = 1148.0
+offset_right = 3068.0
+offset_bottom = 1080.0
+scale = Vector2(0.6000162, 0.6000356)
+texture = ExtResource("2_eobq4")
+flip_h = true
+
+[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=1391667078]
+offset_left = 80.0
+offset_top = 205.0
+offset_right = 1670.0
+offset_bottom = 415.0
+scale = Vector2(0.4158402, 0.4158047)
+theme_override_constants/separation = 20
+
+[node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=306732477]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=1957421643]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=1411740935]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="Heart4" type="TextureRect" parent="HeartContainer" unique_id=183434011]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="Heart5" type="TextureRect" parent="HeartContainer" unique_id=1539834912]
+layout_mode = 2
+texture = ExtResource("3_j3gjl")
+
+[node name="HeartDebug" type="TextureRect" parent="HeartContainer" unique_id=617941353]
+layout_mode = 2
+texture = ExtResource("4_mm8pb")
+
+[node name="HeartNone" type="TextureRect" parent="HeartContainer" unique_id=1531762875]
+layout_mode = 2
+texture = ExtResource("5_syjsp")
+
+[node name="CookieContainer" type="HBoxContainer" parent="." unique_id=1944018274]
+offset_left = 242.99997
+offset_top = 316.0
+offset_right = 1441.0226
+offset_bottom = 456.0
+scale = Vector2(0.4158402, 0.4158047)
+theme_override_constants/separation = 20
+
+[node name="Cookie1" type="TextureRect" parent="CookieContainer" unique_id=4382699]
+layout_mode = 2
+texture = ExtResource("6_j3gjl")
+stretch_mode = 3
+
+[node name="Cookie2" type="TextureRect" parent="CookieContainer" unique_id=1873077678]
+layout_mode = 2
+texture = ExtResource("6_j3gjl")
+stretch_mode = 3
+
+[node name="Cookie3" type="TextureRect" parent="CookieContainer" unique_id=423122932]
+layout_mode = 2
+texture = ExtResource("6_j3gjl")
+stretch_mode = 3
+
+[node name="NoCookie1" type="TextureRect" parent="CookieContainer" unique_id=44545545]
+layout_mode = 2
+texture = ExtResource("7_mm8pb")
+stretch_mode = 3
+
+[node name="NoCookie2" type="TextureRect" parent="CookieContainer" unique_id=909946974]
+layout_mode = 2
+texture = ExtResource("7_mm8pb")
+stretch_mode = 3
+
+[node name="NoCookie3" type="TextureRect" parent="CookieContainer" unique_id=1141702721]
+layout_mode = 2
+texture = ExtResource("7_mm8pb")
+stretch_mode = 3
+
+[node name="CookieText" type="RichTextLabel" parent="." unique_id=1278614622]
+clip_contents = false
+offset_left = 83.0
+offset_top = 315.0
+offset_right = 237.0
+offset_bottom = 376.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("6_k5uh5")
+theme_override_font_sizes/normal_font_size = 48
+text = "COOKIES:"
+vertical_alignment = 1
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1137134102]
+offset_left = 85.0
+offset_top = 406.0
+offset_right = 589.0
+offset_bottom = 491.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_ty5y0")
+theme_override_font_sizes/normal_font_size = 40
+text = "Starting in 0.0"
+
+[node name="Message" type="RichTextLabel" parent="." unique_id=1877646189]
+offset_left = 86.0
+offset_top = 491.0
+offset_right = 571.0
+offset_bottom = 594.0
+theme_override_colors/default_color = Color(0.9471993, 0.9471994, 0.9471993, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "You really shouldnt see this piece of text"

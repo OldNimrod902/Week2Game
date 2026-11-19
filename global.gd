@@ -16,6 +16,9 @@ var spooky_levels_done = 0
 var spooky_speed_modifier = 0
 var spooky_modified_speed = false
 
+var peak_record_time = 100000
+var peak_levels_done = 0
+
 func _ready() -> void:
 	while true:
 		while not game_finished:
