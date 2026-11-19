@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="3_j2r43"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="4_1bgrj"]
 [ext_resource type="Texture2D" uid="uid://d3o885gljxlti" path="res://assets/spooky_ghost.png" id="5_0yqr5"]
-[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="7_3n7ea"]
-[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="8_ue41w"]
-[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="9_2uyn0"]
+[ext_resource type="PackedScene" uid="uid://2ufobnp268c2" path="res://touch_screen_ui.tscn" id="9_0yqr5"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="10_ncokw"]
 [ext_resource type="Script" uid="uid://c3y2fteua1e4v" path="res://spooky_scenes/close_to_ghost.gd" id="11_3n7ea"]
 
@@ -109,9 +107,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncokw"]
 size = Vector2(1.2420752, 255.35722)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ww54"]
-size = Vector2(160, 160)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ue41w"]
 size = Vector2(256, 214)
 
@@ -201,32 +196,6 @@ position = Vector2(42.656456, -130.35718)
 scale = Vector2(0.9999993, 1)
 shape = SubResource("RectangleShape2D_ncokw")
 
-[node name="TouchScreenUI" type="CanvasLayer" parent="." unique_id=245435578]
-
-[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="TouchScreenUI" unique_id=41771440]
-position = Vector2(179, 422.00003)
-scale = Vector2(0.62, 0.62)
-texture_normal = ExtResource("7_3n7ea")
-shape = SubResource("RectangleShape2D_8ww54")
-action = "move_right"
-visibility_mode = 1
-
-[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1365466141]
-position = Vector2(57.000008, 422)
-scale = Vector2(0.62, 0.62)
-texture_normal = ExtResource("8_ue41w")
-shape = SubResource("RectangleShape2D_8ww54")
-action = "move_left"
-visibility_mode = 1
-
-[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="TouchScreenUI" unique_id=1123202388]
-position = Vector2(990.00006, 422)
-scale = Vector2(0.62, 0.62)
-texture_normal = ExtResource("9_2uyn0")
-shape = SubResource("RectangleShape2D_8ww54")
-action = "jump"
-visibility_mode = 1
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=933346390]
 
 [node name="quest_text" type="RichTextLabel" parent="CanvasLayer" unique_id=1258801399]
@@ -272,6 +241,8 @@ script = ExtResource("11_3n7ea")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseToGhost" unique_id=2097249296]
 position = Vector2(283, 70)
 shape = SubResource("RectangleShape2D_ue41w")
+
+[node name="TouchScreenUI" parent="." unique_id=145102091 instance=ExtResource("9_0yqr5")]
 
 [connection signal="pressed" from="CookieButton" to="." method="_on_cookie_button_pressed"]
 [connection signal="got_away_from_ghost" from="CloseToGhost" to="." method="_on_got_away_from_ghost"]

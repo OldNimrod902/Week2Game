@@ -5,22 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="2_vodl3"]
 [ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="3_vuxkx"]
 [ext_resource type="PackedScene" uid="uid://b25o8x3abyrg3" path="res://scenes/timer.tscn" id="4_me5al"]
-[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="5_rxrep"]
-[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="6_lcs6w"]
 [ext_resource type="Script" uid="uid://bte4qpi6jy800" path="res://scenes/outside_the_box.gd" id="6_me5al"]
-[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="7_ijls6"]
 [ext_resource type="Texture2D" uid="uid://dgba370gnn8gu" path="res://assets/clock.png" id="7_ol02w"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="8_0fn5h"]
 [ext_resource type="Script" uid="uid://tnshk5b3evcv" path="res://scenes/door_lv5.gd" id="9_sren0"]
 [ext_resource type="Texture2D" uid="uid://c2fi2yqj3t8s7" path="res://assets/door.png" id="10_2i8f8"]
 [ext_resource type="Script" uid="uid://hmuebgo6ajis" path="res://scenes/close_to_clock.gd" id="11_2i8f8"]
 [ext_resource type="AudioStream" uid="uid://ccp2jep5qf3k6" path="res://sounds/clock_pickup.mp3" id="12_1av5u"]
+[ext_resource type="PackedScene" uid="uid://2ufobnp268c2" path="res://touch_screen_ui.tscn" id="13_37ql3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol02w"]
 size = Vector2(40, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_10io5"]
-size = Vector2(160, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fn5h"]
 size = Vector2(2145, 142)
@@ -97,32 +92,6 @@ shape = SubResource("RectangleShape2D_ol02w")
 [node name="Player" parent="." unique_id=599305279 instance=ExtResource("3_vuxkx")]
 position = Vector2(170, 512)
 
-[node name="TouchScreenUI" type="CanvasLayer" parent="Player" unique_id=295255319]
-
-[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="Player/TouchScreenUI" unique_id=599666202]
-position = Vector2(179, 422.00003)
-scale = Vector2(0.62, 0.62)
-texture_normal = ExtResource("5_rxrep")
-shape = SubResource("RectangleShape2D_10io5")
-action = "move_right"
-visibility_mode = 1
-
-[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="Player/TouchScreenUI" unique_id=1402970415]
-position = Vector2(57.000008, 422)
-scale = Vector2(0.62, 0.62)
-texture_normal = ExtResource("6_lcs6w")
-shape = SubResource("RectangleShape2D_10io5")
-action = "move_left"
-visibility_mode = 1
-
-[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="Player/TouchScreenUI" unique_id=338524612]
-position = Vector2(990.00006, 422)
-scale = Vector2(0.62, 0.62)
-texture_normal = ExtResource("7_ijls6")
-shape = SubResource("RectangleShape2D_10io5")
-action = "jump"
-visibility_mode = 1
-
 [node name="quest_text" type="RichTextLabel" parent="." unique_id=393323901]
 offset_left = 76.0
 offset_top = 98.0
@@ -192,6 +161,8 @@ shape = SubResource("RectangleShape2D_x1h7o")
 
 [node name="clock_pickup_sound" type="AudioStreamPlayer" parent="." unique_id=199362936]
 stream = ExtResource("12_1av5u")
+
+[node name="TouchScreenUI" parent="." unique_id=145102091 instance=ExtResource("13_37ql3")]
 
 [connection signal="fallen_out" from="outside_the_box" to="." method="_on_outside_the_box_fallen_out"]
 [connection signal="pressed" from="ClockPickup" to="." method="_on_clock_pickup_pressed"]

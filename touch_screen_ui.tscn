@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://2ufobnp268c2"]
+
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="1_rjv1h"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="2_8t4rk"]
+[ext_resource type="Texture2D" uid="uid://bxvqt3l3641kb" path="res://assets/ui_up.png" id="3_e48dh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gcu5"]
+size = Vector2(160, 160)
+
+[node name="TouchScreenUI" type="CanvasLayer" unique_id=145102091]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="." unique_id=1698988233]
+position = Vector2(213, 422.00003)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("1_rjv1h")
+shape = SubResource("RectangleShape2D_2gcu5")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="." unique_id=1375152944]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("2_8t4rk")
+shape = SubResource("RectangleShape2D_2gcu5")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Up" type="TouchScreenButton" parent="." unique_id=1700823223]
+position = Vector2(936.00006, 422)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("3_e48dh")
+shape = SubResource("RectangleShape2D_2gcu5")
+action = "jump"
+visibility_mode = 1
