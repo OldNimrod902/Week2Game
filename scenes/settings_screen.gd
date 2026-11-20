@@ -26,22 +26,27 @@ func _on_back_button_pressed() -> void:
 # difficulty settings
 func _on_easy_pressed() -> void:
 	Global.lives=5
+	Global.lives_selected=5
 	Global.time_adjustment=2
 
 
 func _on_normal_pressed() -> void:
 	Global.lives=4
+	Global.lives_selected=4
 	Global.time_adjustment=0
 
 func _on_hard_pressed() -> void:
 	Global.lives=3
+	Global.lives_selected=3
 	Global.time_adjustment=-2
 
 func _on_harder_pressed() -> void:
 	Global.lives=1
+	Global.lives_selected=1
 	Global.time_adjustment=-2
 
 
 func _on_debug_pressed() -> void:
 	Global.lives=10000
+	Global.lives_selected=10000
 	Global.time_adjustment=0

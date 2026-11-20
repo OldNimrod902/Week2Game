@@ -31,12 +31,12 @@ text = "You shall be forever haunted!"
 clip_contents = false
 offset_left = 64.0
 offset_top = 251.0
-offset_right = 997.6534
-offset_bottom = 461.0714
-scale = Vector2(0.64477885, 0.64263874)
+offset_right = 688.0
+offset_bottom = 392.4243
+scale = Vector2(1, 0.997)
 theme_override_colors/default_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
 theme_override_constants/outline_size = 15
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "You lost all of your lives, and failed to collect all 3 cookies!
 Go back to the main menu and start over.
 Note: you might want to change the game's difficulty in the settings menu, if it's to hard for you"

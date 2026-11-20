@@ -2,6 +2,7 @@ extends Node
 
 var minigames_done = 0
 var lives = 4
+var lives_selected = 4
 var time_adjustment = 0
 var intermission_message = "Good luck..."
 var total_time = 0

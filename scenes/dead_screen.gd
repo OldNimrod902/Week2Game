@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	Global.lives=4
+	Global.lives=Global.lives_selected
 	Global.minigames_done=0
 	Global.death_cause="none"
 	Global.intermission_message="This time you'll be better"
