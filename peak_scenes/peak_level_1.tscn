@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://cehx8nimcwqy8"]
+
+[ext_resource type="Texture2D" uid="uid://d0r78gy2vsiij" path="res://assets/peak_sky_1.png" id="1_bmsw4"]
+[ext_resource type="Script" uid="uid://cm55t0my5r733" path="res://peak_scenes/peak_level_1.gd" id="1_teabs"]
+[ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="2_h6nnl"]
+[ext_resource type="Script" uid="uid://py0adnih0o8j" path="res://peak_scenes/camera_2d.gd" id="3_h6nnl"]
+[ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="3_teabs"]
+[ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="6_hn3gq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn3gq"]
+size = Vector2(121.288765, 33.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esc26"]
+size = Vector2(19.15036, 25.734741)
+
+[node name="peak_level_1" type="Node2D" unique_id=687344664]
+script = ExtResource("1_teabs")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1610141432]
+offset_left = -984.0
+offset_top = -8739.0
+offset_right = 2136.0
+offset_bottom = 909.0
+texture = ExtResource("1_bmsw4")
+stretch_mode = 1
+
+[node name="Player" parent="." unique_id=599305279 instance=ExtResource("2_h6nnl")]
+position = Vector2(576, 427)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2063982322]
+position = Vector2(576, 427)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 1.0
+drag_right_margin = 1.0
+script = ExtResource("3_h6nnl")
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=871173937]
+position = Vector2(3, 494)
+scale = Vector2(24.519997, 2.799999)
+
+[node name="TextureRect" type="TextureRect" parent="ground" unique_id=1926914989]
+offset_left = -44.82056
+offset_top = -1.071429
+offset_right = 4575.592
+offset_bottom = 142.92857
+scale = Vector2(0.029004568, 0.28962559)
+texture = ExtResource("3_teabs")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=1466514220]
+position = Vector2(28.058735, 16.071411)
+shape = SubResource("RectangleShape2D_hn3gq")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=288488988]
+position = Vector2(680, 310.00003)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform1" unique_id=1618464556]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1245007188]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1417173772]
+position = Vector2(361.99997, 132.00003)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform2" unique_id=388179018]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1367022080]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1724567606]
+position = Vector2(154.99994, 23)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform3" unique_id=1770442151]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=2091974849]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=2133812768]
+position = Vector2(392.00003, -107)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform4" unique_id=2033999491]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=1331852577]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[node name="Platform5" type="StaticBody2D" parent="." unique_id=1454216290]
+position = Vector2(704, -173)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform5" unique_id=500179545]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=26097696]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[node name="Platform6" type="StaticBody2D" parent="." unique_id=344130312]
+position = Vector2(919, -225)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform6" unique_id=1053367669]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6" unique_id=372939063]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[node name="Platform7" type="StaticBody2D" parent="." unique_id=2107785846]
+position = Vector2(631.9999, -378)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform7" unique_id=2014495009]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform7" unique_id=1779673238]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[node name="Platform8" type="StaticBody2D" parent="." unique_id=1809628233]
+position = Vector2(363.99997, -478)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform8" unique_id=799799532]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform8" unique_id=1007125932]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[node name="Platform9" type="StaticBody2D" parent="." unique_id=1079400347]
+position = Vector2(147.99997, -594)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform9" unique_id=1567890326]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform9" unique_id=1984873508]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[node name="Platform10" type="StaticBody2D" parent="." unique_id=468418307]
+position = Vector2(416, -707.00006)
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="Platform10" unique_id=1422904493]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("6_hn3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform10" unique_id=412448079]
+position = Vector2(9.713154, 13.108093)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_esc26")
+one_way_collision = true
+
+[connection signal="died" from="Player" to="." method="_on_player_died"]

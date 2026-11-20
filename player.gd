@@ -7,6 +7,8 @@ var JUMP_VELOCITY = -600.0
 @onready var jump_sound = $jump_sound
 @onready var walking_sound = $walking_sound
 
+signal died
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -42,5 +44,24 @@ func _physics_process(delta: float) -> void:
 	else:
 		walking_sound.stop()
 		body.play("idle")
+		
+	if Global.peak_player:
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		
+		var camera = get_viewport().get_camera_2d()
+		var half_width = get_viewport_rect().size.x / 2
+		
+		var left = camera.global_position.x - half_width
+		var right = camera.global_position.x + half_width
+		
+		if global_position.x < left:
+			global_position.x = right
+		elif global_position.x > right:
+			global_position.x = left
+			
+		if global_position.y > camera.global_position.y + 600:
+			emit_signal("died")
+		
 	
 	move_and_slide()
