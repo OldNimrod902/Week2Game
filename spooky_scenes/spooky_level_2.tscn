@@ -507,6 +507,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform2" type="StaticBody2D" parent="." unique_id=489036331]
 position = Vector2(547, 2082.0002)
@@ -522,6 +523,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform3" type="StaticBody2D" parent="." unique_id=1592523839]
 position = Vector2(798, 1940)
@@ -537,6 +539,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform4" type="StaticBody2D" parent="." unique_id=858985638]
 position = Vector2(550.9999, 1789.0001)
@@ -552,6 +555,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.740768, 12.529541)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform5" type="StaticBody2D" parent="." unique_id=440233049]
 position = Vector2(239.99997, 1785.0001)
@@ -567,6 +571,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform6" type="StaticBody2D" parent="." unique_id=728417194]
 position = Vector2(77, 1645.0001)
@@ -588,6 +593,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.78755, 13.258748)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="TextureRect" type="TextureRect" parent="Platform6" unique_id=1218978970]
 offset_right = 468.21478
@@ -599,6 +605,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform8" type="StaticBody2D" parent="." unique_id=1372812886]
 position = Vector2(592.00006, 1365.0001)
@@ -614,6 +621,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform9" type="StaticBody2D" parent="." unique_id=1168492517]
 position = Vector2(858, 1225.0001)
@@ -629,6 +637,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform10" type="StaticBody2D" parent="." unique_id=879198330]
 position = Vector2(602, 1076.0001)
@@ -644,6 +653,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform11" type="StaticBody2D" parent="." unique_id=91724894]
 position = Vector2(322.99997, 1167)
@@ -659,6 +669,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform12" type="StaticBody2D" parent="." unique_id=1803722933]
 position = Vector2(75.99997, 1031)
@@ -674,6 +685,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform13" type="StaticBody2D" parent="." unique_id=332244910]
 position = Vector2(359.00003, 893.0001)
@@ -689,6 +701,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform14" type="StaticBody2D" parent="." unique_id=1941489665]
 position = Vector2(616, 770)
@@ -704,6 +717,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.713154, 13.108093)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="Platform7" type="StaticBody2D" parent="." unique_id=1396477756]
 position = Vector2(304.00003, 1498.0001)
@@ -720,6 +734,7 @@ texture = ExtResource("6_5f3q6")
 position = Vector2(9.757452, 12.958662)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_wniwh")
+one_way_collision = true
 
 [node name="wall1" type="StaticBody2D" parent="." unique_id=1237056708]
 position = Vector2(-1378.9999, 587)
@@ -761,6 +776,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform16" type="StaticBody2D" parent="." unique_id=1180424946]
 position = Vector2(298.99997, 238)
@@ -784,6 +800,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform17" type="StaticBody2D" parent="." unique_id=829164945]
 position = Vector2(774.00006, 351)
@@ -807,6 +824,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform19" type="StaticBody2D" parent="." unique_id=1205618068]
 position = Vector2(50.999954, -103)
@@ -860,6 +878,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform21" type="StaticBody2D" parent="." unique_id=1211028358]
 position = Vector2(700.00006, -433.00003)
@@ -883,6 +902,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform22" type="StaticBody2D" parent="." unique_id=663874823]
 position = Vector2(131.99994, -565)
@@ -906,6 +926,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform23" type="StaticBody2D" parent="." unique_id=1749235726]
 position = Vector2(358, -755.00006)
@@ -929,6 +950,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform24" type="StaticBody2D" parent="." unique_id=208415341]
 position = Vector2(842.00006, -880.00006)
@@ -952,6 +974,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform25" type="StaticBody2D" parent="." unique_id=1741625092]
 position = Vector2(587.9999, -1065)
@@ -975,6 +998,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform26" type="StaticBody2D" parent="." unique_id=468011440]
 position = Vector2(213.99998, -1230)
@@ -998,6 +1022,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(18.984798, 9.8311)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform27" type="StaticBody2D" parent="." unique_id=1104033558]
 position = Vector2(702, -1357)
@@ -1021,6 +1046,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform28" type="StaticBody2D" parent="." unique_id=1796901318]
 position = Vector2(176.99994, -1482)
@@ -1044,6 +1070,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform29" type="StaticBody2D" parent="." unique_id=528972402]
 position = Vector2(344, -1664)
@@ -1067,6 +1094,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.205555, 12.288837)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Platform18" type="StaticBody2D" parent="." unique_id=1753419221]
 position = Vector2(739.00006, 68.000015)
@@ -1091,6 +1119,7 @@ texture = ExtResource("7_wniwh")
 position = Vector2(19.047739, 12.275063)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_rsidx")
+one_way_collision = true
 
 [node name="Cookie_pickup" type="Node2D" parent="." unique_id=1203980044]
 position = Vector2(310, -2354)

@@ -35,7 +35,7 @@ offset_top = 149.0
 offset_right = 840.0
 offset_bottom = 512.0
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 24
 text = "Once upon a time, there was a creature
 A creature that, for whatever reason, did not posses \"arms\"
 This creature is you, fellow traveler

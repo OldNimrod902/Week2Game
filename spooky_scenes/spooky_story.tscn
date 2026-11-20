@@ -25,9 +25,9 @@ flip_h = true
 offset_left = 92.0
 offset_top = 149.0
 offset_right = 840.0
-offset_bottom = 512.0
+offset_bottom = 525.0
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 24
 text = "The armless creature lived happily ever since it got back the Antique Clock
 But ever since you entered that building, something has been haunting you.
 So its your job to make it stop haunting the armless creature.
