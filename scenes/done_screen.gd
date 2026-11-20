@@ -2,6 +2,7 @@ extends Node2D
 @onready var timer: RichTextLabel = $Elapsed_time
 @onready var record_timer: RichTextLabel = $Record_time
 @onready var victory_audio = $AudioVictory
+@onready var confirmation = $exitconfirm
 
 func _ready() -> void:
 	Global.game_finished=true;
@@ -22,4 +23,8 @@ func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
 
 func _on_quit_pressed() -> void:
+	confirmation.popup()
+
+
+func _on_exitconfirm_confirmed() -> void:
 	get_tree().quit()

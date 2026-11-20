@@ -90,5 +90,18 @@ text = "QUIT GAME"
 [node name="AudioVictory" type="AudioStreamPlayer" parent="." unique_id=390844092]
 stream = ExtResource("5_t6dg5")
 
+[node name="exitconfirm" type="ConfirmationDialog" parent="." unique_id=1301848410]
+oversampling_override = 1.0
+title = "Exit"
+initial_position = 1
+size = Vector2i(250, 128)
+sharp_corners = true
+ok_button_text = "Yes"
+dialog_text = "Are you sure that you want to close this really good game?
+Note: this feature does not work on itch.io, the game just freezes."
+dialog_autowrap = true
+cancel_button_text = "No"
+
 [connection signal="pressed" from="HBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="confirmed" from="exitconfirm" to="." method="_on_exitconfirm_confirmed"]

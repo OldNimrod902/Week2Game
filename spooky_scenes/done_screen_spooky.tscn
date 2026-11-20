@@ -191,5 +191,17 @@ texture = ExtResource("7_uqplo")
 libraries/ = SubResource("AnimationLibrary_862uk")
 autoplay = &"floating"
 
+[node name="exitconfirm" type="ConfirmationDialog" parent="." unique_id=2097451021]
+oversampling_override = 1.0
+title = "Exit"
+initial_position = 1
+size = Vector2i(250, 128)
+sharp_corners = true
+ok_button_text = "Yes"
+dialog_text = "Are you sure that you want to close this really good game?
+Note: this feature does not work on itch.io, the game just freezes."
+dialog_autowrap = true
+cancel_button_text = "No"
+
 [connection signal="pressed" from="HBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]

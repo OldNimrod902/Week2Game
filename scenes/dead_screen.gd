@@ -1,5 +1,6 @@
 extends Node2D
 @onready var game_over_sound = $game_over_sound
+@onready var confirmation = $exitconfirm
 
 func _ready() -> void:
 	game_over_sound.play()
@@ -17,4 +18,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_ragequit_pressed() -> void:
+	confirmation.popup()
+
+func _on_exitconfirm_confirmed() -> void:
 	get_tree().quit()

@@ -72,5 +72,18 @@ text = "RAGE QUIT"
 [node name="game_over_sound" type="AudioStreamPlayer" parent="." unique_id=473087919]
 stream = ExtResource("4_g6ylt")
 
+[node name="exitconfirm" type="ConfirmationDialog" parent="." unique_id=222518378]
+oversampling_override = 1.0
+title = "Exit"
+initial_position = 1
+size = Vector2i(250, 128)
+sharp_corners = true
+ok_button_text = "Yes"
+dialog_text = "Are you sure that you want to close this really good game?
+Note: this feature does not work on itch.io, the game just freezes."
+dialog_autowrap = true
+cancel_button_text = "No"
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Ragequit" to="." method="_on_ragequit_pressed"]
+[connection signal="confirmed" from="exitconfirm" to="." method="_on_exitconfirm_confirmed"]

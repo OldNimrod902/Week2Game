@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var confirmation = $exitconfirm
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +16,7 @@ func _on_start_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	confirmation.popup()
 
 
 func _on_settings_pressed() -> void:
@@ -24,3 +24,7 @@ func _on_settings_pressed() -> void:
 
 func _on_challenges_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/challenges_ui.tscn")
+
+
+func _on_exitconfirm_confirmed() -> void:
+	get_tree().quit()

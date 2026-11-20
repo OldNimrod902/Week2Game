@@ -48,12 +48,12 @@ clip_contents = false
 layout_mode = 0
 offset_left = 6.2036743
 offset_top = 132.26704
-offset_right = 1276.2288
+offset_right = 1285.8501
 offset_bottom = 340.50745
 scale = Vector2(0.64477885, 0.64263874)
 theme_override_colors/default_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
 theme_override_constants/outline_size = 7
-theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/normal_font_size = 60
 text = "Challenges are harder expansions to the main game that test your abilities using new gamplay elements. Give them a try!"
 
 [node name="Spookie" type="Button" parent="." unique_id=1053050417]
