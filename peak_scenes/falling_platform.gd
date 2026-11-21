@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	if player_area.overlaps_area(self_area) and not has_fallen:
 		texture.texture = load("res://assets/fall_platform_broken.png")
 		break_sound.play()
-		await wait(0.3)
+		await wait(0.6)
 		fall()
 
 func fall():

@@ -21,3 +21,7 @@ func _on_spookie_pressed() -> void:
 
 func _on_peak_pressed() -> void:
 	get_tree().change_scene_to_file("res://peak_scenes/peak_story.tscn")
+
+
+func _on_peak_infinite_pressed() -> void:
+	pass # Replace with function body.
