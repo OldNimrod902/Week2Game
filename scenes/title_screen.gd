@@ -1,9 +1,12 @@
 extends Node2D
 @onready var confirmation = $exitconfirm
-
+@onready var record_time = $TimeLabel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	record_time.hide()
+	if Global.record_time != 100000:
+		record_time.show()
+		record_time.text = "SHORTEST TIME: " + str(snapped(Global.record_time, 0.1)) + "s"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,10 +1,15 @@
 extends Control
+@onready var spooky_record = $Spookie/TimeData
+@onready var peak_record = $Peak/TimeData
+@onready var peak_infinite_record = $Peak_infinite/TimeData
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	if Global.spooky_record_time != 100000:
+		spooky_record.text = str(snapped(Global.spooky_record_time, 0.1))
+	if Global.peak_record_time !=100000:
+		peak_record.text = str(snapped(Global.peak_record_time, 0.1))
+	if Global.peak_infinite_record != 0:
+		peak_infinite_record.text = str(snapped(Global.peak_infinite_record, 0.1))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

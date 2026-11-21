@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dpby4yvjnabg4" path="res://assets/background.png" id="1_h85tw"]
 [ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="2_40nbh"]
 [ext_resource type="Texture2D" uid="uid://d3o885gljxlti" path="res://assets/spooky_ghost.png" id="4_n1w3y"]
-[ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="5_u00ox"]
+[ext_resource type="FontFile" uid="uid://3u30c14aexnu" path="res://font_assets/Handjet-ExtraBold.ttf" id="5_n1w3y"]
+[ext_resource type="Texture2D" uid="uid://cmdkrjo1umew4" path="res://assets/peak_sky_2.png" id="6_u00ox"]
 
 [node name="challenges_UI" type="Control" unique_id=1271138894]
 layout_mode = 3
@@ -59,9 +60,9 @@ text = "Challenges are harder expansions to the main game that test your abiliti
 [node name="Spookie" type="Button" parent="." unique_id=1053050417]
 layout_mode = 0
 offset_left = 101.0
-offset_top = 266.0
-offset_right = 728.0
-offset_bottom = 377.0
+offset_top = 274.0
+offset_right = 324.0
+offset_bottom = 478.0
 theme_override_colors/font_color = Color(0.3887009, 1, 0.79712546, 1)
 theme_override_colors/font_outline_color = Color(0, 0.3206409, 0.44815522, 1)
 theme_override_constants/outline_size = 16
@@ -70,15 +71,39 @@ theme_override_constants/icon_max_width = 64
 theme_override_fonts/font = ExtResource("2_40nbh")
 theme_override_font_sizes/font_size = 41
 theme_override_icons/icon = ExtResource("4_n1w3y")
-text = "SPOOKIE CHALLENGE"
-alignment = 0
+text = "SPOOKIE
+CHALLENGE"
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="TimeLabel" type="RichTextLabel" parent="Spookie" unique_id=287824096]
+layout_mode = 0
+offset_top = 204.0
+offset_right = 223.0
+offset_bottom = 233.0
+theme_override_colors/default_color = Color(1, 1, 1, 0.7921569)
+theme_override_fonts/normal_font = ExtResource("5_n1w3y")
+text = "SHORTEST TIME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeData" type="RichTextLabel" parent="Spookie" unique_id=1463176739]
+layout_mode = 0
+offset_top = 229.0
+offset_right = 223.0
+offset_bottom = 270.0
+theme_override_fonts/normal_font = ExtResource("2_40nbh")
+theme_override_font_sizes/normal_font_size = 36
+text = "N/A"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Peak" type="Button" parent="." unique_id=1654320676]
 layout_mode = 0
-offset_left = 101.0
-offset_top = 393.0
-offset_right = 557.0
-offset_bottom = 504.0
+offset_left = 350.0
+offset_top = 274.0
+offset_right = 573.0
+offset_bottom = 478.0
 theme_override_colors/font_color = Color(0.96615225, 0.85954475, 0.6837179, 1)
 theme_override_colors/font_outline_color = Color(0.7105971, 0.4687342, 0.34255612, 1)
 theme_override_constants/outline_size = 16
@@ -86,16 +111,40 @@ theme_override_constants/h_separation = 21
 theme_override_constants/icon_max_width = 64
 theme_override_fonts/font = ExtResource("2_40nbh")
 theme_override_font_sizes/font_size = 41
-theme_override_icons/icon = ExtResource("5_u00ox")
-text = "TILL DA PEAK CHALLENGE"
-alignment = 0
+theme_override_icons/icon = ExtResource("6_u00ox")
+text = "TILL DA PEAK
+CHALLENGE"
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="TimeLabel" type="RichTextLabel" parent="Peak" unique_id=66184371]
+layout_mode = 0
+offset_top = 204.0
+offset_right = 223.0
+offset_bottom = 233.0
+theme_override_colors/default_color = Color(1, 1, 1, 0.7921569)
+theme_override_fonts/normal_font = ExtResource("5_n1w3y")
+text = "SHORTEST TIME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeData" type="RichTextLabel" parent="Peak" unique_id=537387653]
+layout_mode = 0
+offset_top = 229.0
+offset_right = 223.0
+offset_bottom = 270.0
+theme_override_fonts/normal_font = ExtResource("2_40nbh")
+theme_override_font_sizes/normal_font_size = 36
+text = "N/A"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Peak_infinite" type="Button" parent="." unique_id=1072785962]
 layout_mode = 0
-offset_left = 574.0
-offset_top = 393.0
-offset_right = 728.0
-offset_bottom = 504.0
+offset_left = 607.0
+offset_top = 274.0
+offset_right = 745.0
+offset_bottom = 385.0
 theme_override_colors/font_color = Color(0.9905942, 0.9615231, 0.91379476, 1)
 theme_override_colors/font_outline_color = Color(0.7105971, 0.4687342, 0.34255612, 1)
 theme_override_constants/outline_size = 16
@@ -105,6 +154,28 @@ theme_override_fonts/font = ExtResource("2_40nbh")
 theme_override_font_sizes/font_size = 38
 text = "INFINITE
 JUMPER"
+
+[node name="TimeLabel" type="RichTextLabel" parent="Peak_infinite" unique_id=1204492646]
+layout_mode = 0
+offset_top = 121.0
+offset_right = 138.0
+offset_bottom = 150.0
+theme_override_colors/default_color = Color(1, 1, 1, 0.7921569)
+theme_override_fonts/normal_font = ExtResource("5_n1w3y")
+text = "HIGHEST CLIMB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeData" type="RichTextLabel" parent="Peak_infinite" unique_id=522759556]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 138.0
+offset_bottom = 203.0
+theme_override_fonts/normal_font = ExtResource("2_40nbh")
+theme_override_font_sizes/normal_font_size = 36
+text = "N/A"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Back_button" type="Button" parent="." unique_id=658072591]
 layout_mode = 0
@@ -118,20 +189,20 @@ text = "BACK"
 
 [node name="peak2" type="Button" parent="." unique_id=438354978]
 layout_mode = 0
-offset_left = 797.0
-offset_top = 363.0
-offset_right = 1007.0
-offset_bottom = 414.0
+offset_left = 920.0
+offset_top = 21.0
+offset_right = 1130.0
+offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("2_40nbh")
 theme_override_font_sizes/font_size = 30
 text = "load peak2"
 
 [node name="peak3" type="Button" parent="." unique_id=1766931981]
 layout_mode = 0
-offset_left = 797.0
-offset_top = 415.0
-offset_right = 1007.0
-offset_bottom = 466.0
+offset_left = 920.0
+offset_top = 73.0
+offset_right = 1130.0
+offset_bottom = 124.0
 theme_override_fonts/font = ExtResource("2_40nbh")
 theme_override_font_sizes/font_size = 30
 text = "load peak3"

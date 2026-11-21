@@ -21,6 +21,7 @@ var peak_record_time = 100000
 var peak_levels_done = 0
 var peak_height = 0
 var peak_player = false
+var peak_infinite_record = 0
 
 func _ready() -> void:
 	while true:

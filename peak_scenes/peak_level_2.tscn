@@ -19,9 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="15_gvto3"]
 [ext_resource type="Script" uid="uid://csuy63wklbfyv" path="res://peak_scenes/platform_animated.gd" id="16_4vpjy"]
 [ext_resource type="Texture2D" uid="uid://cwyrvn1ilcup7" path="res://assets/platform_green.png" id="17_4vpjy"]
-[ext_resource type="Script" uid="uid://dx1odb0iol3oe" path="res://scenes/spike.gd" id="18_cvs41"]
 [ext_resource type="Texture2D" uid="uid://ce4kd0ak8j4ba" path="res://assets/spikes.png" id="19_0gknc"]
 [ext_resource type="Script" uid="uid://blmdvhmv47gfm" path="res://peak_scenes/falling_platform.gd" id="20_j7i0a"]
+[ext_resource type="Script" uid="uid://lxcm2lvvywl8" path="res://peak_scenes/peak_spike.gd" id="20_x67vs"]
 [ext_resource type="Texture2D" uid="uid://bc44jo6su8ex" path="res://assets/fall_platform.png" id="21_sflga"]
 [ext_resource type="Script" uid="uid://c8xjeiqx5b5pb" path="res://peak_scenes/leap_platform.gd" id="22_x3op8"]
 [ext_resource type="Texture2D" uid="uid://ckrb3hey7sxfo" path="res://assets/jump_platform.png" id="23_wk246"]
@@ -414,7 +414,7 @@ scale = Vector2(9.059881, 1.2206199)
 [node name="spike" type="Node2D" parent="spiky_platform" unique_id=149280410]
 position = Vector2(4.415077, -26.216125)
 scale = Vector2(0.11037673, 0.8192559)
-script = ExtResource("18_cvs41")
+script = ExtResource("20_x67vs")
 
 [node name="TextureRect" type="TextureRect" parent="spiky_platform/spike" unique_id=365394081]
 offset_left = -18.999998
@@ -448,7 +448,7 @@ scale = Vector2(9.059881, 1.2206199)
 [node name="spike" type="Node2D" parent="spiky_platform4" unique_id=765817298]
 position = Vector2(4.415077, -26.216125)
 scale = Vector2(0.11037673, 0.8192559)
-script = ExtResource("18_cvs41")
+script = ExtResource("20_x67vs")
 
 [node name="TextureRect" type="TextureRect" parent="spiky_platform4/spike" unique_id=1053164948]
 offset_left = -18.999998
@@ -482,7 +482,7 @@ scale = Vector2(9.059881, 1.2206199)
 [node name="spike" type="Node2D" parent="spiky_platform5" unique_id=356406039]
 position = Vector2(4.415077, -26.216125)
 scale = Vector2(0.11037673, 0.8192559)
-script = ExtResource("18_cvs41")
+script = ExtResource("20_x67vs")
 
 [node name="TextureRect" type="TextureRect" parent="spiky_platform5/spike" unique_id=1475883720]
 offset_left = -18.999998
@@ -516,7 +516,7 @@ scale = Vector2(9.059881, 1.2206199)
 [node name="spike" type="Node2D" parent="spiky_platform6" unique_id=393825145]
 position = Vector2(4.415077, -26.216125)
 scale = Vector2(0.11037673, 0.8192559)
-script = ExtResource("18_cvs41")
+script = ExtResource("20_x67vs")
 
 [node name="TextureRect" type="TextureRect" parent="spiky_platform6/spike" unique_id=1338819370]
 offset_left = -18.999998
@@ -550,7 +550,7 @@ scale = Vector2(9.059881, 1.2206199)
 [node name="spike" type="Node2D" parent="spiky_platform7" unique_id=1646319120]
 position = Vector2(4.415077, -26.216125)
 scale = Vector2(0.11037673, 0.8192559)
-script = ExtResource("18_cvs41")
+script = ExtResource("20_x67vs")
 
 [node name="TextureRect" type="TextureRect" parent="spiky_platform7/spike" unique_id=1962179851]
 offset_left = -18.999998
@@ -584,7 +584,7 @@ scale = Vector2(9.059881, 1.2206199)
 [node name="spike" type="Node2D" parent="spiky_platform2" unique_id=844156803]
 position = Vector2(4.415077, -26.216125)
 scale = Vector2(0.11037673, 0.8192559)
-script = ExtResource("18_cvs41")
+script = ExtResource("20_x67vs")
 
 [node name="TextureRect" type="TextureRect" parent="spiky_platform2/spike" unique_id=1156724060]
 offset_left = -18.999998
@@ -618,7 +618,7 @@ scale = Vector2(9.059881, 1.2206199)
 [node name="spike" type="Node2D" parent="spiky_platform3" unique_id=1276183433]
 position = Vector2(4.415077, -26.216125)
 scale = Vector2(0.11037673, 0.8192559)
-script = ExtResource("18_cvs41")
+script = ExtResource("20_x67vs")
 
 [node name="TextureRect" type="TextureRect" parent="spiky_platform3/spike" unique_id=746986716]
 offset_left = -18.999998
