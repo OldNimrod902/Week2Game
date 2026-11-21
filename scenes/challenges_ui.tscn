@@ -139,6 +139,20 @@ text = "N/A"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ad" type="RichTextLabel" parent="Peak" unique_id=1367575055]
+layout_mode = 0
+offset_top = 163.0
+offset_right = 223.0
+offset_bottom = 204.0
+theme_override_colors/default_color = Color(1, 1, 0.21960784, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("2_40nbh")
+theme_override_font_sizes/normal_font_size = 26
+text = "NEW!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Peak_infinite" type="Button" parent="." unique_id=1072785962]
 layout_mode = 0
 offset_left = 607.0
