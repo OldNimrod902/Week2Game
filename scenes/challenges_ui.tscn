@@ -116,7 +116,29 @@ theme_override_fonts/font = ExtResource("2_40nbh")
 theme_override_font_sizes/font_size = 30
 text = "BACK"
 
+[node name="peak2" type="Button" parent="." unique_id=438354978]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 363.0
+offset_right = 1007.0
+offset_bottom = 414.0
+theme_override_fonts/font = ExtResource("2_40nbh")
+theme_override_font_sizes/font_size = 30
+text = "load peak2"
+
+[node name="peak3" type="Button" parent="." unique_id=1766931981]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 415.0
+offset_right = 1007.0
+offset_bottom = 466.0
+theme_override_fonts/font = ExtResource("2_40nbh")
+theme_override_font_sizes/font_size = 30
+text = "load peak3"
+
 [connection signal="pressed" from="Spookie" to="." method="_on_spookie_pressed"]
 [connection signal="pressed" from="Peak" to="." method="_on_peak_pressed"]
 [connection signal="pressed" from="Peak_infinite" to="." method="_on_peak_infinite_pressed"]
 [connection signal="pressed" from="Back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="peak2" to="." method="_on_peak_2_pressed"]
+[connection signal="pressed" from="peak3" to="." method="_on_peak_3_pressed"]
