@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://c8xjeiqx5b5pb" path="res://peak_scenes/leap_platform.gd" id="22_x3op8"]
 [ext_resource type="Texture2D" uid="uid://ckrb3hey7sxfo" path="res://assets/jump_platform.png" id="23_wk246"]
 [ext_resource type="Script" uid="uid://d4dsnxcj5jajv" path="res://peak_scenes/leap_platform_moving.gd" id="24_sflga"]
+[ext_resource type="PackedScene" uid="uid://b5nim0se8kg25" path="res://peak_scenes/peak_touch_screen_ui.tscn" id="27_x67vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sflga"]
 size = Vector2(121.288765, 33.75)
@@ -2222,6 +2223,8 @@ one_way_collision = true
 position = Vector2(9.713157, -13.927322)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_2qdyj")
+
+[node name="PeakTouchScreenUI" parent="." unique_id=666729187 instance=ExtResource("27_x67vs")]
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="passed_line" from="final_platform" to="." method="_on_final_platform_passed_line"]

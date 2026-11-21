@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ydmeo5gbacq0" path="res://assets/peak_sky_1_top.png" id="15_he6i7"]
 [ext_resource type="Texture2D" uid="uid://cepvlxuobjqxi" path="res://assets/wooden_platform.png" id="16_14th1"]
 [ext_resource type="Script" uid="uid://dfwrqw1ttokiv" path="res://peak_scenes/final_platform.gd" id="16_nlhqe"]
+[ext_resource type="PackedScene" uid="uid://b5nim0se8kg25" path="res://peak_scenes/peak_touch_screen_ui.tscn" id="18_nlhqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esc26"]
 size = Vector2(19.15036, 25.734741)
@@ -1483,6 +1484,8 @@ one_way_collision = true
 position = Vector2(563.5127, 20)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_nlhqe")
+
+[node name="PeakTouchScreenUI" parent="." unique_id=666729187 instance=ExtResource("18_nlhqe")]
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
 [connection signal="passed_line" from="final_platform" to="." method="_on_final_platform_passed_line"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b5nim0se8kg25"]
+
+[ext_resource type="Texture2D" uid="uid://dtmk2jl8n1lf7" path="res://assets/ui_right.png" id="1_wqpl5"]
+[ext_resource type="Texture2D" uid="uid://mdde6rlbdvcc" path="res://assets/ui_left.png" id="2_kljv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cekm8"]
+size = Vector2(160, 160)
+
+[node name="PeakTouchScreenUI" type="CanvasLayer" unique_id=666729187]
+
+[node name="TouchScreenButton_Right" type="TouchScreenButton" parent="." unique_id=1906866307]
+position = Vector2(954, 422.00003)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("1_wqpl5")
+shape = SubResource("RectangleShape2D_cekm8")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenButton_Left" type="TouchScreenButton" parent="." unique_id=45626743]
+position = Vector2(57.000008, 422)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("2_kljv6")
+shape = SubResource("RectangleShape2D_cekm8")
+action = "move_left"
+visibility_mode = 1
