@@ -28,7 +28,7 @@ func _on_player_died() -> void:
 func _on_final_platform_passed_line() -> void:
 	complete_text.show()
 	await wait(3)
-	Global.intermission_message = "Starting to get a but cold up here"
+	Global.intermission_message = "Starting to get a bit cold up here"
 	Global.peak_height = h_max
 	get_tree().change_scene_to_file("res://peak_scenes/peak_intermission.tscn")
 

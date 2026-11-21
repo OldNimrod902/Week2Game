@@ -211,7 +211,7 @@ one_way_collision = true
 [node name="Area2D" type="Area2D" parent="Falling_platform3" unique_id=767617548]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Falling_platform3/Area2D" unique_id=919379132]
-position = Vector2(9.713157, -13.927322)
+position = Vector2(9.713157, -47.51681)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_dupqi")
 

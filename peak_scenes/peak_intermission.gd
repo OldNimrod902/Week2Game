@@ -90,13 +90,13 @@ func _process(delta: float) -> void:
 	elif Global.lives > 5:
 		heart_debug.show()
 		
-	if Global.peak_levels_done == 1:
+	if Global.peak_levels_done == 0:
 		peak_stage_1.show()
-	elif Global.peak_levels_done == 2:
+	elif Global.peak_levels_done == 1:
 		peak_stage_2.show()
-	elif Global.peak_levels_done == 3:
+	elif Global.peak_levels_done == 2:
 		peak_stage_3.show()
-	elif Global.peak_levels_done == 4:
+	elif Global.peak_levels_done == 3:
 		peak_stage_4.show()
 		
 	height_text.text = str(Global.peak_height) + "m"
