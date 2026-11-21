@@ -34,3 +34,12 @@ func _on_final_platform_passed_line() -> void:
 
 func wait(seconds: float) -> void: 
 	await get_tree().create_timer(seconds).timeout 
+
+
+func _on_spike_trap_entered() -> void:
+	Global.lives -= 1
+	Global.peak_levels_done-= 1
+	Global.intermission_message = "Who put these here? Oh. I did."
+	Global.death_cause = "spike"
+	Global.peak_height = h_max
+	get_tree().change_scene_to_file("res://peak_scenes/peak_intermission.tscn")
