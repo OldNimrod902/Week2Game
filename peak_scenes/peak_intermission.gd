@@ -59,7 +59,7 @@ func _ready() -> void:
 	
 	await Timer(3.0)
 	Global.death_cause = "alive"
-	if Global.peak_levels_done < 4:
+	if Global.peak_levels_done < 3:
 		Global.peak_levels_done = Global.peak_levels_done +1
 		get_tree().change_scene_to_file("res://peak_scenes/peak_level_" + str(Global.peak_levels_done) + ".tscn")
 	else:

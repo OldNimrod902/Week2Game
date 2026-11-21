@@ -9,10 +9,11 @@
 script = ExtResource("1_jootw")
 
 [node name="Background" type="TextureRect" parent="." unique_id=424748248]
-offset_right = 1920.0
+offset_right = 4046.6772
 offset_bottom = 1080.0
 scale = Vector2(0.5999985, 0.60000694)
 texture = ExtResource("2_jootw")
+stretch_mode = 1
 
 [node name="title" type="RichTextLabel" parent="." unique_id=290899306]
 clip_contents = false

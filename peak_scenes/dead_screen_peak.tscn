@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://0lhquqfw3vr"]
+
+[ext_resource type="Script" uid="uid://buki7f0mj5etd" path="res://peak_scenes/dead_screen_peak.gd" id="1_6nasq"]
+[ext_resource type="Texture2D" uid="uid://68jofgjhh4ia" path="res://assets/peak_bakcgroun_2_transition.png" id="1_q7fp2"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="2_6nasq"]
+[ext_resource type="AudioStream" uid="uid://vbe7l2pc2n13" path="res://sounds/game_over.mp3" id="3_2dm4e"]
+
+[node name="dead_screen_peak" type="Control" unique_id=423484111]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6nasq")
+
+[node name="Background" type="TextureRect" parent="." unique_id=853033450]
+layout_mode = 0
+offset_right = 3266.6753
+offset_bottom = 720.0
+texture = ExtResource("1_q7fp2")
+stretch_mode = 1
+
+[node name="title" type="RichTextLabel" parent="." unique_id=995863840]
+clip_contents = false
+layout_mode = 0
+offset_left = 61.000004
+offset_top = 163.00002
+offset_right = 1072.1993
+offset_bottom = 284.37457
+scale = Vector2(0.64477885, 0.64263874)
+theme_override_colors/default_color = Color(1, 0, 0.23529412, 1)
+theme_override_colors/font_outline_color = Color(0.51635885, 8.3025543e-07, 2.8878452e-07, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/normal_font_size = 71
+text = "You failed the mountains!"
+
+[node name="description" type="RichTextLabel" parent="." unique_id=989720649]
+clip_contents = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 251.0
+offset_right = 688.0
+offset_bottom = 392.4243
+scale = Vector2(1, 0.997)
+theme_override_colors/default_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/normal_font_size = 24
+text = "You lost all of your lives, and failed to climb the mountain!
+Go back to the main menu and start over.
+Note: you might want to change the game's difficulty in the settings menu, if it's to hard for you"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1169988461]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 402.0
+offset_right = 279.0
+offset_bottom = 523.0
+theme_override_constants/separation = 11
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1137412364]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6nasq")
+theme_override_font_sizes/font_size = 26
+text = "RESTART"
+
+[node name="Ragequit" type="Button" parent="VBoxContainer" unique_id=734808611]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.2369943, 2.5419052e-07, 7.821247e-08, 1)
+theme_override_constants/outline_size = 5
+text = "RAGE QUIT"
+
+[node name="game_over_sound" type="AudioStreamPlayer" parent="." unique_id=386442403]
+stream = ExtResource("3_2dm4e")
+
+[node name="exitconfirm" type="ConfirmationDialog" parent="." unique_id=1068545220]
+oversampling_override = 1.0
+title = "Exit"
+initial_position = 1
+size = Vector2i(250, 128)
+sharp_corners = true
+ok_button_text = "Yes"
+dialog_text = "Are you sure that you want to close this really good game?
+Note: this feature does not work on itch.io, the game just freezes."
+dialog_autowrap = true
+cancel_button_text = "No"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Ragequit" to="." method="_on_ragequit_pressed"]
+[connection signal="confirmed" from="exitconfirm" to="." method="_on_exitconfirm_confirmed"]
