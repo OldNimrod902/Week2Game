@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cppm5sqhe6n2d"]
+
+[ext_resource type="Texture2D" uid="uid://b7j5c11pp1oqn" path="res://assets/platfrom.png" id="1_3pwma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykops"]
+size = Vector2(19.288334, 24.577677)
+
+[node name="peak_platform" type="StaticBody2D" unique_id=383050873]
+scale = Vector2(9.059881, 1.2206199)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1728006297]
+offset_right = 468.21478
+offset_bottom = 63.999996
+scale = Vector2(0.04118688, 0.6170451)
+texture = ExtResource("1_3pwma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=444750001]
+position = Vector2(9.64417, 12.28884)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_ykops")
+one_way_collision = true

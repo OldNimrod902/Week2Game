@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 
 func _on_main_menu_pressed() -> void:
-	Global.spooky_levels_done=0
+	Global.peak_levels_done=0
 	Global.intermission_message="I see you're trying for a better time"
 	Global.death_cause="none"
 	Global.lives=Global.lives_selected

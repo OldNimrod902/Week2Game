@@ -5,11 +5,11 @@ extends Control
 
 func _ready() -> void:
 	if Global.spooky_record_time != 100000:
-		spooky_record.text = str(snapped(Global.spooky_record_time, 0.1))
+		spooky_record.text = str(snapped(Global.spooky_record_time, 0.1)) + "s"
 	if Global.peak_record_time !=100000:
-		peak_record.text = str(snapped(Global.peak_record_time, 0.1))
+		peak_record.text = str(snapped(Global.peak_record_time, 0.1)) + "s"
 	if Global.peak_infinite_record != 0:
-		peak_infinite_record.text = str(snapped(Global.peak_infinite_record, 0.1))
+		peak_infinite_record.text = str(Global.peak_infinite_record) + "m"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -29,4 +29,4 @@ func _on_peak_pressed() -> void:
 
 
 func _on_peak_infinite_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://peak_scenes/infinite_peak.tscn")

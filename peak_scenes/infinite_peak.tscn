@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cgxr0bydhoyjt"]
+
+[ext_resource type="Script" uid="uid://dkmbqa42p76ky" path="res://infinite_peak.gd" id="1_fuf33"]
+[ext_resource type="Texture2D" uid="uid://cbss6dxmca7jg" path="res://assets/grass.png" id="2_f427j"]
+[ext_resource type="Texture2D" uid="uid://d0r78gy2vsiij" path="res://assets/peak_sky_1.png" id="2_x1pqd"]
+[ext_resource type="Texture2D" uid="uid://douyhkiy582hx" path="res://assets/dirt_background.png" id="3_x1pqd"]
+[ext_resource type="PackedScene" uid="uid://c1l11qjc2nvyp" path="res://scenes/player.tscn" id="4_quyt3"]
+[ext_resource type="Script" uid="uid://py0adnih0o8j" path="res://peak_scenes/camera_2d.gd" id="5_f427j"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="7_quyt3"]
+[ext_resource type="PackedScene" uid="uid://b5nim0se8kg25" path="res://peak_scenes/peak_touch_screen_ui.tscn" id="8_g4xvw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4xvw"]
+size = Vector2(121.288765, 33.75)
+
+[node name="infinite_peak" type="Node2D" unique_id=1840871388]
+script = ExtResource("1_fuf33")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1033203047]
+scroll_scale = Vector2(0, 1)
+repeat_size = Vector2(0, 720)
+repeat_times = 3
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=372710040]
+offset_left = -631.0
+offset_top = -24.0
+offset_right = 1827.0
+offset_bottom = 696.0
+texture = ExtResource("2_x1pqd")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=1941445890]
+position = Vector2(3, 494)
+scale = Vector2(24.519997, 2.799999)
+
+[node name="TextureRect" type="TextureRect" parent="ground" unique_id=471441286]
+texture_filter = 1
+offset_left = -44.82056
+offset_top = -1.071429
+offset_right = 4575.592
+offset_bottom = 142.92857
+scale = Vector2(0.029004568, 0.28962559)
+texture = ExtResource("2_f427j")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=809614038]
+position = Vector2(28.058735, 16.071411)
+shape = SubResource("RectangleShape2D_g4xvw")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1485139130]
+offset_left = -286.0
+offset_top = 605.0
+offset_right = 2830.6582
+offset_bottom = 1685.0
+scale = Vector2(0.6000017, 0.60001403)
+texture = ExtResource("3_x1pqd")
+stretch_mode = 1
+
+[node name="Player" parent="." unique_id=599305279 instance=ExtResource("4_quyt3")]
+position = Vector2(599, 436)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1057003807]
+position = Vector2(576, 427)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 1.0
+drag_right_margin = 1.0
+script = ExtResource("5_f427j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1385073260]
+
+[node name="height_label" type="RichTextLabel" parent="CanvasLayer" unique_id=745288235]
+offset_left = 24.0
+offset_top = 23.0
+offset_right = 136.0
+offset_bottom = 63.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+text = "HEIGHT"
+
+[node name="height_text" type="RichTextLabel" parent="CanvasLayer" unique_id=698966354]
+clip_contents = false
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 150.0
+offset_bottom = 97.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_quyt3")
+theme_override_font_sizes/normal_font_size = 41
+text = "00m"
+
+[node name="PeakTouchScreenUI" parent="." unique_id=666729187 instance=ExtResource("8_g4xvw")]
+
+[connection signal="died" from="Player" to="." method="_on_player_died"]
