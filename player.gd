@@ -47,6 +47,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Global.peak_player:
 		if is_on_floor():
+			jump_sound.play()
 			velocity.y = JUMP_VELOCITY
 		
 		var camera = get_viewport().get_camera_2d()
