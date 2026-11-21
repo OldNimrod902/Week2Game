@@ -191,6 +191,18 @@ text = "N/A"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ad2" type="RichTextLabel" parent="Peak_infinite" unique_id=64235195]
+layout_mode = 0
+offset_top = -21.0
+offset_right = 138.0
+offset_bottom = 20.0
+theme_override_colors/default_color = Color(1, 0, 0.21960784, 1)
+theme_override_fonts/normal_font = ExtResource("2_40nbh")
+theme_override_font_sizes/normal_font_size = 26
+text = "BETA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Back_button" type="Button" parent="." unique_id=658072591]
 layout_mode = 0
 offset_left = 101.0
