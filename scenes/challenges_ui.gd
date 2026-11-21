@@ -30,12 +30,3 @@ func _on_peak_pressed() -> void:
 
 func _on_peak_infinite_pressed() -> void:
 	pass # Replace with function body.
-
-
-func _on_peak_2_pressed() -> void:
-	Global.peak_levels_done=2
-	get_tree().change_scene_to_file("res://peak_scenes/peak_level_2.tscn")
-
-func _on_peak_3_pressed() -> void:
-	Global.peak_levels_done=3
-	get_tree().change_scene_to_file("res://peak_scenes/peak_level_3.tscn")
