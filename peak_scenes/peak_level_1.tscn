@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bc44jo6su8ex" path="res://assets/fall_platform.png" id="6_qqbb1"]
 [ext_resource type="Texture2D" uid="uid://douyhkiy582hx" path="res://assets/dirt_background.png" id="8_dupqi"]
 [ext_resource type="AudioStream" uid="uid://dje80bufikaiv" path="res://sounds/platform_crack.mp3" id="10_irg1m"]
+[ext_resource type="FontFile" uid="uid://bmt257kayau5q" path="res://font_assets/Jersey10-Regular.ttf" id="11_0tx7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esc26"]
 size = Vector2(19.15036, 25.734741)
@@ -291,5 +292,27 @@ stretch_mode = 1
 
 [node name="platform_break" type="AudioStreamPlayer" parent="." unique_id=888451721]
 stream = ExtResource("10_irg1m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=243966301]
+
+[node name="height_label" type="RichTextLabel" parent="CanvasLayer" unique_id=1723334533]
+offset_left = 24.0
+offset_top = 23.0
+offset_right = 136.0
+offset_bottom = 63.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+text = "HEIGHT"
+
+[node name="height_text" type="RichTextLabel" parent="CanvasLayer" unique_id=425066225]
+clip_contents = false
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 150.0
+offset_bottom = 97.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("11_0tx7f")
+theme_override_font_sizes/normal_font_size = 41
+text = "00m"
 
 [connection signal="died" from="Player" to="." method="_on_player_died"]
